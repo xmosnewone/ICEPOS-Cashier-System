@@ -1,6 +1,6 @@
 <div align="center">
     <p align="center">
-        <img src="icepos.png" height="150" alt="logo"/>
+        <img src="/icepos.png" height="150" alt="logo"/>
     </p>
 </div>
 
