@@ -1,0 +1,6 @@
+E:\LL.POS\LL.POS.Model\bin\Release\LL.POS.Model.dll
+E:\LL.POS\LL.POS.Model\obj\Release\LL.POS.Model.dll
+E:\LL.POS\LL.POS.Model\obj\Release\LL.POS.Model.csprojResolveAssemblyReference.cache
+E:\Avooa\EPOS\LL.POS\LL.POS.Model\bin\Release\LL.POS.Model.dll
+E:\Avooa\EPOS\LL.POS\LL.POS.Model\obj\Release\LL.POS.Model.csprojResolveAssemblyReference.cache
+E:\Avooa\EPOS\LL.POS\LL.POS.Model\obj\Release\LL.POS.Model.dll

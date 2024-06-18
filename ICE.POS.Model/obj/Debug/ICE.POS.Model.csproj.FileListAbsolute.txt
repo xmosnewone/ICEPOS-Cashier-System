@@ -1,0 +1,13 @@
+D:\Avooa\ICE.POS\LL.POS.Model\bin\Debug\LL.POS.Model.dll
+D:\Avooa\ICE.POS\LL.POS.Model\bin\Debug\LL.POS.Model.pdb
+D:\Avooa\ICE.POS\LL.POS.Model\obj\Debug\ICE.POS.Model.csprojResolveAssemblyReference.cache
+D:\Avooa\ICE.POS\LL.POS.Model\obj\Debug\LL.POS.Model.dll
+D:\Avooa\ICE.POS\LL.POS.Model\obj\Debug\LL.POS.Model.pdb
+D:\Avooa\ICE.POS.M\ICE.POS.Model\bin\Debug\ICE.POS.Model.dll
+D:\Avooa\ICE.POS.M\ICE.POS.Model\bin\Debug\ICE.POS.Model.pdb
+D:\Avooa\ICE.POS.M\ICE.POS.Model\obj\Debug\ICE.POS.Model.dll
+D:\Avooa\ICE.POS.M\ICE.POS.Model\obj\Debug\ICE.POS.Model.pdb
+D:\Avooa\ICE.POS\ICE.POS.Model\bin\Debug\ICE.POS.Model.dll
+D:\Avooa\ICE.POS\ICE.POS.Model\bin\Debug\ICE.POS.Model.pdb
+D:\Avooa\ICE.POS\ICE.POS.Model\obj\Debug\ICE.POS.Model.dll
+D:\Avooa\ICE.POS\ICE.POS.Model\obj\Debug\ICE.POS.Model.pdb

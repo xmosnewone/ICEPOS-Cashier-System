@@ -1,0 +1,2 @@
+D:\Avooa\ICE.POS\ICE.Common\bin\Release\ICE.Common.dll
+D:\Avooa\ICE.POS\ICE.Common\obj\Release\ICE.Common.dll

@@ -1,0 +1,1225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TestConnection">
+        <s:complexType />
+      </s:element>
+      <s:element name="TestConnectionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TestConnectionResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetCashierPwd">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pwd" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetCashierPwdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetCashierPwdResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCashierList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="branchNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cashierId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCashierListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCashierListResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBranchInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="branchNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBranchInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBranchInfoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBranchList">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetBranchListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBranchListResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBranchStock">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="branchNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="branchText" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBranchStockResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBranchStockResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBarcodeList">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetBarcodeListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBarcodeListResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetItemList">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetItemListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetItemListResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetItemClsList">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetItemClsListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetItemClsListResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPosStatusList">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetPosStatusListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPosStatusListResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBaseCodeType">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetBaseCodeTypeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBaseCodeTypeResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBaseCodeInfo">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetBaseCodeInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBaseCodeInfoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPaymentInfo">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetPaymentInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPaymentInfoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFunction">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="branchNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFunctionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFunctionResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPMSheetMaster">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="transNO" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sheetNO" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="branchNO" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="status" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="startDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="endDate" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPMSheetMasterResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPMSheetMasterResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPMSheetDetail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sheetNO" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dt">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPMSheetDetailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPMSheetDetailResult" type="tns:t_pm_sheet_master" />
+            <s:element minOccurs="0" maxOccurs="1" name="dt">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="t_pm_sheet_master">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="sheet_no" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="trans_no" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="db_no" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="branch_no" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="d_branch_no" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="voucher_no" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="supcust_no" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="coin_no" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="pay_way" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="pay_date" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="dept_flag" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="approve_flag" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="oper_date" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="work_date" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="valid_date" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="order_amt" nillable="true" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="order_status" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="order_man" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="oper_id" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="confirm_man" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="dept_id" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="sale_way" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="reverse_flag" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="reverse_sheet" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="direct_flag" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="trans_flag" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="acct_flag" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="other1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="other2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="other3" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="sheet_amt" nillable="true" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="branch_flag" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="com_flag" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="num1" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="num2" nillable="true" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="relate_sheet_no" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="memo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="detailList" type="tns:ArrayOfT_pm_sheet_detail" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfT_pm_sheet_detail">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="t_pm_sheet_detail" nillable="true" type="tns:t_pm_sheet_detail" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="t_pm_sheet_detail">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="flow_id" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="sheet_no" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="item_no" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="order_qty" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="real_qty" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="large_qty" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="orgi_price" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="valid_price" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="sub_amt" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="tax" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="valid_date" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="other1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="other2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="other3" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="num1" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="num2" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="num3" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="route_qty" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="jhd_qty" nillable="true" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="sheet_mo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="mo_qty" nillable="true" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="sheet_po" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="po_qty" nillable="true" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UpdatePosStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="posStatus" type="tns:t_sys_pos_status" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="t_sys_pos_status">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="branch_no" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="posid" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="posdesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="hostip" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="hostname" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="operdate" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="amount" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="orderqty" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="lasttime" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="lastcashier" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="status" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="other" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="com_flag" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="load_flag" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UpdatePosStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdatePosStatusResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertCardPayList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cardPayList" type="tns:ArrayOfT_rm_card_paylist" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfT_rm_card_paylist">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="t_rm_card_paylist" nillable="true" type="tns:t_rm_card_paylist" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="t_rm_card_paylist">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="id" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="flow_no" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="card_type" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="card_id" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="amount" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="pay_time" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="other1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="other2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="branch_no" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="residual_amt" nillable="true" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="com_flag" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="vip_acc" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="real_date" nillable="true" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="InsertCardPayListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InsertCardPayListResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InPayFlowList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="payFlow" type="tns:ArrayOfT_rm_payflow" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfT_rm_payflow">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="t_rm_payflow" nillable="true" type="tns:t_rm_payflow" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="t_rm_payflow">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="com_no" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="flow_id" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="flow_no" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="sale_amount" nillable="true" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="branch_no" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="pay_way" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="sell_way" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="card_no" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="vip_no" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="coin_no" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="coin_rate" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="pay_amount" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="oper_date" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="oper_id" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="counter_no" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="sale_man" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="memo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="voucher_no" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="remote_flag" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="exchange_flag" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="shift_no" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="com_flag" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="posid" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="uptime" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="is_jxc" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="real_date" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="saleFlowlList" type="tns:ArrayOfT_rm_saleflow" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfT_rm_saleflow">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="t_rm_saleflow" nillable="true" type="tns:t_rm_saleflow" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="t_rm_saleflow">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="com_no" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="flow_id" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="flow_no" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="branch_no" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="item_no" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="source_price" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="sale_price" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="sale_qnty" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="sale_money" nillable="true" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="sell_way" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="oper_id" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="sale_man" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="counter_no" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="oper_date" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="remote_flag" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="shift_no" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="com_flag" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="spec_flag" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="pref_amt" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="in_price" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="n_stan" nillable="true" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="chr_stan" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="posid" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="uptime" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="is_jxc" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="real_date" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="spec_sheet_no" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="spec_group_id" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="InPayFlowListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InPayFlowListResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InPMSheetMaster">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_sheetMaster" type="tns:t_pm_sheet_master" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InPMSheetMasterResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InPMSheetMasterResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPosSet">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetPosSetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPosSetResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="TestConnectionSoapIn">
+    <wsdl:part name="parameters" element="tns:TestConnection" />
+  </wsdl:message>
+  <wsdl:message name="TestConnectionSoapOut">
+    <wsdl:part name="parameters" element="tns:TestConnectionResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetCashierPwdSoapIn">
+    <wsdl:part name="parameters" element="tns:SetCashierPwd" />
+  </wsdl:message>
+  <wsdl:message name="SetCashierPwdSoapOut">
+    <wsdl:part name="parameters" element="tns:SetCashierPwdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCashierListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCashierList" />
+  </wsdl:message>
+  <wsdl:message name="GetCashierListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCashierListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBranchInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBranchInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetBranchInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBranchInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBranchListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBranchList" />
+  </wsdl:message>
+  <wsdl:message name="GetBranchListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBranchListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBranchStockSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBranchStock" />
+  </wsdl:message>
+  <wsdl:message name="GetBranchStockSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBranchStockResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBarcodeListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBarcodeList" />
+  </wsdl:message>
+  <wsdl:message name="GetBarcodeListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBarcodeListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetItemListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetItemList" />
+  </wsdl:message>
+  <wsdl:message name="GetItemListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetItemListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetItemClsListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetItemClsList" />
+  </wsdl:message>
+  <wsdl:message name="GetItemClsListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetItemClsListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPosStatusListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPosStatusList" />
+  </wsdl:message>
+  <wsdl:message name="GetPosStatusListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPosStatusListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBaseCodeTypeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBaseCodeType" />
+  </wsdl:message>
+  <wsdl:message name="GetBaseCodeTypeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBaseCodeTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBaseCodeInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBaseCodeInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetBaseCodeInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBaseCodeInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPaymentInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPaymentInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetPaymentInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPaymentInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFunctionSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFunction" />
+  </wsdl:message>
+  <wsdl:message name="GetFunctionSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFunctionResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPMSheetMasterSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPMSheetMaster" />
+  </wsdl:message>
+  <wsdl:message name="GetPMSheetMasterSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPMSheetMasterResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPMSheetDetailSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPMSheetDetail" />
+  </wsdl:message>
+  <wsdl:message name="GetPMSheetDetailSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPMSheetDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePosStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdatePosStatus" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePosStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdatePosStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertCardPayListSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertCardPayList" />
+  </wsdl:message>
+  <wsdl:message name="InsertCardPayListSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertCardPayListResponse" />
+  </wsdl:message>
+  <wsdl:message name="InPayFlowListSoapIn">
+    <wsdl:part name="parameters" element="tns:InPayFlowList" />
+  </wsdl:message>
+  <wsdl:message name="InPayFlowListSoapOut">
+    <wsdl:part name="parameters" element="tns:InPayFlowListResponse" />
+  </wsdl:message>
+  <wsdl:message name="InPMSheetMasterSoapIn">
+    <wsdl:part name="parameters" element="tns:InPMSheetMaster" />
+  </wsdl:message>
+  <wsdl:message name="InPMSheetMasterSoapOut">
+    <wsdl:part name="parameters" element="tns:InPMSheetMasterResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPosSetSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPosSet" />
+  </wsdl:message>
+  <wsdl:message name="GetPosSetSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPosSetResponse" />
+  </wsdl:message>
+  <wsdl:portType name="PosServicesSoap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TestConnection">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">测试连接</wsdl:documentation>
+      <wsdl:input message="tns:TestConnectionSoapIn" />
+      <wsdl:output message="tns:TestConnectionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetCashierPwd">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">修改收银密码</wsdl:documentation>
+      <wsdl:input message="tns:SetCashierPwdSoapIn" />
+      <wsdl:output message="tns:SetCashierPwdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCashierList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">收银员信息,CashierId允许为空</wsdl:documentation>
+      <wsdl:input message="tns:GetCashierListSoapIn" />
+      <wsdl:output message="tns:GetCashierListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBranchInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取单个机构信息</wsdl:documentation>
+      <wsdl:input message="tns:GetBranchInfoSoapIn" />
+      <wsdl:output message="tns:GetBranchInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBranchList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">所有机构信息</wsdl:documentation>
+      <wsdl:input message="tns:GetBranchListSoapIn" />
+      <wsdl:output message="tns:GetBranchListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBranchStock">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">机构库存信息</wsdl:documentation>
+      <wsdl:input message="tns:GetBranchStockSoapIn" />
+      <wsdl:output message="tns:GetBranchStockSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBarcodeList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">条码信息</wsdl:documentation>
+      <wsdl:input message="tns:GetBarcodeListSoapIn" />
+      <wsdl:output message="tns:GetBarcodeListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetItemList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">商品列表</wsdl:documentation>
+      <wsdl:input message="tns:GetItemListSoapIn" />
+      <wsdl:output message="tns:GetItemListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetItemClsList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">商品分类列表</wsdl:documentation>
+      <wsdl:input message="tns:GetItemClsListSoapIn" />
+      <wsdl:output message="tns:GetItemClsListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPosStatusList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">POS机状态信息</wsdl:documentation>
+      <wsdl:input message="tns:GetPosStatusListSoapIn" />
+      <wsdl:output message="tns:GetPosStatusListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBaseCodeType">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">基础代码信息表</wsdl:documentation>
+      <wsdl:input message="tns:GetBaseCodeTypeSoapIn" />
+      <wsdl:output message="tns:GetBaseCodeTypeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBaseCodeInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">基础代码信息表</wsdl:documentation>
+      <wsdl:input message="tns:GetBaseCodeInfoSoapIn" />
+      <wsdl:output message="tns:GetBaseCodeInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPaymentInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">支付信息</wsdl:documentation>
+      <wsdl:input message="tns:GetPaymentInfoSoapIn" />
+      <wsdl:output message="tns:GetPaymentInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFunction">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">快捷键</wsdl:documentation>
+      <wsdl:input message="tns:GetFunctionSoapIn" />
+      <wsdl:output message="tns:GetFunctionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPMSheetMaster">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">查询要货主表信息</wsdl:documentation>
+      <wsdl:input message="tns:GetPMSheetMasterSoapIn" />
+      <wsdl:output message="tns:GetPMSheetMasterSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPMSheetDetail">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">查询要货商品信息</wsdl:documentation>
+      <wsdl:input message="tns:GetPMSheetDetailSoapIn" />
+      <wsdl:output message="tns:GetPMSheetDetailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePosStatus">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">更新POS机状态信息</wsdl:documentation>
+      <wsdl:input message="tns:UpdatePosStatusSoapIn" />
+      <wsdl:output message="tns:UpdatePosStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertCardPayList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">会员卡付款列表</wsdl:documentation>
+      <wsdl:input message="tns:InsertCardPayListSoapIn" />
+      <wsdl:output message="tns:InsertCardPayListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InPayFlowList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">付款列表</wsdl:documentation>
+      <wsdl:input message="tns:InPayFlowListSoapIn" />
+      <wsdl:output message="tns:InPayFlowListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InPMSheetMaster">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">终端采购主信息</wsdl:documentation>
+      <wsdl:input message="tns:InPMSheetMasterSoapIn" />
+      <wsdl:output message="tns:InPMSheetMasterSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPosSet">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取POS机配置信息</wsdl:documentation>
+      <wsdl:input message="tns:GetPosSetSoapIn" />
+      <wsdl:output message="tns:GetPosSetSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="PosServicesSoap" type="tns:PosServicesSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestConnection">
+      <soap:operation soapAction="http://tempuri.org/TestConnection" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetCashierPwd">
+      <soap:operation soapAction="http://tempuri.org/SetCashierPwd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCashierList">
+      <soap:operation soapAction="http://tempuri.org/GetCashierList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBranchInfo">
+      <soap:operation soapAction="http://tempuri.org/GetBranchInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBranchList">
+      <soap:operation soapAction="http://tempuri.org/GetBranchList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBranchStock">
+      <soap:operation soapAction="http://tempuri.org/GetBranchStock" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBarcodeList">
+      <soap:operation soapAction="http://tempuri.org/GetBarcodeList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetItemList">
+      <soap:operation soapAction="http://tempuri.org/GetItemList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetItemClsList">
+      <soap:operation soapAction="http://tempuri.org/GetItemClsList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPosStatusList">
+      <soap:operation soapAction="http://tempuri.org/GetPosStatusList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBaseCodeType">
+      <soap:operation soapAction="http://tempuri.org/GetBaseCodeType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBaseCodeInfo">
+      <soap:operation soapAction="http://tempuri.org/GetBaseCodeInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPaymentInfo">
+      <soap:operation soapAction="http://tempuri.org/GetPaymentInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFunction">
+      <soap:operation soapAction="http://tempuri.org/GetFunction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPMSheetMaster">
+      <soap:operation soapAction="http://tempuri.org/GetPMSheetMaster" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPMSheetDetail">
+      <soap:operation soapAction="http://tempuri.org/GetPMSheetDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePosStatus">
+      <soap:operation soapAction="http://tempuri.org/UpdatePosStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertCardPayList">
+      <soap:operation soapAction="http://tempuri.org/InsertCardPayList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InPayFlowList">
+      <soap:operation soapAction="http://tempuri.org/InPayFlowList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InPMSheetMaster">
+      <soap:operation soapAction="http://tempuri.org/InPMSheetMaster" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPosSet">
+      <soap:operation soapAction="http://tempuri.org/GetPosSet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="PosServicesSoap12" type="tns:PosServicesSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestConnection">
+      <soap12:operation soapAction="http://tempuri.org/TestConnection" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetCashierPwd">
+      <soap12:operation soapAction="http://tempuri.org/SetCashierPwd" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCashierList">
+      <soap12:operation soapAction="http://tempuri.org/GetCashierList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBranchInfo">
+      <soap12:operation soapAction="http://tempuri.org/GetBranchInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBranchList">
+      <soap12:operation soapAction="http://tempuri.org/GetBranchList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBranchStock">
+      <soap12:operation soapAction="http://tempuri.org/GetBranchStock" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBarcodeList">
+      <soap12:operation soapAction="http://tempuri.org/GetBarcodeList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetItemList">
+      <soap12:operation soapAction="http://tempuri.org/GetItemList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetItemClsList">
+      <soap12:operation soapAction="http://tempuri.org/GetItemClsList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPosStatusList">
+      <soap12:operation soapAction="http://tempuri.org/GetPosStatusList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBaseCodeType">
+      <soap12:operation soapAction="http://tempuri.org/GetBaseCodeType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBaseCodeInfo">
+      <soap12:operation soapAction="http://tempuri.org/GetBaseCodeInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPaymentInfo">
+      <soap12:operation soapAction="http://tempuri.org/GetPaymentInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFunction">
+      <soap12:operation soapAction="http://tempuri.org/GetFunction" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPMSheetMaster">
+      <soap12:operation soapAction="http://tempuri.org/GetPMSheetMaster" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPMSheetDetail">
+      <soap12:operation soapAction="http://tempuri.org/GetPMSheetDetail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePosStatus">
+      <soap12:operation soapAction="http://tempuri.org/UpdatePosStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertCardPayList">
+      <soap12:operation soapAction="http://tempuri.org/InsertCardPayList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InPayFlowList">
+      <soap12:operation soapAction="http://tempuri.org/InPayFlowList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InPMSheetMaster">
+      <soap12:operation soapAction="http://tempuri.org/InPMSheetMaster" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPosSet">
+      <soap12:operation soapAction="http://tempuri.org/GetPosSet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PosServices">
+    <wsdl:port name="PosServicesSoap" binding="tns:PosServicesSoap">
+      <soap:address location="http://localhost:4058/ws/PosServices.asmx" />
+    </wsdl:port>
+    <wsdl:port name="PosServicesSoap12" binding="tns:PosServicesSoap12">
+      <soap12:address location="http://localhost:4058/ws/PosServices.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

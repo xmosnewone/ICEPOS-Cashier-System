@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D780598F-3202-450E-BFF5-0A59D2C99541}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ICE.POS.Common</RootNamespace>
+    <AssemblyName>ICE.POS.Common</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MySql.Data">
+      <HintPath>..\Lib\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\FileMD5.cs" />
+    <Compile Include="Common\ListItem.cs" />
+    <Compile Include="Common\SystemTime.cs" />
+    <Compile Include="Common\TextGraphics.cs" />
+    <Compile Include="Common\TicketSet.cs" />
+    <Compile Include="Controls\ButtonEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\ButtonForPos.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlState.cs" />
+    <Compile Include="Controls\GraphicsPathHelper.cs" />
+    <Compile Include="Controls\MyDataGrid.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\MyDataGridView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\PanelEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\RoundStyle.cs" />
+    <Compile Include="Controls\TableLayoutPanelEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\TextBoxEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Device\CashBox.cs" />
+    <Compile Include="Device\PosPrint.cs" />
+    <Compile Include="Device\WinPrinter.cs" />
+    <Compile Include="Device\_PortCom.cs" />
+    <Compile Include="Device\_PortLpt.cs" />
+    <Compile Include="Enum\LogEnum.cs" />
+    <Compile Include="Enum\PosOpState.cs" />
+    <Compile Include="Enum\PosOpType.cs" />
+    <Compile Include="Enum\PosSaleWay.cs" />
+    <Compile Include="Enum\SaleBillType.cs" />
+    <Compile Include="Enum\SearchType.cs" />
+    <Compile Include="Helpers\LoggerHelper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Services\MemberServicesProvider.cs" />
+    <Compile Include="Services\PosDownServiceProvider.cs" />
+    <Compile Include="Services\PosServiceProvider.cs" />
+    <Compile Include="Services\PosUploadServiceProvider.cs" />
+    <Compile Include="Services\PServiceProvider.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ICE.Common\ICE.Common.csproj">
+      <Project>{1622E79D-57B9-4626-B92A-571E990C6584}</Project>
+      <Name>ICE.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ICE.POS.Model\ICE.POS.Model.csproj">
+      <Project>{2527808A-C91D-4D84-B279-77650D7818C9}</Project>
+      <Name>ICE.POS.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ICE.Utility\ICE.Utility.csproj">
+      <Project>{1584AC12-29F6-428D-8C24-B76E6EAA0DE2}</Project>
+      <Name>ICE.Utility</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

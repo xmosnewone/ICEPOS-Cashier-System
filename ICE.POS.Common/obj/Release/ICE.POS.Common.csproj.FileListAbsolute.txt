@@ -1,0 +1,14 @@
+D:\Avooa\ICE.POS\ICE.POS.Common\bin\Release\POSDLL.dll
+D:\Avooa\ICE.POS\ICE.POS.Common\bin\Release\ICE.POS.Common.dll
+D:\Avooa\ICE.POS\ICE.POS.Common\bin\Release\ICE.Common.dll
+D:\Avooa\ICE.POS\ICE.POS.Common\bin\Release\ICE.POS.Model.dll
+D:\Avooa\ICE.POS\ICE.POS.Common\bin\Release\ICE.Utility.dll
+D:\Avooa\ICE.POS\ICE.POS.Common\bin\Release\MySql.Data.dll
+D:\Avooa\ICE.POS\ICE.POS.Common\bin\Release\log4net.dll
+D:\Avooa\ICE.POS\ICE.POS.Common\bin\Release\System.Data.SQLite.dll
+D:\Avooa\ICE.POS\ICE.POS.Common\bin\Release\Newtonsoft.Json.dll
+D:\Avooa\ICE.POS\ICE.POS.Common\bin\Release\log4net.xml
+D:\Avooa\ICE.POS\ICE.POS.Common\bin\Release\Newtonsoft.Json.pdb
+D:\Avooa\ICE.POS\ICE.POS.Common\bin\Release\Newtonsoft.Json.xml
+D:\Avooa\ICE.POS\ICE.POS.Common\obj\Release\ICE.POS.Common.csprojResolveAssemblyReference.cache
+D:\Avooa\ICE.POS\ICE.POS.Common\obj\Release\ICE.POS.Common.dll

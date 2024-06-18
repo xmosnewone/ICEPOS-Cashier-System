@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<applicationConfig>
+    <ServerUrl>http://icepos.cc/api/api</ServerUrl>
+    <BranchNo>MD0002</BranchNo>
+    <PosId>MD0002</PosId>
+</applicationConfig>

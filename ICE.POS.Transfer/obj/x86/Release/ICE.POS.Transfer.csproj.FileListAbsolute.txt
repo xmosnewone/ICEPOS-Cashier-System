@@ -1,0 +1,7 @@
+D:\Avooa\ICE.POS\ICE.POS\bin\Release\POSDLL.dll
+D:\Avooa\ICE.POS\ICE.POS\bin\Release\ICE.POS.Transfer.exe.config
+D:\Avooa\ICE.POS\ICE.POS\bin\Release\ICE.POS.Transfer.exe
+D:\Avooa\ICE.POS\ICE.POS.Transfer\obj\x86\Release\ICE.POS.Transfer.csprojResolveAssemblyReference.cache
+D:\Avooa\ICE.POS\ICE.POS.Transfer\obj\x86\Release\ICE.POS.Transfer.FormMain.resources
+D:\Avooa\ICE.POS\ICE.POS.Transfer\obj\x86\Release\ICE.POS.Transfer.csproj.GenerateResource.Cache
+D:\Avooa\ICE.POS\ICE.POS.Transfer\obj\x86\Release\ICE.POS.Transfer.exe

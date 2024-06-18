@@ -1,0 +1,1 @@
+﻿<%@ WebService Language="C#" CodeBehind="PosServices.asmx.cs" Class="LL.POS.Service.PosServices" %>

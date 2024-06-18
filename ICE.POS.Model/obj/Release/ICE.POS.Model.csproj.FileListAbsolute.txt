@@ -1,0 +1,2 @@
+D:\Avooa\ICE.POS\ICE.POS.Model\bin\Release\ICE.POS.Model.dll
+D:\Avooa\ICE.POS\ICE.POS.Model\obj\Release\ICE.POS.Model.dll
