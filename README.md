@@ -46,6 +46,14 @@ ICEPOS收银系统对服务器或电脑硬件要求不高,可以使用单台电�
 不限操作人数，不限门店数量，不限安装数量，自由开发，数据安全。
 用户操作手册请到官网下载:[用户手册Manu.pdf](https://doc.icepos.cn/userdocument.html)
 
+#### 技术交流
+QQ 群号:967490959 (ICEPOS技术交流群1)
+<div align="center">
+    <p align="center">
+        <img src="./blob/main/qqqrcode.png" height="auto" alt="logo"/>
+    </p>
+</div>
+
 #### 参考文档
 
 ThinkPHP框架：http://www.thinkphp.cn
