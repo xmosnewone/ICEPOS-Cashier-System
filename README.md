@@ -1,6 +1,6 @@
 <div align="center">
     <p align="center">
-        <img src="/tree/main/blob/main/icepos.png" height="150" alt="logo"/>
+        <img src="./blob/main/icepos.png" height="150" alt="logo"/>
     </p>
 </div>
 
@@ -70,20 +70,19 @@ Ueditor https://github.com/fex-team/ueditor
 C# / PC端 营业员登录界面
 <div align="center">
     <p align="center">
-        <img src="asset/login.jpg" height="auto" alt="logo"/>
+        <img src="./blob/main/login.jpg" height="auto" alt="logo"/>
     </p>
 </div>
 
 营业员录入客户商品界面
 <div align="center">
     <p align="center">
-        <img src="asset/front1.jpg" height="auto" alt="logo"/>
+        <img src="./blob/main/front1.jpg" height="auto" alt="logo"/>
     </p>
 </div>
 双屏显示模式--客户屏幕
 <div align="center">
     <p align="center">
-        <img src="asset/front2.jpg" height="auto" alt="logo"/>
+        <img src="./blob/main/front2.jpg" height="auto" alt="logo"/>
     </p>
 </div>
-![Uploading front1.jpg…]()
