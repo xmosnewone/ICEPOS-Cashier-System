@@ -1,0 +1,9 @@
+2024-06-19 15:55:34,802:InsertCashierData--->>>>Error:System.Data.SQLite.SQLiteException: Abort due to constraint violation
+columns oper_id, oper_name are not unique
+   在 System.Data.SQLite.SQLite3.Reset(SQLiteStatement stmt)
+   在 System.Data.SQLite.SQLite3.Step(SQLiteStatement stmt)
+   在 System.Data.SQLite.SQLiteDataReader.NextResult()
+   在 System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   在 System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.SQLite.SQLiteCommand.ExecuteNonQuery()
+   在 ICE.Utility.DbUtilitySQLite.ExecuteSqlsByTrans(String connectionString, List`1 _dicParameters, String& errorMessage)

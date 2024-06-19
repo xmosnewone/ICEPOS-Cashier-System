@@ -813,13 +813,19 @@
         {
             return this._dal.UpdateTHandle();
         }
-        
-        
-        
-        
-        
+
+
+        //清空营业员SQLLite表
+        public bool DelCashierData()
+        {
+            return this._dal.DelCashierData();
+        }
+
+
         public bool InsertCashierData(DataTable table, decimal del, ref decimal rid)
         {
+            //清空营业员表
+            this.DelCashierData();
             return this._dal.InsertCashierData(table,del,ref rid);
         }
         

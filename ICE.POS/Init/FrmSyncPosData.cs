@@ -320,7 +320,9 @@ namespace ICE.POS
                         _dic.Add("rid", _t_handle.t_base_code);
                         break;
                     case "Getoper":
-                        _dic.Add("rid", _t_handle.t_operator);
+                        //_dic.Add("rid", _t_handle.t_operator);
+                        //全部下载
+                        _dic.Add("rid","-1");
                         break;
                     case "Getpmaster":
                         //_dic.Add("rid", _t_handle.t_rm_plan_master);

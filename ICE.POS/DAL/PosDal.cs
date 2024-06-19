@@ -2936,11 +2936,26 @@ namespace ICE.POS
             }
             return isok;
         }
-        
-        
-        
-        
-        
+
+
+        //清空商品分类数据表
+        public bool DelCashierData()
+        {
+            SQLiteParameter[] parameters = null;
+            List<SqlParaEntity> transList = null;
+            SqlParaEntity _current;
+            String errorMessage = String.Empty;
+
+            transList = new List<SqlParaEntity>();
+            _current = new SqlParaEntity() { parameters = null, Sql = "delete from t_operator" };
+            transList.Add(_current);
+
+            bool isok = DbUtilitySQLite.Instance.ExecuteSqlsByTrans(Gattr.ITEM_DB_FILE_NAME, transList, ref errorMessage) > 0 ? true : false;
+
+            return isok;
+        }
+
+
         public bool InsertCashierData(DataTable table,decimal del,ref decimal rid)
         {
             String sqlI = "";
