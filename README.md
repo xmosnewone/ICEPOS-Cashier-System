@@ -82,7 +82,7 @@ C# / PC端 营业员登录界面
     </p>
 </div>
 
-营业员录入客户商品界面
+营业员录入--商户界面
 <div align="center">
     <p align="center">
         <img src="./blob/main/front1.jpg" height="auto" alt="logo"/>
@@ -92,5 +92,11 @@ C# / PC端 营业员登录界面
 <div align="center">
     <p align="center">
         <img src="./blob/main/front2.jpg" height="auto" alt="logo"/>
+    </p>
+</div>
+扫码盒使用实况照片--商户界面
+<div align="center">
+    <p align="center">
+        <img src="./blob/main/runact.jpg" height="auto" alt="logo"/>
     </p>
 </div>
