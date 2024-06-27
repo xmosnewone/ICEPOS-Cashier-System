@@ -100,3 +100,12 @@ C# / PC端 营业员登录界面
         <img src="./blob/main/runact.jpg" height="auto" alt="logo"/>
     </p>
 </div>
+
+扫码盒使用微信支付收款--商户界面
+<div align="center">
+    <p align="center">
+        <img src="./blob/main/runpay.jpg" height="auto" alt="logo"/>
+    </p>
+</div>
+
+如果对您有帮助，您可以点右上角 💘Star💘 支持
