@@ -32,6 +32,10 @@
         
         
         bool isWork = false;
+
+        bool DealerAccountWork = true;//收银员对账记录错误后暂停
+        bool DealerDataWork = true;//上传支付和商品销售流水出现错误后暂停
+        bool DealerVipWork = true;//上传VIP消费记录出现错误后暂停
         #endregion
         #region 构造函数
         public FormMain()
@@ -244,7 +248,7 @@
         }
         
         
-        
+        //循环定时执行上传数据的方法
         void DoDealerWork()
         {
             isWork = true;
@@ -283,6 +287,11 @@
         
         void DealerData(bool isWorkInvoke, int mark)
         {
+            if (DealerDataWork == false)
+            {
+                //LoggerHelper.Log("MsmkLogger", "上传支付和商品销售流水出现错误##", LogEnum.TransferLog);
+                return;
+            }
 
             String _branchNo = string.Empty;
             DataTable tableFlowNo = null;
@@ -342,12 +351,14 @@
                                         }
                                         else
                                         {
+                                            DealerDataWork = false;
                                             sb.AppendLine("流水号:" + dr[0].ToString() + "Error:" + result.ToString());
                                             LoggerHelper.Log("MsmkLogger", sb.ToString(), LogEnum.TransferLog);
                                         }
                                     }
                                     else
                                     {
+                                            DealerDataWork = false;
                                         if (json == "-10")
                                         {
                                             sb.AppendLine("流水号:" + dr[0].ToString() + "Error:参数错误");
@@ -362,6 +373,7 @@
                                 }
                                 else
                                 {
+                                             DealerDataWork = false;
                                     sb.AppendLine("流水号:" + dr[0].ToString() + "Error:" + errorMessage);
                                     LoggerHelper.Log("MsmkLogger", sb.ToString(), LogEnum.TransferLog);
                                 }
@@ -453,6 +465,11 @@
         
         void DealerAccount(bool isWorkInvoke)
         {
+            if (DealerAccountWork == false) {
+                //LoggerHelper.Log("MsmkLogger", "上传收银员对账记录错误##", LogEnum.TransferLog);
+                return;
+            }
+
             DataTable tableAcc = null;
             bool isok = true;
             string errorMessage = string.Empty;
@@ -506,6 +523,7 @@
                                 }
                                 else
                                 {
+                                    DealerAccountWork = false;
                                     sb.Append("门店：" + account.branch_no);
                                     sb.Append("POS机：" + account.pos_id);
                                     sb.Append("收银员：" + account.oper_id);
@@ -515,6 +533,7 @@
                             }
                             else
                             {
+                                    DealerAccountWork = false;
                                 if (json == "-10")
                                 {
                                     sb.AppendLine("流水号:" + dr[0].ToString() + "Error:参数错误");
@@ -541,6 +560,12 @@
         
         void DealerVip(bool isWorkInvoke)
         {
+            if (DealerVipWork == false)
+            {
+                //LoggerHelper.Log("MsmkLogger", "上传会员消费记录错误##", LogEnum.TransferLog);
+                return;
+            }
+
             DataTable tableAcc = null;
             bool isok = true;
             string errorMessage = string.Empty;
@@ -593,6 +618,7 @@
                                 }
                                 else
                                 {
+                                    DealerVipWork = false;
                                     sb.Append("流水号：" + vip.flow_no);
                                     sb.Append("会员卡：" + vip.card_no);
                                     sb.Append(" 会员消费上传失败" + "Error:" + errorMessage);
@@ -601,6 +627,7 @@
                             }
                             else
                             {
+                                    DealerVipWork = false;
                                 if (json == "-10")
                                 {
                                     sb.AppendLine("流水号:" + dr[0].ToString() + "Error:参数错误");
