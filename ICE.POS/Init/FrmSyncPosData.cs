@@ -294,14 +294,14 @@ namespace ICE.POS
                         //Console.WriteLine("执行全新下载");
                         break;
                     case "Getbrastock":
-                        string last_time1 = WindowsAPIUtility.GetLocalSysParam("download", "t_pos_branch_stock", Gattr.LAST_UPDATE_TIME, Gattr.INI_FILE_PATH);
-                        _dic.Add("rid", _t_handle.t_product_food_kc);
-                        _dic.Add("last_time", ExtendUtility.Instance.ParseToDateTime(last_time1).ToString());
+                        //下载最新商品库存
+                        //Console.WriteLine("执行库存更新");
+                        _dic.Add("rid", "-1");
                         break;
                     case "Getbraprc":
-                        string last_time2 = WindowsAPIUtility.GetLocalSysParam("download", "t_pos_branch_price", Gattr.LAST_UPDATE_TIME, Gattr.INI_FILE_PATH);
-                        _dic.Add("rid", _t_handle.t_product_food_jg);
-                        _dic.Add("last_time", ExtendUtility.Instance.ParseToDateTime(last_time2).ToString());
+                        //下载最新商品价格
+                        //Console.WriteLine("执行价格更新");
+                        _dic.Add("rid", "-1");
                         break;
                     case "Getbarcode":
                         // string last_time3 = WindowsAPIUtility.GetLocalSysParam("download", "barcode", Gattr.LAST_UPDATE_TIME, Gattr.INI_FILE_PATH);
