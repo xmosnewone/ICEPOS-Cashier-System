@@ -1026,7 +1026,7 @@
                         return 0;
                     }
                     //if ((span.Days > 10) && (MessageBox.Show(str4, Gattr.AppTitle, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No))
-                    if (span.Days > 10)
+                    if (span.Days > 0)
                     {
                         reader.Close();
                         stream.Close();
