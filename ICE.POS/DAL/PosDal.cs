@@ -1897,7 +1897,7 @@ namespace ICE.POS
         {
             Int32 result = 0;
             Boolean isOK = false;
-            String sql = "delete t_app_payflow where id=@id";
+            String sql = "delete from t_app_payflow where id=@id";
             SQLiteCommand command = null;
             SQLiteParameter parameter = null;
             try
@@ -2779,7 +2779,7 @@ namespace ICE.POS
                     "change_price=@change_price,vip_acc_flag=@vip_acc_flag," +
                     "min_qty=@min_qty,max_qty=@max_qty,"+
                     "vip_acc_num=@vip_acc_num,scheme_price=@scheme_price where item_no=@item_no";
-                sqlD = "delete t_product_food where item_no=@item_no";
+                sqlD = "delete from t_product_food where item_no=@item_no";
                 transList = new List<SqlParaEntity>();
                 selectSql = "select count(*) from t_product_food where item_no=@item_no";
                 if (del == -1)
@@ -3321,11 +3321,27 @@ namespace ICE.POS
             }
             return isok;
         }
-        
-        
-        
-        
-        
+
+
+
+
+        //删除所有门店记录
+        public bool DelBranchList()
+        {
+            SQLiteParameter[] parameters = null;
+            List<SqlParaEntity> transList = null;
+            SqlParaEntity _current;
+            String errorMessage = String.Empty;
+
+            transList = new List<SqlParaEntity>();
+            _current = new SqlParaEntity() { parameters = null, Sql = "delete from t_branch_info" };
+            transList.Add(_current);
+
+            bool isok = DbUtilitySQLite.Instance.ExecuteSqlsByTrans(Gattr.ITEM_DB_FILE_NAME, transList, ref errorMessage) > 0 ? true : false;
+
+            return isok;
+        }
+
         public bool InsertBranchList(DataTable table)
         {
             String sqlI = "";
