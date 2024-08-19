@@ -12,3 +12,17 @@ D:\Avooa\ICE.POS\ICE.POS.Common\bin\Release\Newtonsoft.Json.pdb
 D:\Avooa\ICE.POS\ICE.POS.Common\bin\Release\Newtonsoft.Json.xml
 D:\Avooa\ICE.POS\ICE.POS.Common\obj\Release\ICE.POS.Common.csprojResolveAssemblyReference.cache
 D:\Avooa\ICE.POS\ICE.POS.Common\obj\Release\ICE.POS.Common.dll
+D:\wamp\www\iceposgithub\ICEPOS-Cashier-System\ICE.POS.Common\bin\Release\POSDLL.dll
+D:\wamp\www\iceposgithub\ICEPOS-Cashier-System\ICE.POS.Common\bin\Release\ICE.POS.Common.dll
+D:\wamp\www\iceposgithub\ICEPOS-Cashier-System\ICE.POS.Common\bin\Release\ICE.Common.dll
+D:\wamp\www\iceposgithub\ICEPOS-Cashier-System\ICE.POS.Common\bin\Release\ICE.POS.Model.dll
+D:\wamp\www\iceposgithub\ICEPOS-Cashier-System\ICE.POS.Common\bin\Release\ICE.Utility.dll
+D:\wamp\www\iceposgithub\ICEPOS-Cashier-System\ICE.POS.Common\bin\Release\MySql.Data.dll
+D:\wamp\www\iceposgithub\ICEPOS-Cashier-System\ICE.POS.Common\bin\Release\log4net.dll
+D:\wamp\www\iceposgithub\ICEPOS-Cashier-System\ICE.POS.Common\bin\Release\System.Data.SQLite.dll
+D:\wamp\www\iceposgithub\ICEPOS-Cashier-System\ICE.POS.Common\bin\Release\Newtonsoft.Json.dll
+D:\wamp\www\iceposgithub\ICEPOS-Cashier-System\ICE.POS.Common\bin\Release\log4net.xml
+D:\wamp\www\iceposgithub\ICEPOS-Cashier-System\ICE.POS.Common\bin\Release\Newtonsoft.Json.pdb
+D:\wamp\www\iceposgithub\ICEPOS-Cashier-System\ICE.POS.Common\bin\Release\Newtonsoft.Json.xml
+D:\wamp\www\iceposgithub\ICEPOS-Cashier-System\ICE.POS.Common\obj\Release\ICE.POS.Common.csprojResolveAssemblyReference.cache
+D:\wamp\www\iceposgithub\ICEPOS-Cashier-System\ICE.POS.Common\obj\Release\ICE.POS.Common.dll

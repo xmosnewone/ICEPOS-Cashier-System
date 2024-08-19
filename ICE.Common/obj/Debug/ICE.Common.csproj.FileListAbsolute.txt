@@ -2,3 +2,8 @@ D:\Avooa\ICE.POS\ICE.Common\bin\Debug\ICE.Common.dll
 D:\Avooa\ICE.POS\ICE.Common\bin\Debug\ICE.Common.pdb
 D:\Avooa\ICE.POS\ICE.Common\obj\Debug\ICE.Common.dll
 D:\Avooa\ICE.POS\ICE.Common\obj\Debug\ICE.Common.pdb
+D:\wamp\www\iceposgithub\ICEPOS-Cashier-System\ICE.Common\bin\Debug\ICE.Common.dll
+D:\wamp\www\iceposgithub\ICEPOS-Cashier-System\ICE.Common\bin\Debug\ICE.Common.pdb
+D:\wamp\www\iceposgithub\ICEPOS-Cashier-System\ICE.Common\obj\Debug\ICE.Common.csprojResolveAssemblyReference.cache
+D:\wamp\www\iceposgithub\ICEPOS-Cashier-System\ICE.Common\obj\Debug\ICE.Common.dll
+D:\wamp\www\iceposgithub\ICEPOS-Cashier-System\ICE.Common\obj\Debug\ICE.Common.pdb

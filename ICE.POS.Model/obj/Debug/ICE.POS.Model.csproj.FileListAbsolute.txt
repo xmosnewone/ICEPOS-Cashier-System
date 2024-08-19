@@ -11,3 +11,8 @@ D:\Avooa\ICE.POS\ICE.POS.Model\bin\Debug\ICE.POS.Model.dll
 D:\Avooa\ICE.POS\ICE.POS.Model\bin\Debug\ICE.POS.Model.pdb
 D:\Avooa\ICE.POS\ICE.POS.Model\obj\Debug\ICE.POS.Model.dll
 D:\Avooa\ICE.POS\ICE.POS.Model\obj\Debug\ICE.POS.Model.pdb
+D:\wamp\www\iceposgithub\ICEPOS-Cashier-System\ICE.POS.Model\bin\Debug\ICE.POS.Model.dll
+D:\wamp\www\iceposgithub\ICEPOS-Cashier-System\ICE.POS.Model\bin\Debug\ICE.POS.Model.pdb
+D:\wamp\www\iceposgithub\ICEPOS-Cashier-System\ICE.POS.Model\obj\Debug\ICE.POS.Model.csprojResolveAssemblyReference.cache
+D:\wamp\www\iceposgithub\ICEPOS-Cashier-System\ICE.POS.Model\obj\Debug\ICE.POS.Model.dll
+D:\wamp\www\iceposgithub\ICEPOS-Cashier-System\ICE.POS.Model\obj\Debug\ICE.POS.Model.pdb
