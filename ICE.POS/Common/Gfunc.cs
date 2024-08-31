@@ -1036,7 +1036,7 @@
                     //初始化Gattr.FlowNo
                     str = str.Substring(12);
                     Gattr.FlowNo = TypeToInt(str, 0);
-                    if (Gattr.FlowNo>1) {
+                    if (Gattr.FlowNo>=1) {
                         Gattr.FlowNo = Gattr.FlowNo - 1;
                     }
                     if ((Gattr.FlowNo <= 0) || (Gattr.FlowNo >= 9999))
