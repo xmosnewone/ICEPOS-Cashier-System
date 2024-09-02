@@ -4473,7 +4473,7 @@ namespace ICE.POS
                                     {
                                         amt = ExtendUtility.Instance.ParseToDecimal(drAmt[0]["rule_val"]);
                                     }
-                                    drNew["rule_desc"] = "买满金额" + amt + "元打折" + discost + "%";
+                                    drNew["rule_desc"] = "买满金额" + amt + "元打" + (discost * 10) + "折";
                                 }
                                 else if (type == "Q")
                                 {
@@ -4482,7 +4482,7 @@ namespace ICE.POS
                                     {
                                         qty = ExtendUtility.Instance.ParseToDecimal(drQty[0]["rule_val"]);
                                     }
-                                    drNew["rule_desc"] = "买满数量" + qty + "打折" + discost + "%";
+                                    drNew["rule_desc"] = "买满数量" + qty + "打" + (discost * 10) + "折";
                                 }
                                 switch (range_flag)
                                 {
