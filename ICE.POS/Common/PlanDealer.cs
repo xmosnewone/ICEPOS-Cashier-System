@@ -646,6 +646,7 @@ namespace ICE.POS
                                 PlanPara _plan = _master.PlanPara;
                                 string item_no = string.Empty;
                                 t_cur_saleflow _currentSale = _saleflow;
+                                //检测商品是否符合促销方案
                                 isok = CheckItem(_plan.CheckParas, _currentSale, _saleFlow);
                                 if (isok)
                                 {
@@ -746,7 +747,7 @@ namespace ICE.POS
         
         
         
-        
+        //检测商品是否符合条件
         private bool CheckCondtionInfo(CheckPara _para, t_cur_saleflow _saleInfo, List<t_cur_saleflow> _oldSales)
         {
             bool isok = false;
@@ -875,7 +876,7 @@ namespace ICE.POS
         
         
         
-        
+        //检测商品编码 分类 品牌是否符合条件
         private bool CheckTypeinfo(string type_no, string type_val, t_cur_saleflow saleinfo)
         {
             bool isok = false;

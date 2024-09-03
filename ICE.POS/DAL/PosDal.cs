@@ -256,6 +256,7 @@ namespace ICE.POS
                     oper_date = ExtendUtility.Instance.ParseToDateTime(operDate).ToString("s"),
                     price = decPrice,
                     unit_price = decSalePrice,//单价和销售价格相同
+                    unit_price1 = decSalePrice,//单价和销售价格相同
                     sale_price = decSalePrice,
                     sale_money = decSalePrice, //默认等于单价
                     item_subno = strItemSubNo,
@@ -4937,6 +4938,7 @@ namespace ICE.POS
                     sale.oper_date = DateTime.Now.ToString("s");
                     sale.price = ExtendUtility.Instance.ParseToDecimal(ExtendUtility.Instance.ParseToDecimal(dr["price"]).ToString(Gattr.PosSalePrcPoint));
                     sale.unit_price = ExtendUtility.Instance.ParseToDecimal(ExtendUtility.Instance.ParseToDecimal(dr["sale_price"]).ToString(Gattr.PosSalePrcPoint));
+                    sale.unit_price1 = ExtendUtility.Instance.ParseToDecimal(ExtendUtility.Instance.ParseToDecimal(dr["sale_price"]).ToString(Gattr.PosSalePrcPoint));
                     sale.sale_price = ExtendUtility.Instance.ParseToDecimal(ExtendUtility.Instance.ParseToDecimal(dr["sale_price"]).ToString(Gattr.PosSalePrcPoint));
                     sale.sale_money = sale.sale_price;
                     sale.item_subno = ExtendUtility.Instance.ParseToString(dr["item_subno"]);
@@ -5041,6 +5043,7 @@ namespace ICE.POS
                         sale.oper_date = DateTime.Now.ToString("s");
                         sale.price = ExtendUtility.Instance.ParseToDecimal(ExtendUtility.Instance.ParseToDecimal(sale.price).ToString(Gattr.PosSalePrcPoint));
                         sale.unit_price = ExtendUtility.Instance.ParseToDecimal(ExtendUtility.Instance.ParseToDecimal(sale.sale_price).ToString(Gattr.PosSalePrcPoint));
+                        sale.unit_price1 = ExtendUtility.Instance.ParseToDecimal(ExtendUtility.Instance.ParseToDecimal(sale.sale_price).ToString(Gattr.PosSalePrcPoint));
                         sale.sale_price = ExtendUtility.Instance.ParseToDecimal(ExtendUtility.Instance.ParseToDecimal(sale.sale_price).ToString(Gattr.PosSalePrcPoint));
                         sale.sale_money = sale.sale_price;
                         sale.item_subno = ExtendUtility.Instance.ParseToString(sale.item_subno);

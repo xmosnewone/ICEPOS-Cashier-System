@@ -13,6 +13,7 @@
         private string _item_no;
         private decimal _unit_price; //单价
         private decimal _sale_price;//售价
+        private decimal _unit_price1; //备份单价
         private decimal _price;//进价
         private string _item_subname;
         private string _item_status = "1";
@@ -65,6 +66,12 @@
         {
             get { return _unit_price; }
             set { _unit_price = value; }
+        }
+
+        public decimal unit_price1
+        {
+            get { return _unit_price1; }
+            set { _unit_price1 = value; }
         }
 
         public decimal sale_price

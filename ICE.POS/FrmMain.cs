@@ -1363,16 +1363,16 @@
             {
                 this.ClearInput();
                 
-                if (item_no.Length == 13 && item_no.Substring(0, 2).Equals("21"))
-                {
-                    this._saleflow = Gattr.Bll.GetItemInfo(item_no.Substring(2, 5));
-                    string strPrice = item_no.Substring(7, 3) + "." + item_no.Substring(10, 2);
-                    this._saleflow.sale_money = Convert.ToDecimal(strPrice);
+                //if (item_no.Length == 13 && item_no.Substring(0, 2).Equals("21"))
+                //{
+                    //this._saleflow = Gattr.Bll.GetItemInfo(item_no.Substring(2, 5));
+                    //string strPrice = item_no.Substring(7, 3) + "." + item_no.Substring(10, 2);
+                    //this._saleflow.sale_money = Convert.ToDecimal(strPrice);
                     
-                    this._saleflow.sale_qnty = this._saleflow.sale_money / this._saleflow.sale_price;
-                }
-                else
-                {
+                    //this._saleflow.sale_qnty = this._saleflow.sale_money / this._saleflow.sale_price;
+                //}
+               // else
+               // {
                     //通过查询商品，拼凑销售数据
                     List<t_cur_saleflow> saleInfos = Gattr.Bll.GetItemsForPos(item_no);
                     if (saleInfos.Count == 0)
@@ -1398,7 +1398,26 @@
                     {
                         this._saleflow = saleInfos[0];
                     }
+                // }
+
+                //合并相同货号项目
+                if (this._listSaleFlow.Count>0) {
+
+                    String _item_no = this._saleflow.item_no;
+                    bool flag = false;
+                    foreach (t_cur_saleflow flow in this._listSaleFlow) {
+                        String temp_no = flow.item_no;
+                        if (temp_no==_item_no ) {
+                            this.FunKeyNum(flow);
+                            flag = true;
+                            break;
+                        }
+                    }
+                    if (flag) {
+                        return;
+                    }
                 }
+
                 _saleflow.flow_id = this.bindingSaleFlow.Count + 1;
                 
 
@@ -2362,11 +2381,15 @@
             else
             {
 
-                decimal num = 0M; 
+                decimal num = 0M;
+                bool isSame = false;
 
                 if (saleflow == null)
                 {
                     saleflow = this.bindingSaleFlow.Current as t_cur_saleflow;
+                }
+                else {
+                    isSame = true;//相同商品增加1
                 }
 
                 decimal num2 = saleflow.sale_qnty;
@@ -2383,7 +2406,14 @@
                 }
                 else
                 {
-                    num = Gfunc.TypeToDecimal("", 0M);
+                    if (isSame)
+                    {
+                        num = saleflow.sale_qnty + 1;
+                    }
+                    else
+                    {
+                        num = Gfunc.TypeToDecimal("", 0M);
+                    }
                 }
 
                 
@@ -2433,7 +2463,7 @@
 
         
         
-        
+        //删除按钮
         private void FunKeyDelSaleFlow()
         {
             if (this._posState == PosOpState.PLU)
@@ -2452,8 +2482,6 @@
                     {
                         this.DelListSaleFlow(saleflow);
                     }
-
-                    
 
                     List<t_cur_saleflow> _saleInfos = this._listSaleFlow;
                     _listSaleFlow = SetSinglePlanRule(_saleInfos);
@@ -2490,13 +2518,29 @@
             }
 
         }
-        
 
-        
+        //删除商品后，将商品原始售价unit_price1还原到unit_price
+        private List<t_cur_saleflow> recover_price (List<t_cur_saleflow> _saleflow)
+        {
 
-        
-        
-        
+            List<t_cur_saleflow> _saleInfo = new List<t_cur_saleflow>();
+            foreach (t_cur_saleflow _flow in _saleflow)
+            {
+                _flow.unit_price= _flow.unit_price1;
+                _flow.sale_money = (decimal)(_flow.sale_qnty * _flow.unit_price);
+
+                _saleInfo.Add(_flow);
+            }
+
+            return _saleInfo;
+        }
+
+
+
+
+
+
+
         private void FunKeyPrc()
         {
             
@@ -4151,6 +4195,17 @@
                         payflow = SetPayFlowInfo(payAmtPaid, payment, _saleTotalAmt, _currentFlowNo, _card, _memo);
                         _listPayFlow.Add(payflow);
                         break;
+                    //case "DIY": //ice_bd_payment_info表添加付款方式后 pay_flag=0 （必须）添加下面代码，后台收款方式即可记录
+                    //    decimal _tempAmt7 = _saleTotalAmt - GetTotalPayedAmt();
+                    //    if (isRedirect)
+                    //    {
+                    //        _tempAmt7 = payAmt;
+                    //    }
+                    //    payAmtPaid = SIString.TryDec(_tempAmt7);
+                    //    payment = new t_payment_info() { rate = 1M, pay_way = "DIY", pay_name = "自定义支付" };
+                    //    payflow = SetPayFlowInfo(payAmtPaid, payment, _saleTotalAmt, _currentFlowNo, _card, _memo);
+                    //    _listPayFlow.Add(payflow);
+                    //    break;
                     case "ZFB":
                         decimal _tempAmt4 = _saleTotalAmt - GetTotalPayedAmt();
                         if (isRedirect)
@@ -6125,7 +6180,10 @@
             {
                 vip_type = string.Empty;
             }
-           
+
+            //恢复商品后台设定单价和重新计算小计
+            _saleflow = this.recover_price(_saleflow);
+
             return PlanDealer.Instance.DearBeforePLU(_saleflow, vip_type);
         }
 
