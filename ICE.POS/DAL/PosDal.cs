@@ -398,8 +398,8 @@ namespace ICE.POS
         private string GetSqlInsertTempSaleRow()
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("Insert into t_cur_saleflow(flow_id,flow_no,item_no,unit_price,sale_price,sale_qnty,sale_money,discount_rate,oper_id,oper_date,item_subno,item_clsno,item_name,item_status,item_subname,branch_no,pos_id,plan_no,item_brand,vip_acc_flag)");
-            builder.Append("values(@flow_id,@flow_no,@item_no,@unit_price,@sale_price,@sale_qnty,@sale_money,@discount_rate,@oper_id,@oper_date,@item_subno,@item_clsno,@item_name,@item_status,@item_subname,@branch_no,@pos_id,@plan_no,@item_brand,@vip_acc_flag)");
+            builder.Append("Insert into t_cur_saleflow(flow_id,flow_no,item_no,unit_price,unit_price1,sale_price,sale_qnty,sale_money,discount_rate,oper_id,oper_date,item_subno,item_clsno,item_name,item_status,item_subname,branch_no,pos_id,plan_no,item_brand,vip_acc_flag)");
+            builder.Append("values(@flow_id,@flow_no,@item_no,@unit_price,@unit_price1,@sale_price,@sale_qnty,@sale_money,@discount_rate,@oper_id,@oper_date,@item_subno,@item_clsno,@item_name,@item_status,@item_subname,@branch_no,@pos_id,@plan_no,@item_brand,@vip_acc_flag)");
             return builder.ToString();
         }
         #endregion
@@ -412,8 +412,8 @@ namespace ICE.POS
         private string GetSqlInsertTempPendingOrderFlow()
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("Insert into t_pending_orderflow(flow_id,flow_no,item_no,unit_price,sale_price,sale_qnty,sale_money,discount_rate,oper_id,oper_date,item_subno,item_clsno,item_name,item_status,item_subname,plan_no,item_brand,vip_acc_flag)");
-            builder.Append("values(@flow_id,@flow_no,@item_no,@unit_price,@sale_price,@sale_qnty,@sale_money,@discount_rate,@oper_id,@oper_date,@item_subno,@item_clsno,@item_name,@item_status,@item_subname,@plan_no,@item_brand,@vip_acc_flag)");
+            builder.Append("Insert into t_pending_orderflow(flow_id,flow_no,item_no,unit_price,unit_price1,sale_price,sale_qnty,sale_money,discount_rate,oper_id,oper_date,item_subno,item_clsno,item_name,item_status,item_subname,plan_no,item_brand,vip_acc_flag)");
+            builder.Append("values(@flow_id,@flow_no,@item_no,@unit_price,@unit_price1,@sale_price,@sale_qnty,@sale_money,@discount_rate,@oper_id,@oper_date,@item_subno,@item_clsno,@item_name,@item_status,@item_subname,@plan_no,@item_brand,@vip_acc_flag)");
             return builder.ToString();
         }
         #endregion
@@ -509,12 +509,14 @@ namespace ICE.POS
                 commandText = this.GetSqlInsertTempPendingOrderFlow();
             }
 
+
             SQLiteCommand command = new SQLiteCommand(commandText, base.dbPosSale);
             Dictionary<string, object> dictionary = new Dictionary<string, object>();
             dictionary.Add("@flow_id", saleflow.flow_id);
             dictionary.Add("@flow_no", saleflow.flow_no);
             dictionary.Add("@item_no", saleflow.item_no);
             dictionary.Add("@unit_price", saleflow.unit_price);
+            dictionary.Add("@unit_price1", saleflow.unit_price1);
             dictionary.Add("@sale_price", saleflow.sale_price);
             dictionary.Add("@sale_qnty", saleflow.sale_qnty);
             dictionary.Add("@sale_money", saleflow.sale_money);
@@ -600,6 +602,7 @@ namespace ICE.POS
                         item_name = reader["item_name"].ToString().Trim(),
                         oper_date = ExtendUtility.Instance.ParseToString(DateTime.Parse(reader["oper_date"].ToString()).ToString("s")),
                         unit_price = Convert.ToDecimal(reader["unit_price"]),
+                        unit_price1 = Convert.ToDecimal(reader["unit_price1"]),
                         sale_price = Convert.ToDecimal(reader["sale_price"]),
                         sale_money = Convert.ToDecimal(reader["sale_money"]), //默认等于单价
                         item_subno = reader["item_subno"].ToString().Trim(),

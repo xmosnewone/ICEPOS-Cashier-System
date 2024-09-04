@@ -2489,10 +2489,7 @@
                     this.bindingSaleFlow.DataSource = this._listSaleFlow;
                     this.bindingSaleFlow.ResetBindings(true);
                     
-
-
                     this.ResetSaleFlowData();
-                    
 
                     this.bindingSaleFlow.Position = this.bindingSaleFlow.Count - 1;
                     this.GvSaleFlow.Refresh();
@@ -2526,7 +2523,8 @@
             List<t_cur_saleflow> _saleInfo = new List<t_cur_saleflow>();
             foreach (t_cur_saleflow _flow in _saleflow)
             {
-                _flow.unit_price= _flow.unit_price1;
+                 _flow.unit_price = _flow.unit_price1;
+                
                 _flow.sale_money = (decimal)(_flow.sale_qnty * _flow.unit_price);
 
                 _saleInfo.Add(_flow);
@@ -2698,7 +2696,7 @@
             
             if (this.bindingSaleFlow.Count <= 0 && pType == "normal")
             {
-                
+                //当前没有商品在列表，则显示上一次挂单的商品数据
 
                 if (frm.PenOrdCount > 0)
                 {
@@ -2783,6 +2781,7 @@
                     {
                         penOrd.vip_no = _currentMember.mem_no;
                     }
+                    //挂单，保存商品信息
                     Gattr.Bll.InsertPendingOrder(strFlow, _listSaleFlow, penOrd);
                     this.bindingSaleFlow.Clear();
                     this.SetTotalAmt();
@@ -6183,7 +6182,6 @@
 
             //恢复商品后台设定单价和重新计算小计
             _saleflow = this.recover_price(_saleflow);
-
             return PlanDealer.Instance.DearBeforePLU(_saleflow, vip_type);
         }
 
