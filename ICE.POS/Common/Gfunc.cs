@@ -368,7 +368,15 @@
                     case TextAlign.Center:
                         if ((byteCount + 1) < intLen)
                         {
-                            num = ((intLen - byteCount) / 2) + length;
+                            num = ((intLen - byteCount) / 2) ;
+                            str = str.PadLeft((num < 0) ? 0 : num, ' ');
+                        }
+                        return str;
+
+                    case TextAlign.Left:
+                        if (str.Length < intLen)
+                        {
+                            num = 0;
                             str = str.PadLeft((num < 0) ? 0 : num, ' ');
                         }
                         return str;
@@ -376,7 +384,7 @@
                     case TextAlign.Right:
                         if (str.Length < intLen)
                         {
-                            num = (intLen - byteCount) + length;
+                            num = (intLen - byteCount) -length;
                             str = str.PadLeft((num < 0) ? 0 : num, ' ');
                         }
                         return str;

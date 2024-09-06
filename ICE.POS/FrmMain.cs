@@ -4986,7 +4986,7 @@
         
         private void PrintHeaderDetail(string no)
         {
-            int QtyLen = 6; 
+            int QtyLen = 5; 
             int PrcLen = 6; 
             int ItemLen = 13; 
 
@@ -5004,9 +5004,9 @@
             string hd4 = "小计";
 
             hd1 = Gfunc.PrintStrAlign(hd1, ItemLen, TextAlign.Left);
-            hd2 = Gfunc.PrintStrAlign(hd2, PrcLen, TextAlign.Right);
-            hd3 = Gfunc.PrintStrAlign(hd3, QtyLen, TextAlign.Right);
-            hd4 = Gfunc.PrintStrAlign(hd4, PrcLen, TextAlign.Right);
+            hd2 = Gfunc.PrintStrAlign(hd2, PrcLen, TextAlign.Left);
+            hd3 = Gfunc.PrintStrAlign(hd3, QtyLen, TextAlign.Left);
+            hd4 = Gfunc.PrintStrAlign(hd4, PrcLen, TextAlign.Left);
 
             _listWinPrtStr.Add(new PrintString(hd1 + hd2 + hd3 + hd4, Gattr.PrtLen, TextAlign.Left));
 
@@ -5084,16 +5084,16 @@
             string sum = (saleItem.sale_qnty * saleItem.unit_price).ToString("0.00");
 
             string str1 = Gfunc.PrintStrAlign(itemNo, ItemLen, TextAlign.Left);
-            string str2 = Gfunc.PrintStrAlign(unitPrice, PrcLen, TextAlign.Right);
-            string str3 = Gfunc.PrintStrAlign(Qnty, QtyLen, TextAlign.Right);
-            string str4 = Gfunc.PrintStrAlign(sum, PrcLen, TextAlign.Right);
+            string str2 = Gfunc.PrintStrAlign(unitPrice, PrcLen, TextAlign.Left);
+            string str3 = Gfunc.PrintStrAlign(Qnty, QtyLen, TextAlign.Left);
+            string str4 = Gfunc.PrintStrAlign(sum, PrcLen, TextAlign.Left);
 
             listPs.Add(new PrintString(str1 + str2 + str3 + str4, Gattr.PrtLen, TextAlign.Left));
             listPs.Add(new PrintString(itemName, Gattr.PrtLen, TextAlign.Left));
             t_cur_saleflow sale = Gattr.Bll.GetItemInfo(saleItem.item_no);
             if (sale.unit_price != saleItem.unit_price && saleItem.sale_way != "B")
             {
-                listPs.Add(new PrintString("                     原价：" + sale.unit_price, Gattr.PrtLen, TextAlign.Left));
+                listPs.Add(new PrintString("       原价：" + sale.unit_price.ToString("0.00"), Gattr.PrtLen, TextAlign.Left));
             }
             return listPs;
         }
