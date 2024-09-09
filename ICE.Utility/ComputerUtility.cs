@@ -4,6 +4,7 @@
     using System.Management;
     using System.Collections.Generic;
     using ICE.Common;
+    using System.Windows.Forms;
 
 
     public class ComputerUtility
@@ -132,12 +133,12 @@
             try
             {
                 mc = new ManagementClass("Win32_DiskDrive");
+                    //HDid = (string)mo.Properties["SerialNumber"].Value;//SerialNumber在Win7以上系统有效
+                    //PNPDeviceID:取\之后的值
                 moc = mc.GetInstances();
                 Dictionary<string, object> _dic = new Dictionary<string, object>();
                 foreach (ManagementObject mo in moc)
                 {
-                    //HDid = (string)mo.Properties["SerialNumber"].Value;//SerialNumber在Win7以上系统有效
-                    //PNPDeviceID:取\之后的值
                     foreach (PropertyData pd in mo.Properties)
                     {
                         if (!_dic.ContainsKey(pd.Name))
@@ -146,13 +147,14 @@
                         }
                     }
                 }
+
                 foreach (KeyValuePair<string, object> kv in _dic)
                 {
-                    if (kv.Key == "Signature")
-                    {
+                    if (kv.Key== "Model") { //用其他下标Signature 有可能报错，跳转到下面 catch(Exception)
                         disk = kv.Value.ToString();
                     }
                 }
+
             }
             catch (Exception)
             {
@@ -160,11 +162,28 @@
                 if (isWin7)
                 {
                     String HDid = "";
+                    String HdType = "";
                     ManagementClass mc1 = new ManagementClass("Win32_DiskDrive");
                     ManagementObjectCollection moc1 = mc.GetInstances();
                     foreach (ManagementObject mo in moc)
                     {
-                        HDid = (string)mo.Properties["Model"].Value;
+                       
+                        HdType = (string)mo.Properties["InterfaceType"].Value;
+                        if (HdType!="USB") {
+                            HDid = (string)mo.Properties["Model"].Value;
+                            break;
+                        }
+
+                    }
+                    if (HDid=="") {
+                        //查找USB等外挂的磁盘
+                        foreach (ManagementObject mo in moc)
+                        {
+                                HDid = (string)mo.Properties["Model"].Value;
+                                if (HDid!="") {
+                                        break;
+                                 }
+                        }
                     }
                     moc1 = null;
                     mc1 = null;
@@ -173,8 +192,6 @@
                 else {
                     return GobalStaticString.UN_KNOWN_DISK;
                 }
-
-                //return "3064267091";
             }
             finally
             {

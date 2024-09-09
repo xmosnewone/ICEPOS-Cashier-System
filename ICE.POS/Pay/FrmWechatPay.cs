@@ -111,8 +111,8 @@ namespace ICE.POS
             Dictionary<string, object> _dic = new Dictionary<string, object>();
             try
             {
-                _dic.Add("username", "");
-                _dic.Add("password", "");
+                _dic.Add("username", Gattr.OperId);
+                _dic.Add("password", Gattr.Oper_Pwd);
                 _dic.Add("access_token", Gattr.access_token);
                 _dic.Add("client_id", Gattr.client_id);
                 _dic.Add("branch_no", Gattr.BranchNo);
@@ -192,8 +192,8 @@ namespace ICE.POS
             Dictionary<string, object> _dic = new Dictionary<string, object>();
             try
             {
-                _dic.Add("username", "");
-                _dic.Add("password", "");
+                _dic.Add("username", Gattr.OperId);
+                _dic.Add("password", Gattr.Oper_Pwd);
                 _dic.Add("client_id", Gattr.client_id);
                 _dic.Add("access_token", Gattr.access_token);
                 _dic.Add("flowno", flowno);

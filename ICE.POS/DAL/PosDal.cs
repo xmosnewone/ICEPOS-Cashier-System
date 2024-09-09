@@ -1330,6 +1330,7 @@ namespace ICE.POS
             {
                 builder.Append(where);
             }
+            builder.Append(" order by pay_way asc");
             object objA = null;
             try
             {
