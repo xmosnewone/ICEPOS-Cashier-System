@@ -24,14 +24,57 @@ namespace ICE.POS
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tNowTime = new System.Windows.Forms.Timer(this.components);
             this.timeCursor = new System.Windows.Forms.Timer(this.components);
             this.bindingPayFlow = new System.Windows.Forms.BindingSource(this.components);
             this.bindingSaleFlow = new System.Windows.Forms.BindingSource(this.components);
             this.plOtherFunc = new ICE.POS.Common.PanelEx(this.components);
             this.lbxFunc = new System.Windows.Forms.ListBox();
+            this.tblPanelBalance = new ICE.POS.Common.TableLayoutPanelEx(this.components);
+            this.GvPayFlow = new System.Windows.Forms.DataGridView();
+            this.plPayListTilte = new ICE.POS.Common.PanelEx(this.components);
+            this.plPayInfo = new ICE.POS.Common.PanelEx(this.components);
+            this.gbPayInput = new System.Windows.Forms.GroupBox();
+            this.plPayKey = new ICE.POS.Common.PanelEx(this.components);
+            this.picPayNumEnter = new System.Windows.Forms.PictureBox();
+            this.picPayNum3 = new System.Windows.Forms.PictureBox();
+            this.btnSaleReset = new System.Windows.Forms.PictureBox();
+            this.picPayNum6 = new System.Windows.Forms.PictureBox();
+            this.picPayNum2 = new System.Windows.Forms.PictureBox();
+            this.picPayNumBack = new System.Windows.Forms.PictureBox();
+            this.picPayNum5 = new System.Windows.Forms.PictureBox();
+            this.picPayNum1 = new System.Windows.Forms.PictureBox();
+            this.picPayNum9 = new System.Windows.Forms.PictureBox();
+            this.picPayNum4 = new System.Windows.Forms.PictureBox();
+            this.picPayNum0 = new System.Windows.Forms.PictureBox();
+            this.picPayNum8 = new System.Windows.Forms.PictureBox();
+            this.picPayNumDot = new System.Windows.Forms.PictureBox();
+            this.picPayNum7 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.plPayInput = new ICE.POS.Common.PanelEx(this.components);
+            this.lbPayCursor = new System.Windows.Forms.Label();
+            this.lbPayInput = new System.Windows.Forms.Label();
+            this.gbPayInfo = new System.Windows.Forms.GroupBox();
+            this.plPayLeft = new ICE.POS.Common.PanelEx(this.components);
+            this.lbPayAmtChange = new System.Windows.Forms.Label();
+            this.lbPayAmtPaid = new System.Windows.Forms.Label();
+            this.lbPayAmtRec = new System.Windows.Forms.Label();
+            this.lbPayTotalAmt = new System.Windows.Forms.Label();
+            this.plPayTitle = new ICE.POS.Common.PanelEx(this.components);
+            this.tblPayWay = new ICE.POS.Common.TableLayoutPanelEx(this.components);
+            this.btnPicFunWechat = new ICE.POS.Common.ButtonForPos();
+            this.btnPicFuncPayEsc = new ICE.POS.Common.ButtonForPos();
+            this.btnPicFunRmb = new ICE.POS.Common.ButtonForPos();
+            this.btnPicFunCup = new ICE.POS.Common.ButtonForPos();
+            this.btnPicFunZfb = new ICE.POS.Common.ButtonForPos();
+            this.btnPicFunCou = new ICE.POS.Common.ButtonForPos();
+            this.btnPicFunPayOther = new ICE.POS.Common.ButtonForPos();
+            this.btnPicFunAllDis = new ICE.POS.Common.ButtonForPos();
+            this.btnPicFunAllcan = new ICE.POS.Common.ButtonForPos();
+            this.btnPicFunAzs = new ICE.POS.Common.ButtonForPos();
+            this.btnPicFunAgz = new ICE.POS.Common.ButtonForPos();
             this.tlpMain = new ICE.POS.Common.TableLayoutPanelEx(this.components);
             this.plButton = new ICE.POS.Common.PanelEx(this.components);
             this.tlpBottom = new ICE.POS.Common.TableLayoutPanelEx(this.components);
@@ -73,49 +116,6 @@ namespace ICE.POS
             this.lbAmtTotal = new System.Windows.Forms.Label();
             this.plAmtLeft = new ICE.POS.Common.PanelEx(this.components);
             this.plTop = new ICE.POS.Common.PanelEx(this.components);
-            this.tblPanelBalance = new ICE.POS.Common.TableLayoutPanelEx(this.components);
-            this.GvPayFlow = new System.Windows.Forms.DataGridView();
-            this.plPayListTilte = new ICE.POS.Common.PanelEx(this.components);
-            this.plPayInfo = new ICE.POS.Common.PanelEx(this.components);
-            this.gbPayInput = new System.Windows.Forms.GroupBox();
-            this.plPayKey = new ICE.POS.Common.PanelEx(this.components);
-            this.picPayNumEnter = new System.Windows.Forms.PictureBox();
-            this.picPayNum3 = new System.Windows.Forms.PictureBox();
-            this.btnSaleReset = new System.Windows.Forms.PictureBox();
-            this.picPayNum6 = new System.Windows.Forms.PictureBox();
-            this.picPayNum2 = new System.Windows.Forms.PictureBox();
-            this.picPayNumBack = new System.Windows.Forms.PictureBox();
-            this.picPayNum5 = new System.Windows.Forms.PictureBox();
-            this.picPayNum1 = new System.Windows.Forms.PictureBox();
-            this.picPayNum9 = new System.Windows.Forms.PictureBox();
-            this.picPayNum4 = new System.Windows.Forms.PictureBox();
-            this.picPayNum0 = new System.Windows.Forms.PictureBox();
-            this.picPayNum8 = new System.Windows.Forms.PictureBox();
-            this.picPayNumDot = new System.Windows.Forms.PictureBox();
-            this.picPayNum7 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.plPayInput = new ICE.POS.Common.PanelEx(this.components);
-            this.lbPayCursor = new System.Windows.Forms.Label();
-            this.lbPayInput = new System.Windows.Forms.Label();
-            this.gbPayInfo = new System.Windows.Forms.GroupBox();
-            this.plPayLeft = new ICE.POS.Common.PanelEx(this.components);
-            this.lbPayAmtChange = new System.Windows.Forms.Label();
-            this.lbPayAmtPaid = new System.Windows.Forms.Label();
-            this.lbPayAmtRec = new System.Windows.Forms.Label();
-            this.lbPayTotalAmt = new System.Windows.Forms.Label();
-            this.plPayTitle = new ICE.POS.Common.PanelEx(this.components);
-            this.tblPayWay = new ICE.POS.Common.TableLayoutPanelEx(this.components);
-            this.btnPicFunWechat = new ICE.POS.Common.ButtonForPos();
-            this.btnPicFuncPayEsc = new ICE.POS.Common.ButtonForPos();
-            this.btnPicFunRmb = new ICE.POS.Common.ButtonForPos();
-            this.btnPicFunBcd = new ICE.POS.Common.ButtonForPos();
-            this.btnPicFunZfb = new ICE.POS.Common.ButtonForPos();
-            this.btnPicFunCou = new ICE.POS.Common.ButtonForPos();
-            this.btnPicFunPayOther = new ICE.POS.Common.ButtonForPos();
-            this.btnPicFunAllDis = new ICE.POS.Common.ButtonForPos();
-            this.btnPicFunAllcan = new ICE.POS.Common.ButtonForPos();
-            this.btnPicFunAzs = new ICE.POS.Common.ButtonForPos();
-            this.btnPicFunAgz = new ICE.POS.Common.ButtonForPos();
             this.picLogo = new System.Windows.Forms.PictureBox();
             this.lbApplication = new System.Windows.Forms.Label();
             this.tlpMiddleLeft = new ICE.POS.Common.PanelEx(this.components);
@@ -149,34 +149,6 @@ namespace ICE.POS
             ((System.ComponentModel.ISupportInitialize)(this.bindingPayFlow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSaleFlow)).BeginInit();
             this.plOtherFunc.SuspendLayout();
-            this.tlpMain.SuspendLayout();
-            this.plButton.SuspendLayout();
-            this.tlpBottom.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnFastOther)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnFastExit)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnFastTot)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnFastNum)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnFastDel)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnFastPrc)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnFastDct)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnFastPnr)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnFastDou)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnFastVip)).BeginInit();
-            this.tlpCenter.SuspendLayout();
-            this.tlpCenterRight.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnClsNextPage)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnClsSmallLeft)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnClsPriorPage)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnClsSmallRight)).BeginInit();
-            this.tlpSale.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.GvSaleFlow)).BeginInit();
-            this.plSaleDown.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnSaleDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnSaleUp)).BeginInit();
-            this.tlpMiddleRight.SuspendLayout();
-            this.plQtyCenter.SuspendLayout();
-            this.plAmtCenter.SuspendLayout();
-            this.plTop.SuspendLayout();
             this.tblPanelBalance.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GvPayFlow)).BeginInit();
             this.plPayInfo.SuspendLayout();
@@ -205,7 +177,7 @@ namespace ICE.POS
             ((System.ComponentModel.ISupportInitialize)(this.btnPicFunWechat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnPicFuncPayEsc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnPicFunRmb)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnPicFunBcd)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnPicFunCup)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnPicFunZfb)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnPicFunCou)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnPicFunPayOther)).BeginInit();
@@ -213,6 +185,34 @@ namespace ICE.POS
             ((System.ComponentModel.ISupportInitialize)(this.btnPicFunAllcan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnPicFunAzs)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnPicFunAgz)).BeginInit();
+            this.tlpMain.SuspendLayout();
+            this.plButton.SuspendLayout();
+            this.tlpBottom.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnFastOther)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnFastExit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnFastTot)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnFastNum)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnFastDel)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnFastPrc)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnFastDct)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnFastPnr)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnFastDou)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnFastVip)).BeginInit();
+            this.tlpCenter.SuspendLayout();
+            this.tlpCenterRight.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnClsNextPage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnClsSmallLeft)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnClsPriorPage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnClsSmallRight)).BeginInit();
+            this.tlpSale.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GvSaleFlow)).BeginInit();
+            this.plSaleDown.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnSaleDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnSaleUp)).BeginInit();
+            this.tlpMiddleRight.SuspendLayout();
+            this.plQtyCenter.SuspendLayout();
+            this.plAmtCenter.SuspendLayout();
+            this.plTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.tlpMiddleLeft.SuspendLayout();
             this.plNumInput.SuspendLayout();
@@ -293,6 +293,637 @@ namespace ICE.POS
             this.lbxFunc.Size = new System.Drawing.Size(124, 440);
             this.lbxFunc.TabIndex = 27;
             this.lbxFunc.Click += new System.EventHandler(this.ListFunc_Click);
+            // 
+            // tblPanelBalance
+            // 
+            this.tblPanelBalance.AutoSize = true;
+            this.tblPanelBalance.BackColor = System.Drawing.Color.AliceBlue;
+            this.tblPanelBalance.ColumnCount = 1;
+            this.tblPanelBalance.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tblPanelBalance.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tblPanelBalance.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tblPanelBalance.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tblPanelBalance.Controls.Add(this.GvPayFlow, 0, 3);
+            this.tblPanelBalance.Controls.Add(this.plPayListTilte, 0, 2);
+            this.tblPanelBalance.Controls.Add(this.plPayInfo, 0, 1);
+            this.tblPanelBalance.Controls.Add(this.plPayTitle, 0, 0);
+            this.tblPanelBalance.Location = new System.Drawing.Point(102, 56);
+            this.tblPanelBalance.Margin = new System.Windows.Forms.Padding(2);
+            this.tblPanelBalance.Name = "tblPanelBalance";
+            this.tblPanelBalance.Padding = new System.Windows.Forms.Padding(4);
+            this.tblPanelBalance.RowCount = 4;
+            this.tblPanelBalance.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 69F));
+            this.tblPanelBalance.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 248F));
+            this.tblPanelBalance.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
+            this.tblPanelBalance.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tblPanelBalance.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tblPanelBalance.Size = new System.Drawing.Size(686, 439);
+            this.tblPanelBalance.TabIndex = 10;
+            this.tblPanelBalance.Visible = false;
+            // 
+            // GvPayFlow
+            // 
+            this.GvPayFlow.AllowUserToAddRows = false;
+            this.GvPayFlow.AllowUserToDeleteRows = false;
+            this.GvPayFlow.AutoGenerateColumns = false;
+            this.GvPayFlow.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.GvPayFlow.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.GvPayFlow.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.GvPayFlow.ColumnHeadersVisible = false;
+            this.GvPayFlow.DataSource = this.bindingPayFlow;
+            this.GvPayFlow.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.GvPayFlow.Location = new System.Drawing.Point(5, 347);
+            this.GvPayFlow.Margin = new System.Windows.Forms.Padding(1, 0, 0, 0);
+            this.GvPayFlow.MultiSelect = false;
+            this.GvPayFlow.Name = "GvPayFlow";
+            this.GvPayFlow.ReadOnly = true;
+            this.GvPayFlow.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.GvPayFlow.RowTemplate.Height = 30;
+            this.GvPayFlow.RowTemplate.ReadOnly = true;
+            this.GvPayFlow.Size = new System.Drawing.Size(677, 88);
+            this.GvPayFlow.TabIndex = 0;
+            this.GvPayFlow.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.GvPayFlow_DataError);
+            // 
+            // plPayListTilte
+            // 
+            this.plPayListTilte.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.plPayListTilte.BackgroundImage = global::ICE.POS.Properties.Resources.pay_title;
+            this.plPayListTilte.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.plPayListTilte.Location = new System.Drawing.Point(5, 321);
+            this.plPayListTilte.Margin = new System.Windows.Forms.Padding(1, 0, 0, 0);
+            this.plPayListTilte.Name = "plPayListTilte";
+            this.plPayListTilte.Size = new System.Drawing.Size(677, 26);
+            this.plPayListTilte.TabIndex = 2;
+            // 
+            // plPayInfo
+            // 
+            this.plPayInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(239)))), ((int)(((byte)(243)))));
+            this.plPayInfo.Controls.Add(this.gbPayInput);
+            this.plPayInfo.Controls.Add(this.gbPayInfo);
+            this.plPayInfo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.plPayInfo.Location = new System.Drawing.Point(5, 74);
+            this.plPayInfo.Margin = new System.Windows.Forms.Padding(1, 1, 1, 0);
+            this.plPayInfo.Name = "plPayInfo";
+            this.plPayInfo.Size = new System.Drawing.Size(676, 247);
+            this.plPayInfo.TabIndex = 3;
+            // 
+            // gbPayInput
+            // 
+            this.gbPayInput.Controls.Add(this.plPayKey);
+            this.gbPayInput.Controls.Add(this.plPayInput);
+            this.gbPayInput.Font = new System.Drawing.Font("微软雅黑", 10.5F);
+            this.gbPayInput.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.gbPayInput.Location = new System.Drawing.Point(310, 0);
+            this.gbPayInput.Name = "gbPayInput";
+            this.gbPayInput.Size = new System.Drawing.Size(336, 244);
+            this.gbPayInput.TabIndex = 1;
+            this.gbPayInput.TabStop = false;
+            this.gbPayInput.Text = "金额输入";
+            // 
+            // plPayKey
+            // 
+            this.plPayKey.BackgroundImage = global::ICE.POS.Properties.Resources.touch_pay_key;
+            this.plPayKey.Controls.Add(this.picPayNumEnter);
+            this.plPayKey.Controls.Add(this.picPayNum3);
+            this.plPayKey.Controls.Add(this.btnSaleReset);
+            this.plPayKey.Controls.Add(this.picPayNum6);
+            this.plPayKey.Controls.Add(this.picPayNum2);
+            this.plPayKey.Controls.Add(this.picPayNumBack);
+            this.plPayKey.Controls.Add(this.picPayNum5);
+            this.plPayKey.Controls.Add(this.picPayNum1);
+            this.plPayKey.Controls.Add(this.picPayNum9);
+            this.plPayKey.Controls.Add(this.picPayNum4);
+            this.plPayKey.Controls.Add(this.picPayNum0);
+            this.plPayKey.Controls.Add(this.picPayNum8);
+            this.plPayKey.Controls.Add(this.picPayNumDot);
+            this.plPayKey.Controls.Add(this.picPayNum7);
+            this.plPayKey.Controls.Add(this.pictureBox1);
+            this.plPayKey.Location = new System.Drawing.Point(15, 75);
+            this.plPayKey.Name = "plPayKey";
+            this.plPayKey.Size = new System.Drawing.Size(308, 164);
+            this.plPayKey.TabIndex = 3;
+            // 
+            // picPayNumEnter
+            // 
+            this.picPayNumEnter.BackColor = System.Drawing.Color.Transparent;
+            this.picPayNumEnter.Location = new System.Drawing.Point(246, 108);
+            this.picPayNumEnter.Name = "picPayNumEnter";
+            this.picPayNumEnter.Size = new System.Drawing.Size(58, 48);
+            this.picPayNumEnter.TabIndex = 0;
+            this.picPayNumEnter.TabStop = false;
+            this.picPayNumEnter.Tag = "Enter";
+            this.picPayNumEnter.Click += new System.EventHandler(this.picPayNum_Click);
+            // 
+            // picPayNum3
+            // 
+            this.picPayNum3.BackColor = System.Drawing.Color.Transparent;
+            this.picPayNum3.Location = new System.Drawing.Point(185, 108);
+            this.picPayNum3.Name = "picPayNum3";
+            this.picPayNum3.Size = new System.Drawing.Size(58, 48);
+            this.picPayNum3.TabIndex = 0;
+            this.picPayNum3.TabStop = false;
+            this.picPayNum3.Tag = "3";
+            this.picPayNum3.Click += new System.EventHandler(this.picPayNum_Click);
+            // 
+            // btnSaleReset
+            // 
+            this.btnSaleReset.BackColor = System.Drawing.Color.Transparent;
+            this.btnSaleReset.Location = new System.Drawing.Point(245, 57);
+            this.btnSaleReset.Name = "btnSaleReset";
+            this.btnSaleReset.Size = new System.Drawing.Size(58, 48);
+            this.btnSaleReset.TabIndex = 0;
+            this.btnSaleReset.TabStop = false;
+            this.btnSaleReset.Tag = "reset";
+            this.btnSaleReset.Click += new System.EventHandler(this.picPayNum_Click);
+            // 
+            // picPayNum6
+            // 
+            this.picPayNum6.BackColor = System.Drawing.Color.Transparent;
+            this.picPayNum6.Location = new System.Drawing.Point(184, 57);
+            this.picPayNum6.Name = "picPayNum6";
+            this.picPayNum6.Size = new System.Drawing.Size(58, 48);
+            this.picPayNum6.TabIndex = 0;
+            this.picPayNum6.TabStop = false;
+            this.picPayNum6.Tag = "6";
+            this.picPayNum6.Click += new System.EventHandler(this.picPayNum_Click);
+            // 
+            // picPayNum2
+            // 
+            this.picPayNum2.BackColor = System.Drawing.Color.Transparent;
+            this.picPayNum2.Location = new System.Drawing.Point(124, 108);
+            this.picPayNum2.Name = "picPayNum2";
+            this.picPayNum2.Size = new System.Drawing.Size(58, 48);
+            this.picPayNum2.TabIndex = 0;
+            this.picPayNum2.TabStop = false;
+            this.picPayNum2.Tag = "2";
+            this.picPayNum2.Click += new System.EventHandler(this.picPayNum_Click);
+            // 
+            // picPayNumBack
+            // 
+            this.picPayNumBack.BackColor = System.Drawing.Color.Transparent;
+            this.picPayNumBack.Location = new System.Drawing.Point(245, 5);
+            this.picPayNumBack.Name = "picPayNumBack";
+            this.picPayNumBack.Size = new System.Drawing.Size(58, 48);
+            this.picPayNumBack.TabIndex = 0;
+            this.picPayNumBack.TabStop = false;
+            this.picPayNumBack.Tag = "backspace";
+            this.picPayNumBack.Click += new System.EventHandler(this.picPayNum_Click);
+            // 
+            // picPayNum5
+            // 
+            this.picPayNum5.BackColor = System.Drawing.Color.Transparent;
+            this.picPayNum5.Location = new System.Drawing.Point(123, 57);
+            this.picPayNum5.Name = "picPayNum5";
+            this.picPayNum5.Size = new System.Drawing.Size(58, 48);
+            this.picPayNum5.TabIndex = 0;
+            this.picPayNum5.TabStop = false;
+            this.picPayNum5.Tag = "5";
+            this.picPayNum5.Click += new System.EventHandler(this.picPayNum_Click);
+            // 
+            // picPayNum1
+            // 
+            this.picPayNum1.BackColor = System.Drawing.Color.Transparent;
+            this.picPayNum1.Location = new System.Drawing.Point(63, 108);
+            this.picPayNum1.Name = "picPayNum1";
+            this.picPayNum1.Size = new System.Drawing.Size(58, 48);
+            this.picPayNum1.TabIndex = 0;
+            this.picPayNum1.TabStop = false;
+            this.picPayNum1.Tag = "1";
+            this.picPayNum1.Click += new System.EventHandler(this.picPayNum_Click);
+            // 
+            // picPayNum9
+            // 
+            this.picPayNum9.BackColor = System.Drawing.Color.Transparent;
+            this.picPayNum9.Location = new System.Drawing.Point(184, 5);
+            this.picPayNum9.Name = "picPayNum9";
+            this.picPayNum9.Size = new System.Drawing.Size(58, 48);
+            this.picPayNum9.TabIndex = 0;
+            this.picPayNum9.TabStop = false;
+            this.picPayNum9.Tag = "9";
+            this.picPayNum9.Click += new System.EventHandler(this.picPayNum_Click);
+            // 
+            // picPayNum4
+            // 
+            this.picPayNum4.BackColor = System.Drawing.Color.Transparent;
+            this.picPayNum4.Location = new System.Drawing.Point(62, 57);
+            this.picPayNum4.Name = "picPayNum4";
+            this.picPayNum4.Size = new System.Drawing.Size(58, 48);
+            this.picPayNum4.TabIndex = 0;
+            this.picPayNum4.TabStop = false;
+            this.picPayNum4.Tag = "4";
+            this.picPayNum4.Click += new System.EventHandler(this.picPayNum_Click);
+            // 
+            // picPayNum0
+            // 
+            this.picPayNum0.BackColor = System.Drawing.Color.Transparent;
+            this.picPayNum0.Location = new System.Drawing.Point(3, 108);
+            this.picPayNum0.Name = "picPayNum0";
+            this.picPayNum0.Size = new System.Drawing.Size(58, 48);
+            this.picPayNum0.TabIndex = 0;
+            this.picPayNum0.TabStop = false;
+            this.picPayNum0.Tag = "0";
+            this.picPayNum0.Click += new System.EventHandler(this.picPayNum_Click);
+            // 
+            // picPayNum8
+            // 
+            this.picPayNum8.BackColor = System.Drawing.Color.Transparent;
+            this.picPayNum8.Location = new System.Drawing.Point(123, 5);
+            this.picPayNum8.Name = "picPayNum8";
+            this.picPayNum8.Size = new System.Drawing.Size(58, 48);
+            this.picPayNum8.TabIndex = 0;
+            this.picPayNum8.TabStop = false;
+            this.picPayNum8.Tag = "8";
+            this.picPayNum8.Click += new System.EventHandler(this.picPayNum_Click);
+            // 
+            // picPayNumDot
+            // 
+            this.picPayNumDot.BackColor = System.Drawing.Color.Transparent;
+            this.picPayNumDot.Location = new System.Drawing.Point(2, 57);
+            this.picPayNumDot.Name = "picPayNumDot";
+            this.picPayNumDot.Size = new System.Drawing.Size(58, 48);
+            this.picPayNumDot.TabIndex = 0;
+            this.picPayNumDot.TabStop = false;
+            this.picPayNumDot.Tag = "dot";
+            this.picPayNumDot.Click += new System.EventHandler(this.picPayNum_Click);
+            // 
+            // picPayNum7
+            // 
+            this.picPayNum7.BackColor = System.Drawing.Color.Transparent;
+            this.picPayNum7.Location = new System.Drawing.Point(62, 5);
+            this.picPayNum7.Name = "picPayNum7";
+            this.picPayNum7.Size = new System.Drawing.Size(58, 48);
+            this.picPayNum7.TabIndex = 0;
+            this.picPayNum7.TabStop = false;
+            this.picPayNum7.Tag = "7";
+            this.picPayNum7.Click += new System.EventHandler(this.picPayNum_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Location = new System.Drawing.Point(2, 5);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(58, 48);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Tag = "-";
+            this.pictureBox1.Click += new System.EventHandler(this.picPayNum_Click);
+            // 
+            // plPayInput
+            // 
+            this.plPayInput.BackgroundImage = global::ICE.POS.Properties.Resources.pay_input;
+            this.plPayInput.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.plPayInput.Controls.Add(this.lbPayCursor);
+            this.plPayInput.Controls.Add(this.lbPayInput);
+            this.plPayInput.Location = new System.Drawing.Point(15, 24);
+            this.plPayInput.Name = "plPayInput";
+            this.plPayInput.Size = new System.Drawing.Size(306, 50);
+            this.plPayInput.TabIndex = 0;
+            // 
+            // lbPayCursor
+            // 
+            this.lbPayCursor.BackColor = System.Drawing.Color.Black;
+            this.lbPayCursor.Font = new System.Drawing.Font("宋体", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lbPayCursor.Location = new System.Drawing.Point(131, 10);
+            this.lbPayCursor.Name = "lbPayCursor";
+            this.lbPayCursor.Size = new System.Drawing.Size(2, 30);
+            this.lbPayCursor.TabIndex = 10;
+            this.lbPayCursor.Text = "12312313";
+            // 
+            // lbPayInput
+            // 
+            this.lbPayInput.BackColor = System.Drawing.Color.Transparent;
+            this.lbPayInput.Font = new System.Drawing.Font("宋体", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lbPayInput.Location = new System.Drawing.Point(7, 5);
+            this.lbPayInput.Margin = new System.Windows.Forms.Padding(0, 0, 4, 3);
+            this.lbPayInput.Name = "lbPayInput";
+            this.lbPayInput.Size = new System.Drawing.Size(270, 40);
+            this.lbPayInput.TabIndex = 9;
+            this.lbPayInput.Text = "1234567890123";
+            this.lbPayInput.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // gbPayInfo
+            // 
+            this.gbPayInfo.Controls.Add(this.plPayLeft);
+            this.gbPayInfo.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.gbPayInfo.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.gbPayInfo.Location = new System.Drawing.Point(3, 1);
+            this.gbPayInfo.Name = "gbPayInfo";
+            this.gbPayInfo.Size = new System.Drawing.Size(300, 243);
+            this.gbPayInfo.TabIndex = 0;
+            this.gbPayInfo.TabStop = false;
+            this.gbPayInfo.Text = "付款信息";
+            // 
+            // plPayLeft
+            // 
+            this.plPayLeft.BackgroundImage = global::ICE.POS.Properties.Resources.touch_pay_info;
+            this.plPayLeft.Controls.Add(this.lbPayAmtChange);
+            this.plPayLeft.Controls.Add(this.lbPayAmtPaid);
+            this.plPayLeft.Controls.Add(this.lbPayAmtRec);
+            this.plPayLeft.Controls.Add(this.lbPayTotalAmt);
+            this.plPayLeft.Location = new System.Drawing.Point(8, 23);
+            this.plPayLeft.Name = "plPayLeft";
+            this.plPayLeft.Size = new System.Drawing.Size(276, 214);
+            this.plPayLeft.TabIndex = 0;
+            // 
+            // lbPayAmtChange
+            // 
+            this.lbPayAmtChange.BackColor = System.Drawing.Color.Transparent;
+            this.lbPayAmtChange.Font = new System.Drawing.Font("宋体", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lbPayAmtChange.Location = new System.Drawing.Point(87, 171);
+            this.lbPayAmtChange.Name = "lbPayAmtChange";
+            this.lbPayAmtChange.Size = new System.Drawing.Size(176, 33);
+            this.lbPayAmtChange.TabIndex = 0;
+            this.lbPayAmtChange.Text = "0.00";
+            this.lbPayAmtChange.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lbPayAmtPaid
+            // 
+            this.lbPayAmtPaid.BackColor = System.Drawing.Color.Transparent;
+            this.lbPayAmtPaid.Font = new System.Drawing.Font("宋体", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lbPayAmtPaid.Location = new System.Drawing.Point(87, 118);
+            this.lbPayAmtPaid.Name = "lbPayAmtPaid";
+            this.lbPayAmtPaid.Size = new System.Drawing.Size(176, 33);
+            this.lbPayAmtPaid.TabIndex = 0;
+            this.lbPayAmtPaid.Text = "0.00";
+            this.lbPayAmtPaid.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lbPayAmtRec
+            // 
+            this.lbPayAmtRec.BackColor = System.Drawing.Color.Transparent;
+            this.lbPayAmtRec.Font = new System.Drawing.Font("宋体", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lbPayAmtRec.Location = new System.Drawing.Point(87, 64);
+            this.lbPayAmtRec.Name = "lbPayAmtRec";
+            this.lbPayAmtRec.Size = new System.Drawing.Size(176, 33);
+            this.lbPayAmtRec.TabIndex = 0;
+            this.lbPayAmtRec.Text = "0.00";
+            this.lbPayAmtRec.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lbPayTotalAmt
+            // 
+            this.lbPayTotalAmt.BackColor = System.Drawing.Color.Transparent;
+            this.lbPayTotalAmt.Font = new System.Drawing.Font("宋体", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lbPayTotalAmt.Location = new System.Drawing.Point(87, 9);
+            this.lbPayTotalAmt.Name = "lbPayTotalAmt";
+            this.lbPayTotalAmt.Size = new System.Drawing.Size(176, 33);
+            this.lbPayTotalAmt.TabIndex = 0;
+            this.lbPayTotalAmt.Text = "0.00";
+            this.lbPayTotalAmt.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // plPayTitle
+            // 
+            this.plPayTitle.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.plPayTitle.Controls.Add(this.tblPayWay);
+            this.plPayTitle.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.plPayTitle.Location = new System.Drawing.Point(4, 4);
+            this.plPayTitle.Margin = new System.Windows.Forms.Padding(0);
+            this.plPayTitle.Name = "plPayTitle";
+            this.plPayTitle.Size = new System.Drawing.Size(678, 69);
+            this.plPayTitle.TabIndex = 4;
+            // 
+            // tblPayWay
+            // 
+            this.tblPayWay.BackColor = System.Drawing.Color.Transparent;
+            this.tblPayWay.ColumnCount = 11;
+            this.tblPayWay.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tblPayWay.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tblPayWay.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tblPayWay.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tblPayWay.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tblPayWay.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tblPayWay.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tblPayWay.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tblPayWay.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tblPayWay.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tblPayWay.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 54F));
+            this.tblPayWay.Controls.Add(this.btnPicFunWechat, 3, 0);
+            this.tblPayWay.Controls.Add(this.btnPicFuncPayEsc, 9, 0);
+            this.tblPayWay.Controls.Add(this.btnPicFunRmb, 0, 0);
+            this.tblPayWay.Controls.Add(this.btnPicFunCup, 1, 0);
+            this.tblPayWay.Controls.Add(this.btnPicFunZfb, 2, 0);
+            this.tblPayWay.Controls.Add(this.btnPicFunCou, 4, 0);
+            this.tblPayWay.Controls.Add(this.btnPicFunPayOther, 5, 0);
+            this.tblPayWay.Controls.Add(this.btnPicFunAllDis, 5, 0);
+            this.tblPayWay.Controls.Add(this.btnPicFunAllcan, 8, 0);
+            this.tblPayWay.Controls.Add(this.btnPicFunAzs, 6, 0);
+            this.tblPayWay.Controls.Add(this.btnPicFunAgz, 7, 0);
+            this.tblPayWay.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tblPayWay.Location = new System.Drawing.Point(0, 0);
+            this.tblPayWay.Margin = new System.Windows.Forms.Padding(0);
+            this.tblPayWay.Name = "tblPayWay";
+            this.tblPayWay.RowCount = 1;
+            this.tblPayWay.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tblPayWay.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tblPayWay.Size = new System.Drawing.Size(678, 69);
+            this.tblPayWay.TabIndex = 1;
+            // 
+            // btnPicFunWechat
+            // 
+            this.btnPicFunWechat.BackColor = System.Drawing.Color.Transparent;
+            this.btnPicFunWechat.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnPicFunWechat.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Bold);
+            this.btnPicFunWechat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.btnPicFunWechat.IsGrass = false;
+            this.btnPicFunWechat.IsItem = false;
+            this.btnPicFunWechat.Location = new System.Drawing.Point(186, 0);
+            this.btnPicFunWechat.Margin = new System.Windows.Forms.Padding(0);
+            this.btnPicFunWechat.MyText = "微信支付";
+            this.btnPicFunWechat.MyUpText = "w";
+            this.btnPicFunWechat.Name = "btnPicFunWechat";
+            this.btnPicFunWechat.Size = new System.Drawing.Size(62, 69);
+            this.btnPicFunWechat.TabIndex = 7;
+            this.btnPicFunWechat.TabStop = false;
+            this.btnPicFunWechat.Tag = "wechat";
+            this.btnPicFunWechat.Click += new System.EventHandler(this.picPayNum_Click);
+            // 
+            // btnPicFuncPayEsc
+            // 
+            this.btnPicFuncPayEsc.BackColor = System.Drawing.Color.Transparent;
+            this.btnPicFuncPayEsc.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnPicFuncPayEsc.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Bold);
+            this.btnPicFuncPayEsc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.btnPicFuncPayEsc.IsGrass = false;
+            this.btnPicFuncPayEsc.IsItem = false;
+            this.btnPicFuncPayEsc.Location = new System.Drawing.Point(620, 0);
+            this.btnPicFuncPayEsc.Margin = new System.Windows.Forms.Padding(0);
+            this.btnPicFuncPayEsc.MyText = "退出";
+            this.btnPicFuncPayEsc.MyUpText = "Esc";
+            this.btnPicFuncPayEsc.Name = "btnPicFuncPayEsc";
+            this.btnPicFuncPayEsc.Size = new System.Drawing.Size(58, 69);
+            this.btnPicFuncPayEsc.TabIndex = 4;
+            this.btnPicFuncPayEsc.TabStop = false;
+            this.btnPicFuncPayEsc.Tag = "payesc";
+            this.btnPicFuncPayEsc.Click += new System.EventHandler(this.picPayNum_Click);
+            // 
+            // btnPicFunRmb
+            // 
+            this.btnPicFunRmb.BackColor = System.Drawing.Color.Transparent;
+            this.btnPicFunRmb.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnPicFunRmb.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Bold);
+            this.btnPicFunRmb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.btnPicFunRmb.IsGrass = false;
+            this.btnPicFunRmb.IsItem = false;
+            this.btnPicFunRmb.Location = new System.Drawing.Point(0, 0);
+            this.btnPicFunRmb.Margin = new System.Windows.Forms.Padding(0);
+            this.btnPicFunRmb.MyText = "现金";
+            this.btnPicFunRmb.MyUpText = "-";
+            this.btnPicFunRmb.Name = "btnPicFunRmb";
+            this.btnPicFunRmb.Size = new System.Drawing.Size(62, 69);
+            this.btnPicFunRmb.TabIndex = 0;
+            this.btnPicFunRmb.TabStop = false;
+            this.btnPicFunRmb.Tag = "rmb";
+            this.btnPicFunRmb.Click += new System.EventHandler(this.picPayNum_Click);
+            // 
+            // btnPicFunCup
+            // 
+            this.btnPicFunCup.BackColor = System.Drawing.Color.Transparent;
+            this.btnPicFunCup.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnPicFunCup.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Bold);
+            this.btnPicFunCup.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.btnPicFunCup.IsGrass = false;
+            this.btnPicFunCup.IsItem = false;
+            this.btnPicFunCup.Location = new System.Drawing.Point(62, 0);
+            this.btnPicFunCup.Margin = new System.Windows.Forms.Padding(0);
+            this.btnPicFunCup.MyText = "优惠券";
+            this.btnPicFunCup.MyUpText = "i";
+            this.btnPicFunCup.Name = "btnPicFunCup";
+            this.btnPicFunCup.Size = new System.Drawing.Size(62, 69);
+            this.btnPicFunCup.TabIndex = 0;
+            this.btnPicFunCup.TabStop = false;
+            this.btnPicFunCup.Tag = "coupon";
+            this.btnPicFunCup.Click += new System.EventHandler(this.picPayNum_Click);
+            // 
+            // btnPicFunZfb
+            // 
+            this.btnPicFunZfb.BackColor = System.Drawing.Color.Transparent;
+            this.btnPicFunZfb.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnPicFunZfb.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Bold);
+            this.btnPicFunZfb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.btnPicFunZfb.IsGrass = false;
+            this.btnPicFunZfb.IsItem = false;
+            this.btnPicFunZfb.Location = new System.Drawing.Point(124, 0);
+            this.btnPicFunZfb.Margin = new System.Windows.Forms.Padding(0);
+            this.btnPicFunZfb.MyText = "支付宝";
+            this.btnPicFunZfb.MyUpText = "f";
+            this.btnPicFunZfb.Name = "btnPicFunZfb";
+            this.btnPicFunZfb.Size = new System.Drawing.Size(62, 69);
+            this.btnPicFunZfb.TabIndex = 0;
+            this.btnPicFunZfb.TabStop = false;
+            this.btnPicFunZfb.Tag = "zfb";
+            this.btnPicFunZfb.Click += new System.EventHandler(this.picPayNum_Click);
+            // 
+            // btnPicFunCou
+            // 
+            this.btnPicFunCou.BackColor = System.Drawing.Color.Transparent;
+            this.btnPicFunCou.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnPicFunCou.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Bold);
+            this.btnPicFunCou.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.btnPicFunCou.IsGrass = false;
+            this.btnPicFunCou.IsItem = false;
+            this.btnPicFunCou.Location = new System.Drawing.Point(248, 0);
+            this.btnPicFunCou.Margin = new System.Windows.Forms.Padding(0);
+            this.btnPicFunCou.MyText = "余额支付";
+            this.btnPicFunCou.MyUpText = "=";
+            this.btnPicFunCou.Name = "btnPicFunCou";
+            this.btnPicFunCou.Size = new System.Drawing.Size(62, 69);
+            this.btnPicFunCou.TabIndex = 0;
+            this.btnPicFunCou.TabStop = false;
+            this.btnPicFunCou.Tag = "yezf";
+            this.btnPicFunCou.Click += new System.EventHandler(this.picPayNum_Click);
+            // 
+            // btnPicFunPayOther
+            // 
+            this.btnPicFunPayOther.BackColor = System.Drawing.Color.Transparent;
+            this.btnPicFunPayOther.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnPicFunPayOther.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Bold);
+            this.btnPicFunPayOther.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.btnPicFunPayOther.IsGrass = false;
+            this.btnPicFunPayOther.IsItem = false;
+            this.btnPicFunPayOther.Location = new System.Drawing.Point(310, 0);
+            this.btnPicFunPayOther.Margin = new System.Windows.Forms.Padding(0);
+            this.btnPicFunPayOther.MyText = "其他方式";
+            this.btnPicFunPayOther.MyUpText = ",";
+            this.btnPicFunPayOther.Name = "btnPicFunPayOther";
+            this.btnPicFunPayOther.Size = new System.Drawing.Size(62, 69);
+            this.btnPicFunPayOther.TabIndex = 0;
+            this.btnPicFunPayOther.TabStop = false;
+            this.btnPicFunPayOther.Tag = "payother";
+            this.btnPicFunPayOther.Click += new System.EventHandler(this.picPayNum_Click);
+            // 
+            // btnPicFunAllDis
+            // 
+            this.btnPicFunAllDis.BackColor = System.Drawing.Color.Transparent;
+            this.btnPicFunAllDis.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnPicFunAllDis.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Bold);
+            this.btnPicFunAllDis.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.btnPicFunAllDis.IsGrass = false;
+            this.btnPicFunAllDis.IsItem = false;
+            this.btnPicFunAllDis.Location = new System.Drawing.Point(372, 0);
+            this.btnPicFunAllDis.Margin = new System.Windows.Forms.Padding(0);
+            this.btnPicFunAllDis.MyText = "整单折扣";
+            this.btnPicFunAllDis.MyUpText = "j";
+            this.btnPicFunAllDis.Name = "btnPicFunAllDis";
+            this.btnPicFunAllDis.Size = new System.Drawing.Size(62, 69);
+            this.btnPicFunAllDis.TabIndex = 0;
+            this.btnPicFunAllDis.TabStop = false;
+            this.btnPicFunAllDis.Tag = "ads";
+            this.btnPicFunAllDis.Click += new System.EventHandler(this.picPayNum_Click);
+            // 
+            // btnPicFunAllcan
+            // 
+            this.btnPicFunAllcan.BackColor = System.Drawing.Color.Transparent;
+            this.btnPicFunAllcan.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnPicFunAllcan.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Bold);
+            this.btnPicFunAllcan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.btnPicFunAllcan.IsGrass = false;
+            this.btnPicFunAllcan.IsItem = false;
+            this.btnPicFunAllcan.Location = new System.Drawing.Point(558, 0);
+            this.btnPicFunAllcan.Margin = new System.Windows.Forms.Padding(0);
+            this.btnPicFunAllcan.MyText = "整单取消";
+            this.btnPicFunAllcan.MyUpText = "e";
+            this.btnPicFunAllcan.Name = "btnPicFunAllcan";
+            this.btnPicFunAllcan.Size = new System.Drawing.Size(62, 69);
+            this.btnPicFunAllcan.TabIndex = 0;
+            this.btnPicFunAllcan.TabStop = false;
+            this.btnPicFunAllcan.Tag = "aca";
+            this.btnPicFunAllcan.Click += new System.EventHandler(this.picPayNum_Click);
+            // 
+            // btnPicFunAzs
+            // 
+            this.btnPicFunAzs.BackColor = System.Drawing.Color.Transparent;
+            this.btnPicFunAzs.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnPicFunAzs.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Bold);
+            this.btnPicFunAzs.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.btnPicFunAzs.IsGrass = false;
+            this.btnPicFunAzs.IsItem = false;
+            this.btnPicFunAzs.Location = new System.Drawing.Point(434, 0);
+            this.btnPicFunAzs.Margin = new System.Windows.Forms.Padding(0);
+            this.btnPicFunAzs.MyText = "整单赠送";
+            this.btnPicFunAzs.MyUpText = "s";
+            this.btnPicFunAzs.Name = "btnPicFunAzs";
+            this.btnPicFunAzs.Size = new System.Drawing.Size(62, 69);
+            this.btnPicFunAzs.TabIndex = 5;
+            this.btnPicFunAzs.TabStop = false;
+            this.btnPicFunAzs.Tag = "azs";
+            this.btnPicFunAzs.Click += new System.EventHandler(this.picPayNum_Click);
+            // 
+            // btnPicFunAgz
+            // 
+            this.btnPicFunAgz.BackColor = System.Drawing.Color.Transparent;
+            this.btnPicFunAgz.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnPicFunAgz.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Bold);
+            this.btnPicFunAgz.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.btnPicFunAgz.IsGrass = false;
+            this.btnPicFunAgz.IsItem = false;
+            this.btnPicFunAgz.Location = new System.Drawing.Point(496, 0);
+            this.btnPicFunAgz.Margin = new System.Windows.Forms.Padding(0);
+            this.btnPicFunAgz.MyText = "挂账";
+            this.btnPicFunAgz.MyUpText = "g";
+            this.btnPicFunAgz.Name = "btnPicFunAgz";
+            this.btnPicFunAgz.Size = new System.Drawing.Size(62, 69);
+            this.btnPicFunAgz.TabIndex = 6;
+            this.btnPicFunAgz.TabStop = false;
+            this.btnPicFunAgz.Tag = "agz";
+            this.btnPicFunAgz.Click += new System.EventHandler(this.picPayNum_Click);
             // 
             // tlpMain
             // 
@@ -972,637 +1603,6 @@ namespace ICE.POS
             this.plTop.Size = new System.Drawing.Size(796, 45);
             this.plTop.TabIndex = 4;
             // 
-            // tblPanelBalance
-            // 
-            this.tblPanelBalance.AutoSize = true;
-            this.tblPanelBalance.BackColor = System.Drawing.Color.AliceBlue;
-            this.tblPanelBalance.ColumnCount = 1;
-            this.tblPanelBalance.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tblPanelBalance.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tblPanelBalance.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tblPanelBalance.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tblPanelBalance.Controls.Add(this.GvPayFlow, 0, 3);
-            this.tblPanelBalance.Controls.Add(this.plPayListTilte, 0, 2);
-            this.tblPanelBalance.Controls.Add(this.plPayInfo, 0, 1);
-            this.tblPanelBalance.Controls.Add(this.plPayTitle, 0, 0);
-            this.tblPanelBalance.Location = new System.Drawing.Point(102, 56);
-            this.tblPanelBalance.Margin = new System.Windows.Forms.Padding(2);
-            this.tblPanelBalance.Name = "tblPanelBalance";
-            this.tblPanelBalance.Padding = new System.Windows.Forms.Padding(4);
-            this.tblPanelBalance.RowCount = 4;
-            this.tblPanelBalance.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 69F));
-            this.tblPanelBalance.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 248F));
-            this.tblPanelBalance.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.tblPanelBalance.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tblPanelBalance.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tblPanelBalance.Size = new System.Drawing.Size(686, 439);
-            this.tblPanelBalance.TabIndex = 10;
-            this.tblPanelBalance.Visible = false;
-            // 
-            // GvPayFlow
-            // 
-            this.GvPayFlow.AllowUserToAddRows = false;
-            this.GvPayFlow.AllowUserToDeleteRows = false;
-            this.GvPayFlow.AutoGenerateColumns = false;
-            this.GvPayFlow.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            this.GvPayFlow.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.GvPayFlow.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.GvPayFlow.ColumnHeadersVisible = false;
-            this.GvPayFlow.DataSource = this.bindingPayFlow;
-            this.GvPayFlow.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.GvPayFlow.Location = new System.Drawing.Point(5, 347);
-            this.GvPayFlow.Margin = new System.Windows.Forms.Padding(1, 0, 0, 0);
-            this.GvPayFlow.MultiSelect = false;
-            this.GvPayFlow.Name = "GvPayFlow";
-            this.GvPayFlow.ReadOnly = true;
-            this.GvPayFlow.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.GvPayFlow.RowTemplate.Height = 30;
-            this.GvPayFlow.RowTemplate.ReadOnly = true;
-            this.GvPayFlow.Size = new System.Drawing.Size(677, 88);
-            this.GvPayFlow.TabIndex = 0;
-            this.GvPayFlow.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.GvPayFlow_DataError);
-            // 
-            // plPayListTilte
-            // 
-            this.plPayListTilte.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.plPayListTilte.BackgroundImage = global::ICE.POS.Properties.Resources.pay_title;
-            this.plPayListTilte.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.plPayListTilte.Location = new System.Drawing.Point(5, 321);
-            this.plPayListTilte.Margin = new System.Windows.Forms.Padding(1, 0, 0, 0);
-            this.plPayListTilte.Name = "plPayListTilte";
-            this.plPayListTilte.Size = new System.Drawing.Size(677, 26);
-            this.plPayListTilte.TabIndex = 2;
-            // 
-            // plPayInfo
-            // 
-            this.plPayInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(239)))), ((int)(((byte)(243)))));
-            this.plPayInfo.Controls.Add(this.gbPayInput);
-            this.plPayInfo.Controls.Add(this.gbPayInfo);
-            this.plPayInfo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.plPayInfo.Location = new System.Drawing.Point(5, 74);
-            this.plPayInfo.Margin = new System.Windows.Forms.Padding(1, 1, 1, 0);
-            this.plPayInfo.Name = "plPayInfo";
-            this.plPayInfo.Size = new System.Drawing.Size(676, 247);
-            this.plPayInfo.TabIndex = 3;
-            // 
-            // gbPayInput
-            // 
-            this.gbPayInput.Controls.Add(this.plPayKey);
-            this.gbPayInput.Controls.Add(this.plPayInput);
-            this.gbPayInput.Font = new System.Drawing.Font("微软雅黑", 10.5F);
-            this.gbPayInput.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.gbPayInput.Location = new System.Drawing.Point(310, 0);
-            this.gbPayInput.Name = "gbPayInput";
-            this.gbPayInput.Size = new System.Drawing.Size(336, 244);
-            this.gbPayInput.TabIndex = 1;
-            this.gbPayInput.TabStop = false;
-            this.gbPayInput.Text = "金额输入";
-            // 
-            // plPayKey
-            // 
-            this.plPayKey.BackgroundImage = global::ICE.POS.Properties.Resources.touch_pay_key;
-            this.plPayKey.Controls.Add(this.picPayNumEnter);
-            this.plPayKey.Controls.Add(this.picPayNum3);
-            this.plPayKey.Controls.Add(this.btnSaleReset);
-            this.plPayKey.Controls.Add(this.picPayNum6);
-            this.plPayKey.Controls.Add(this.picPayNum2);
-            this.plPayKey.Controls.Add(this.picPayNumBack);
-            this.plPayKey.Controls.Add(this.picPayNum5);
-            this.plPayKey.Controls.Add(this.picPayNum1);
-            this.plPayKey.Controls.Add(this.picPayNum9);
-            this.plPayKey.Controls.Add(this.picPayNum4);
-            this.plPayKey.Controls.Add(this.picPayNum0);
-            this.plPayKey.Controls.Add(this.picPayNum8);
-            this.plPayKey.Controls.Add(this.picPayNumDot);
-            this.plPayKey.Controls.Add(this.picPayNum7);
-            this.plPayKey.Controls.Add(this.pictureBox1);
-            this.plPayKey.Location = new System.Drawing.Point(15, 75);
-            this.plPayKey.Name = "plPayKey";
-            this.plPayKey.Size = new System.Drawing.Size(308, 164);
-            this.plPayKey.TabIndex = 3;
-            // 
-            // picPayNumEnter
-            // 
-            this.picPayNumEnter.BackColor = System.Drawing.Color.Transparent;
-            this.picPayNumEnter.Location = new System.Drawing.Point(246, 108);
-            this.picPayNumEnter.Name = "picPayNumEnter";
-            this.picPayNumEnter.Size = new System.Drawing.Size(58, 48);
-            this.picPayNumEnter.TabIndex = 0;
-            this.picPayNumEnter.TabStop = false;
-            this.picPayNumEnter.Tag = "Enter";
-            this.picPayNumEnter.Click += new System.EventHandler(this.picPayNum_Click);
-            // 
-            // picPayNum3
-            // 
-            this.picPayNum3.BackColor = System.Drawing.Color.Transparent;
-            this.picPayNum3.Location = new System.Drawing.Point(185, 108);
-            this.picPayNum3.Name = "picPayNum3";
-            this.picPayNum3.Size = new System.Drawing.Size(58, 48);
-            this.picPayNum3.TabIndex = 0;
-            this.picPayNum3.TabStop = false;
-            this.picPayNum3.Tag = "3";
-            this.picPayNum3.Click += new System.EventHandler(this.picPayNum_Click);
-            // 
-            // btnSaleReset
-            // 
-            this.btnSaleReset.BackColor = System.Drawing.Color.Transparent;
-            this.btnSaleReset.Location = new System.Drawing.Point(245, 57);
-            this.btnSaleReset.Name = "btnSaleReset";
-            this.btnSaleReset.Size = new System.Drawing.Size(58, 48);
-            this.btnSaleReset.TabIndex = 0;
-            this.btnSaleReset.TabStop = false;
-            this.btnSaleReset.Tag = "reset";
-            this.btnSaleReset.Click += new System.EventHandler(this.picPayNum_Click);
-            // 
-            // picPayNum6
-            // 
-            this.picPayNum6.BackColor = System.Drawing.Color.Transparent;
-            this.picPayNum6.Location = new System.Drawing.Point(184, 57);
-            this.picPayNum6.Name = "picPayNum6";
-            this.picPayNum6.Size = new System.Drawing.Size(58, 48);
-            this.picPayNum6.TabIndex = 0;
-            this.picPayNum6.TabStop = false;
-            this.picPayNum6.Tag = "6";
-            this.picPayNum6.Click += new System.EventHandler(this.picPayNum_Click);
-            // 
-            // picPayNum2
-            // 
-            this.picPayNum2.BackColor = System.Drawing.Color.Transparent;
-            this.picPayNum2.Location = new System.Drawing.Point(124, 108);
-            this.picPayNum2.Name = "picPayNum2";
-            this.picPayNum2.Size = new System.Drawing.Size(58, 48);
-            this.picPayNum2.TabIndex = 0;
-            this.picPayNum2.TabStop = false;
-            this.picPayNum2.Tag = "2";
-            this.picPayNum2.Click += new System.EventHandler(this.picPayNum_Click);
-            // 
-            // picPayNumBack
-            // 
-            this.picPayNumBack.BackColor = System.Drawing.Color.Transparent;
-            this.picPayNumBack.Location = new System.Drawing.Point(245, 5);
-            this.picPayNumBack.Name = "picPayNumBack";
-            this.picPayNumBack.Size = new System.Drawing.Size(58, 48);
-            this.picPayNumBack.TabIndex = 0;
-            this.picPayNumBack.TabStop = false;
-            this.picPayNumBack.Tag = "backspace";
-            this.picPayNumBack.Click += new System.EventHandler(this.picPayNum_Click);
-            // 
-            // picPayNum5
-            // 
-            this.picPayNum5.BackColor = System.Drawing.Color.Transparent;
-            this.picPayNum5.Location = new System.Drawing.Point(123, 57);
-            this.picPayNum5.Name = "picPayNum5";
-            this.picPayNum5.Size = new System.Drawing.Size(58, 48);
-            this.picPayNum5.TabIndex = 0;
-            this.picPayNum5.TabStop = false;
-            this.picPayNum5.Tag = "5";
-            this.picPayNum5.Click += new System.EventHandler(this.picPayNum_Click);
-            // 
-            // picPayNum1
-            // 
-            this.picPayNum1.BackColor = System.Drawing.Color.Transparent;
-            this.picPayNum1.Location = new System.Drawing.Point(63, 108);
-            this.picPayNum1.Name = "picPayNum1";
-            this.picPayNum1.Size = new System.Drawing.Size(58, 48);
-            this.picPayNum1.TabIndex = 0;
-            this.picPayNum1.TabStop = false;
-            this.picPayNum1.Tag = "1";
-            this.picPayNum1.Click += new System.EventHandler(this.picPayNum_Click);
-            // 
-            // picPayNum9
-            // 
-            this.picPayNum9.BackColor = System.Drawing.Color.Transparent;
-            this.picPayNum9.Location = new System.Drawing.Point(184, 5);
-            this.picPayNum9.Name = "picPayNum9";
-            this.picPayNum9.Size = new System.Drawing.Size(58, 48);
-            this.picPayNum9.TabIndex = 0;
-            this.picPayNum9.TabStop = false;
-            this.picPayNum9.Tag = "9";
-            this.picPayNum9.Click += new System.EventHandler(this.picPayNum_Click);
-            // 
-            // picPayNum4
-            // 
-            this.picPayNum4.BackColor = System.Drawing.Color.Transparent;
-            this.picPayNum4.Location = new System.Drawing.Point(62, 57);
-            this.picPayNum4.Name = "picPayNum4";
-            this.picPayNum4.Size = new System.Drawing.Size(58, 48);
-            this.picPayNum4.TabIndex = 0;
-            this.picPayNum4.TabStop = false;
-            this.picPayNum4.Tag = "4";
-            this.picPayNum4.Click += new System.EventHandler(this.picPayNum_Click);
-            // 
-            // picPayNum0
-            // 
-            this.picPayNum0.BackColor = System.Drawing.Color.Transparent;
-            this.picPayNum0.Location = new System.Drawing.Point(3, 108);
-            this.picPayNum0.Name = "picPayNum0";
-            this.picPayNum0.Size = new System.Drawing.Size(58, 48);
-            this.picPayNum0.TabIndex = 0;
-            this.picPayNum0.TabStop = false;
-            this.picPayNum0.Tag = "0";
-            this.picPayNum0.Click += new System.EventHandler(this.picPayNum_Click);
-            // 
-            // picPayNum8
-            // 
-            this.picPayNum8.BackColor = System.Drawing.Color.Transparent;
-            this.picPayNum8.Location = new System.Drawing.Point(123, 5);
-            this.picPayNum8.Name = "picPayNum8";
-            this.picPayNum8.Size = new System.Drawing.Size(58, 48);
-            this.picPayNum8.TabIndex = 0;
-            this.picPayNum8.TabStop = false;
-            this.picPayNum8.Tag = "8";
-            this.picPayNum8.Click += new System.EventHandler(this.picPayNum_Click);
-            // 
-            // picPayNumDot
-            // 
-            this.picPayNumDot.BackColor = System.Drawing.Color.Transparent;
-            this.picPayNumDot.Location = new System.Drawing.Point(2, 57);
-            this.picPayNumDot.Name = "picPayNumDot";
-            this.picPayNumDot.Size = new System.Drawing.Size(58, 48);
-            this.picPayNumDot.TabIndex = 0;
-            this.picPayNumDot.TabStop = false;
-            this.picPayNumDot.Tag = "dot";
-            this.picPayNumDot.Click += new System.EventHandler(this.picPayNum_Click);
-            // 
-            // picPayNum7
-            // 
-            this.picPayNum7.BackColor = System.Drawing.Color.Transparent;
-            this.picPayNum7.Location = new System.Drawing.Point(62, 5);
-            this.picPayNum7.Name = "picPayNum7";
-            this.picPayNum7.Size = new System.Drawing.Size(58, 48);
-            this.picPayNum7.TabIndex = 0;
-            this.picPayNum7.TabStop = false;
-            this.picPayNum7.Tag = "7";
-            this.picPayNum7.Click += new System.EventHandler(this.picPayNum_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Location = new System.Drawing.Point(2, 5);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(58, 48);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Tag = "-";
-            this.pictureBox1.Click += new System.EventHandler(this.picPayNum_Click);
-            // 
-            // plPayInput
-            // 
-            this.plPayInput.BackgroundImage = global::ICE.POS.Properties.Resources.pay_input;
-            this.plPayInput.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.plPayInput.Controls.Add(this.lbPayCursor);
-            this.plPayInput.Controls.Add(this.lbPayInput);
-            this.plPayInput.Location = new System.Drawing.Point(15, 24);
-            this.plPayInput.Name = "plPayInput";
-            this.plPayInput.Size = new System.Drawing.Size(306, 50);
-            this.plPayInput.TabIndex = 0;
-            // 
-            // lbPayCursor
-            // 
-            this.lbPayCursor.BackColor = System.Drawing.Color.Black;
-            this.lbPayCursor.Font = new System.Drawing.Font("宋体", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbPayCursor.Location = new System.Drawing.Point(131, 10);
-            this.lbPayCursor.Name = "lbPayCursor";
-            this.lbPayCursor.Size = new System.Drawing.Size(2, 30);
-            this.lbPayCursor.TabIndex = 10;
-            this.lbPayCursor.Text = "12312313";
-            // 
-            // lbPayInput
-            // 
-            this.lbPayInput.BackColor = System.Drawing.Color.Transparent;
-            this.lbPayInput.Font = new System.Drawing.Font("宋体", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbPayInput.Location = new System.Drawing.Point(7, 5);
-            this.lbPayInput.Margin = new System.Windows.Forms.Padding(0, 0, 4, 3);
-            this.lbPayInput.Name = "lbPayInput";
-            this.lbPayInput.Size = new System.Drawing.Size(270, 40);
-            this.lbPayInput.TabIndex = 9;
-            this.lbPayInput.Text = "1234567890123";
-            this.lbPayInput.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // gbPayInfo
-            // 
-            this.gbPayInfo.Controls.Add(this.plPayLeft);
-            this.gbPayInfo.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.gbPayInfo.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.gbPayInfo.Location = new System.Drawing.Point(3, 1);
-            this.gbPayInfo.Name = "gbPayInfo";
-            this.gbPayInfo.Size = new System.Drawing.Size(300, 243);
-            this.gbPayInfo.TabIndex = 0;
-            this.gbPayInfo.TabStop = false;
-            this.gbPayInfo.Text = "付款信息";
-            // 
-            // plPayLeft
-            // 
-            this.plPayLeft.BackgroundImage = global::ICE.POS.Properties.Resources.touch_pay_info;
-            this.plPayLeft.Controls.Add(this.lbPayAmtChange);
-            this.plPayLeft.Controls.Add(this.lbPayAmtPaid);
-            this.plPayLeft.Controls.Add(this.lbPayAmtRec);
-            this.plPayLeft.Controls.Add(this.lbPayTotalAmt);
-            this.plPayLeft.Location = new System.Drawing.Point(8, 23);
-            this.plPayLeft.Name = "plPayLeft";
-            this.plPayLeft.Size = new System.Drawing.Size(276, 214);
-            this.plPayLeft.TabIndex = 0;
-            // 
-            // lbPayAmtChange
-            // 
-            this.lbPayAmtChange.BackColor = System.Drawing.Color.Transparent;
-            this.lbPayAmtChange.Font = new System.Drawing.Font("宋体", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbPayAmtChange.Location = new System.Drawing.Point(87, 171);
-            this.lbPayAmtChange.Name = "lbPayAmtChange";
-            this.lbPayAmtChange.Size = new System.Drawing.Size(176, 33);
-            this.lbPayAmtChange.TabIndex = 0;
-            this.lbPayAmtChange.Text = "0.00";
-            this.lbPayAmtChange.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lbPayAmtPaid
-            // 
-            this.lbPayAmtPaid.BackColor = System.Drawing.Color.Transparent;
-            this.lbPayAmtPaid.Font = new System.Drawing.Font("宋体", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbPayAmtPaid.Location = new System.Drawing.Point(87, 118);
-            this.lbPayAmtPaid.Name = "lbPayAmtPaid";
-            this.lbPayAmtPaid.Size = new System.Drawing.Size(176, 33);
-            this.lbPayAmtPaid.TabIndex = 0;
-            this.lbPayAmtPaid.Text = "0.00";
-            this.lbPayAmtPaid.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lbPayAmtRec
-            // 
-            this.lbPayAmtRec.BackColor = System.Drawing.Color.Transparent;
-            this.lbPayAmtRec.Font = new System.Drawing.Font("宋体", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbPayAmtRec.Location = new System.Drawing.Point(87, 64);
-            this.lbPayAmtRec.Name = "lbPayAmtRec";
-            this.lbPayAmtRec.Size = new System.Drawing.Size(176, 33);
-            this.lbPayAmtRec.TabIndex = 0;
-            this.lbPayAmtRec.Text = "0.00";
-            this.lbPayAmtRec.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lbPayTotalAmt
-            // 
-            this.lbPayTotalAmt.BackColor = System.Drawing.Color.Transparent;
-            this.lbPayTotalAmt.Font = new System.Drawing.Font("宋体", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbPayTotalAmt.Location = new System.Drawing.Point(87, 9);
-            this.lbPayTotalAmt.Name = "lbPayTotalAmt";
-            this.lbPayTotalAmt.Size = new System.Drawing.Size(176, 33);
-            this.lbPayTotalAmt.TabIndex = 0;
-            this.lbPayTotalAmt.Text = "0.00";
-            this.lbPayTotalAmt.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // plPayTitle
-            // 
-            this.plPayTitle.BackColor = System.Drawing.Color.AntiqueWhite;
-            this.plPayTitle.Controls.Add(this.tblPayWay);
-            this.plPayTitle.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.plPayTitle.Location = new System.Drawing.Point(4, 4);
-            this.plPayTitle.Margin = new System.Windows.Forms.Padding(0);
-            this.plPayTitle.Name = "plPayTitle";
-            this.plPayTitle.Size = new System.Drawing.Size(678, 69);
-            this.plPayTitle.TabIndex = 4;
-            // 
-            // tblPayWay
-            // 
-            this.tblPayWay.BackColor = System.Drawing.Color.Transparent;
-            this.tblPayWay.ColumnCount = 11;
-            this.tblPayWay.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tblPayWay.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tblPayWay.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tblPayWay.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tblPayWay.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tblPayWay.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tblPayWay.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tblPayWay.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tblPayWay.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tblPayWay.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tblPayWay.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 54F));
-            this.tblPayWay.Controls.Add(this.btnPicFunWechat, 3, 0);
-            this.tblPayWay.Controls.Add(this.btnPicFuncPayEsc, 9, 0);
-            this.tblPayWay.Controls.Add(this.btnPicFunRmb, 0, 0);
-            this.tblPayWay.Controls.Add(this.btnPicFunBcd, 1, 0);
-            this.tblPayWay.Controls.Add(this.btnPicFunZfb, 2, 0);
-            this.tblPayWay.Controls.Add(this.btnPicFunCou, 4, 0);
-            this.tblPayWay.Controls.Add(this.btnPicFunPayOther, 5, 0);
-            this.tblPayWay.Controls.Add(this.btnPicFunAllDis, 5, 0);
-            this.tblPayWay.Controls.Add(this.btnPicFunAllcan, 8, 0);
-            this.tblPayWay.Controls.Add(this.btnPicFunAzs, 6, 0);
-            this.tblPayWay.Controls.Add(this.btnPicFunAgz, 7, 0);
-            this.tblPayWay.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tblPayWay.Location = new System.Drawing.Point(0, 0);
-            this.tblPayWay.Margin = new System.Windows.Forms.Padding(0);
-            this.tblPayWay.Name = "tblPayWay";
-            this.tblPayWay.RowCount = 1;
-            this.tblPayWay.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tblPayWay.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tblPayWay.Size = new System.Drawing.Size(678, 69);
-            this.tblPayWay.TabIndex = 1;
-            // 
-            // btnPicFunWechat
-            // 
-            this.btnPicFunWechat.BackColor = System.Drawing.Color.Transparent;
-            this.btnPicFunWechat.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnPicFunWechat.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Bold);
-            this.btnPicFunWechat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.btnPicFunWechat.IsGrass = false;
-            this.btnPicFunWechat.IsItem = false;
-            this.btnPicFunWechat.Location = new System.Drawing.Point(186, 0);
-            this.btnPicFunWechat.Margin = new System.Windows.Forms.Padding(0);
-            this.btnPicFunWechat.MyText = "微信支付";
-            this.btnPicFunWechat.MyUpText = "w";
-            this.btnPicFunWechat.Name = "btnPicFunWechat";
-            this.btnPicFunWechat.Size = new System.Drawing.Size(62, 69);
-            this.btnPicFunWechat.TabIndex = 7;
-            this.btnPicFunWechat.TabStop = false;
-            this.btnPicFunWechat.Tag = "wechat";
-            this.btnPicFunWechat.Click += new System.EventHandler(this.picPayNum_Click);
-            // 
-            // btnPicFuncPayEsc
-            // 
-            this.btnPicFuncPayEsc.BackColor = System.Drawing.Color.Transparent;
-            this.btnPicFuncPayEsc.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnPicFuncPayEsc.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Bold);
-            this.btnPicFuncPayEsc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.btnPicFuncPayEsc.IsGrass = false;
-            this.btnPicFuncPayEsc.IsItem = false;
-            this.btnPicFuncPayEsc.Location = new System.Drawing.Point(620, 0);
-            this.btnPicFuncPayEsc.Margin = new System.Windows.Forms.Padding(0);
-            this.btnPicFuncPayEsc.MyText = "退出";
-            this.btnPicFuncPayEsc.MyUpText = "Esc";
-            this.btnPicFuncPayEsc.Name = "btnPicFuncPayEsc";
-            this.btnPicFuncPayEsc.Size = new System.Drawing.Size(58, 69);
-            this.btnPicFuncPayEsc.TabIndex = 4;
-            this.btnPicFuncPayEsc.TabStop = false;
-            this.btnPicFuncPayEsc.Tag = "payesc";
-            this.btnPicFuncPayEsc.Click += new System.EventHandler(this.picPayNum_Click);
-            // 
-            // btnPicFunRmb
-            // 
-            this.btnPicFunRmb.BackColor = System.Drawing.Color.Transparent;
-            this.btnPicFunRmb.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnPicFunRmb.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Bold);
-            this.btnPicFunRmb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.btnPicFunRmb.IsGrass = false;
-            this.btnPicFunRmb.IsItem = false;
-            this.btnPicFunRmb.Location = new System.Drawing.Point(0, 0);
-            this.btnPicFunRmb.Margin = new System.Windows.Forms.Padding(0);
-            this.btnPicFunRmb.MyText = "现金";
-            this.btnPicFunRmb.MyUpText = "-";
-            this.btnPicFunRmb.Name = "btnPicFunRmb";
-            this.btnPicFunRmb.Size = new System.Drawing.Size(62, 69);
-            this.btnPicFunRmb.TabIndex = 0;
-            this.btnPicFunRmb.TabStop = false;
-            this.btnPicFunRmb.Tag = "rmb";
-            this.btnPicFunRmb.Click += new System.EventHandler(this.picPayNum_Click);
-            // 
-            // btnPicFunBcd
-            // 
-            this.btnPicFunBcd.BackColor = System.Drawing.Color.Transparent;
-            this.btnPicFunBcd.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnPicFunBcd.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Bold);
-            this.btnPicFunBcd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.btnPicFunBcd.IsGrass = false;
-            this.btnPicFunBcd.IsItem = false;
-            this.btnPicFunBcd.Location = new System.Drawing.Point(62, 0);
-            this.btnPicFunBcd.Margin = new System.Windows.Forms.Padding(0);
-            this.btnPicFunBcd.MyText = "银行卡";
-            this.btnPicFunBcd.MyUpText = "i";
-            this.btnPicFunBcd.Name = "btnPicFunBcd";
-            this.btnPicFunBcd.Size = new System.Drawing.Size(62, 69);
-            this.btnPicFunBcd.TabIndex = 0;
-            this.btnPicFunBcd.TabStop = false;
-            this.btnPicFunBcd.Tag = "cdt";
-            this.btnPicFunBcd.Click += new System.EventHandler(this.picPayNum_Click);
-            // 
-            // btnPicFunZfb
-            // 
-            this.btnPicFunZfb.BackColor = System.Drawing.Color.Transparent;
-            this.btnPicFunZfb.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnPicFunZfb.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Bold);
-            this.btnPicFunZfb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.btnPicFunZfb.IsGrass = false;
-            this.btnPicFunZfb.IsItem = false;
-            this.btnPicFunZfb.Location = new System.Drawing.Point(124, 0);
-            this.btnPicFunZfb.Margin = new System.Windows.Forms.Padding(0);
-            this.btnPicFunZfb.MyText = "支付宝";
-            this.btnPicFunZfb.MyUpText = "f";
-            this.btnPicFunZfb.Name = "btnPicFunZfb";
-            this.btnPicFunZfb.Size = new System.Drawing.Size(62, 69);
-            this.btnPicFunZfb.TabIndex = 0;
-            this.btnPicFunZfb.TabStop = false;
-            this.btnPicFunZfb.Tag = "zfb";
-            this.btnPicFunZfb.Click += new System.EventHandler(this.picPayNum_Click);
-            // 
-            // btnPicFunCou
-            // 
-            this.btnPicFunCou.BackColor = System.Drawing.Color.Transparent;
-            this.btnPicFunCou.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnPicFunCou.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Bold);
-            this.btnPicFunCou.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.btnPicFunCou.IsGrass = false;
-            this.btnPicFunCou.IsItem = false;
-            this.btnPicFunCou.Location = new System.Drawing.Point(248, 0);
-            this.btnPicFunCou.Margin = new System.Windows.Forms.Padding(0);
-            this.btnPicFunCou.MyText = "余额支付";
-            this.btnPicFunCou.MyUpText = "=";
-            this.btnPicFunCou.Name = "btnPicFunCou";
-            this.btnPicFunCou.Size = new System.Drawing.Size(62, 69);
-            this.btnPicFunCou.TabIndex = 0;
-            this.btnPicFunCou.TabStop = false;
-            this.btnPicFunCou.Tag = "yezf";
-            this.btnPicFunCou.Click += new System.EventHandler(this.picPayNum_Click);
-            // 
-            // btnPicFunPayOther
-            // 
-            this.btnPicFunPayOther.BackColor = System.Drawing.Color.Transparent;
-            this.btnPicFunPayOther.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnPicFunPayOther.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Bold);
-            this.btnPicFunPayOther.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.btnPicFunPayOther.IsGrass = false;
-            this.btnPicFunPayOther.IsItem = false;
-            this.btnPicFunPayOther.Location = new System.Drawing.Point(310, 0);
-            this.btnPicFunPayOther.Margin = new System.Windows.Forms.Padding(0);
-            this.btnPicFunPayOther.MyText = "其他方式";
-            this.btnPicFunPayOther.MyUpText = ",";
-            this.btnPicFunPayOther.Name = "btnPicFunPayOther";
-            this.btnPicFunPayOther.Size = new System.Drawing.Size(62, 69);
-            this.btnPicFunPayOther.TabIndex = 0;
-            this.btnPicFunPayOther.TabStop = false;
-            this.btnPicFunPayOther.Tag = "payother";
-            this.btnPicFunPayOther.Click += new System.EventHandler(this.picPayNum_Click);
-            // 
-            // btnPicFunAllDis
-            // 
-            this.btnPicFunAllDis.BackColor = System.Drawing.Color.Transparent;
-            this.btnPicFunAllDis.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnPicFunAllDis.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Bold);
-            this.btnPicFunAllDis.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.btnPicFunAllDis.IsGrass = false;
-            this.btnPicFunAllDis.IsItem = false;
-            this.btnPicFunAllDis.Location = new System.Drawing.Point(372, 0);
-            this.btnPicFunAllDis.Margin = new System.Windows.Forms.Padding(0);
-            this.btnPicFunAllDis.MyText = "整单折扣";
-            this.btnPicFunAllDis.MyUpText = "j";
-            this.btnPicFunAllDis.Name = "btnPicFunAllDis";
-            this.btnPicFunAllDis.Size = new System.Drawing.Size(62, 69);
-            this.btnPicFunAllDis.TabIndex = 0;
-            this.btnPicFunAllDis.TabStop = false;
-            this.btnPicFunAllDis.Tag = "ads";
-            this.btnPicFunAllDis.Click += new System.EventHandler(this.picPayNum_Click);
-            // 
-            // btnPicFunAllcan
-            // 
-            this.btnPicFunAllcan.BackColor = System.Drawing.Color.Transparent;
-            this.btnPicFunAllcan.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnPicFunAllcan.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Bold);
-            this.btnPicFunAllcan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.btnPicFunAllcan.IsGrass = false;
-            this.btnPicFunAllcan.IsItem = false;
-            this.btnPicFunAllcan.Location = new System.Drawing.Point(558, 0);
-            this.btnPicFunAllcan.Margin = new System.Windows.Forms.Padding(0);
-            this.btnPicFunAllcan.MyText = "整单取消";
-            this.btnPicFunAllcan.MyUpText = "e";
-            this.btnPicFunAllcan.Name = "btnPicFunAllcan";
-            this.btnPicFunAllcan.Size = new System.Drawing.Size(62, 69);
-            this.btnPicFunAllcan.TabIndex = 0;
-            this.btnPicFunAllcan.TabStop = false;
-            this.btnPicFunAllcan.Tag = "aca";
-            this.btnPicFunAllcan.Click += new System.EventHandler(this.picPayNum_Click);
-            // 
-            // btnPicFunAzs
-            // 
-            this.btnPicFunAzs.BackColor = System.Drawing.Color.Transparent;
-            this.btnPicFunAzs.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnPicFunAzs.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Bold);
-            this.btnPicFunAzs.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.btnPicFunAzs.IsGrass = false;
-            this.btnPicFunAzs.IsItem = false;
-            this.btnPicFunAzs.Location = new System.Drawing.Point(434, 0);
-            this.btnPicFunAzs.Margin = new System.Windows.Forms.Padding(0);
-            this.btnPicFunAzs.MyText = "整单赠送";
-            this.btnPicFunAzs.MyUpText = "s";
-            this.btnPicFunAzs.Name = "btnPicFunAzs";
-            this.btnPicFunAzs.Size = new System.Drawing.Size(62, 69);
-            this.btnPicFunAzs.TabIndex = 5;
-            this.btnPicFunAzs.TabStop = false;
-            this.btnPicFunAzs.Tag = "azs";
-            this.btnPicFunAzs.Click += new System.EventHandler(this.picPayNum_Click);
-            // 
-            // btnPicFunAgz
-            // 
-            this.btnPicFunAgz.BackColor = System.Drawing.Color.Transparent;
-            this.btnPicFunAgz.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnPicFunAgz.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Bold);
-            this.btnPicFunAgz.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.btnPicFunAgz.IsGrass = false;
-            this.btnPicFunAgz.IsItem = false;
-            this.btnPicFunAgz.Location = new System.Drawing.Point(496, 0);
-            this.btnPicFunAgz.Margin = new System.Windows.Forms.Padding(0);
-            this.btnPicFunAgz.MyText = "挂账";
-            this.btnPicFunAgz.MyUpText = "g";
-            this.btnPicFunAgz.Name = "btnPicFunAgz";
-            this.btnPicFunAgz.Size = new System.Drawing.Size(62, 69);
-            this.btnPicFunAgz.TabIndex = 6;
-            this.btnPicFunAgz.TabStop = false;
-            this.btnPicFunAgz.Tag = "agz";
-            this.btnPicFunAgz.Click += new System.EventHandler(this.picPayNum_Click);
-            // 
             // picLogo
             // 
             this.picLogo.BackColor = System.Drawing.Color.Transparent;
@@ -2070,6 +2070,42 @@ namespace ICE.POS
             ((System.ComponentModel.ISupportInitialize)(this.bindingPayFlow)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSaleFlow)).EndInit();
             this.plOtherFunc.ResumeLayout(false);
+            this.tblPanelBalance.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.GvPayFlow)).EndInit();
+            this.plPayInfo.ResumeLayout(false);
+            this.gbPayInput.ResumeLayout(false);
+            this.plPayKey.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picPayNumEnter)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picPayNum3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnSaleReset)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picPayNum6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picPayNum2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picPayNumBack)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picPayNum5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picPayNum1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picPayNum9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picPayNum4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picPayNum0)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picPayNum8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picPayNumDot)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picPayNum7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.plPayInput.ResumeLayout(false);
+            this.gbPayInfo.ResumeLayout(false);
+            this.plPayLeft.ResumeLayout(false);
+            this.plPayTitle.ResumeLayout(false);
+            this.tblPayWay.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnPicFunWechat)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnPicFuncPayEsc)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnPicFunRmb)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnPicFunCup)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnPicFunZfb)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnPicFunCou)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnPicFunPayOther)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnPicFunAllDis)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnPicFunAllcan)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnPicFunAzs)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnPicFunAgz)).EndInit();
             this.tlpMain.ResumeLayout(false);
             this.plButton.ResumeLayout(false);
             this.tlpBottom.ResumeLayout(false);
@@ -2099,42 +2135,6 @@ namespace ICE.POS
             this.plAmtCenter.ResumeLayout(false);
             this.plTop.ResumeLayout(false);
             this.plTop.PerformLayout();
-            this.tblPanelBalance.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.GvPayFlow)).EndInit();
-            this.plPayInfo.ResumeLayout(false);
-            this.gbPayInput.ResumeLayout(false);
-            this.plPayKey.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picPayNumEnter)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picPayNum3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnSaleReset)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picPayNum6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picPayNum2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picPayNumBack)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picPayNum5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picPayNum1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picPayNum9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picPayNum4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picPayNum0)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picPayNum8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picPayNumDot)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picPayNum7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.plPayInput.ResumeLayout(false);
-            this.gbPayInfo.ResumeLayout(false);
-            this.plPayLeft.ResumeLayout(false);
-            this.plPayTitle.ResumeLayout(false);
-            this.tblPayWay.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.btnPicFunWechat)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnPicFuncPayEsc)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnPicFunRmb)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnPicFunBcd)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnPicFunZfb)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnPicFunCou)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnPicFunPayOther)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnPicFunAllDis)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnPicFunAllcan)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnPicFunAzs)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnPicFunAgz)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             this.tlpMiddleLeft.ResumeLayout(false);
             this.tlpMiddleLeft.PerformLayout();
@@ -2221,7 +2221,7 @@ namespace ICE.POS
         private TableLayoutPanelEx tblPayWay;
         private ButtonForPos btnPicFuncPayEsc;
         private ButtonForPos btnPicFunRmb;
-        private ButtonForPos btnPicFunBcd;
+        private ButtonForPos btnPicFunCup;
         private ButtonForPos btnPicFunZfb;
         private ButtonForPos btnPicFunCou;
         private ButtonForPos btnPicFunPayOther;

@@ -1699,6 +1699,7 @@
                             case "zfb":
                             case "wechat":
                             case "aca":
+                            case "coupon":
                                 this.CallKeyFunc(new t_attr_function() { func_id = str.ToLower() });
                                 break;
                             case "payesc":
@@ -2156,6 +2157,9 @@
                         break;
                     case PosOpType.购物券:
                         MessageBox.Show(keyfunc.func_name + "功能尚未实现！", Gattr.AppTitle);
+                        break;
+                    case PosOpType.优惠券:
+                        MessageBox.Show(keyfunc.func_name + "功能尚未开放！", Gattr.AppTitle);
                         break;
                     case PosOpType.其他方式:
                         this.FunKeyFkf();
@@ -4194,17 +4198,39 @@
                         payflow = SetPayFlowInfo(payAmtPaid, payment, _saleTotalAmt, _currentFlowNo, _card, _memo);
                         _listPayFlow.Add(payflow);
                         break;
-                    //case "DIY": //ice_bd_payment_info表添加付款方式后 pay_flag=0 （必须）添加下面代码，后台收款方式即可记录
-                    //    decimal _tempAmt7 = _saleTotalAmt - GetTotalPayedAmt();
-                    //    if (isRedirect)
-                    //    {
-                    //        _tempAmt7 = payAmt;
-                    //    }
-                    //    payAmtPaid = SIString.TryDec(_tempAmt7);
-                    //    payment = new t_payment_info() { rate = 1M, pay_way = "DIY", pay_name = "自定义支付" };
-                    //    payflow = SetPayFlowInfo(payAmtPaid, payment, _saleTotalAmt, _currentFlowNo, _card, _memo);
-                    //    _listPayFlow.Add(payflow);
-                    //    break;
+                    case "CHQ":
+                        decimal _tempAmt9 = _saleTotalAmt - GetTotalPayedAmt();
+                        if (isRedirect)
+                        {
+                            _tempAmt9 = payAmt;
+                        }
+                        payAmtPaid = SIString.TryDec(_tempAmt9);
+                        payment = new t_payment_info() { rate = 1M, pay_way = "CHQ", pay_name = "人民币支票" };
+                        payflow = SetPayFlowInfo(payAmtPaid, payment, _saleTotalAmt, _currentFlowNo, _card, _memo);
+                        _listPayFlow.Add(payflow);
+                        break;
+                    case "WXQR": //ice_bd_payment_info表添加付款方式后 pay_flag=0 （必须）添加下面代码，后台收款方式即可记录
+                        decimal _tempAmt7 = _saleTotalAmt - GetTotalPayedAmt();
+                        if (isRedirect)
+                        {
+                            _tempAmt7 = payAmt;
+                        }
+                        payAmtPaid = SIString.TryDec(_tempAmt7);
+                        payment = new t_payment_info() { rate = 1M, pay_way = "WXQR", pay_name = "微信扫码收款" };
+                        payflow = SetPayFlowInfo(payAmtPaid, payment, _saleTotalAmt, _currentFlowNo, _card, _memo);
+                        _listPayFlow.Add(payflow);
+                        break;
+                    case "ZFBQR":
+                        decimal _tempAmt8 = _saleTotalAmt - GetTotalPayedAmt();
+                        if (isRedirect)
+                        {
+                            _tempAmt8 = payAmt;
+                        }
+                        payAmtPaid = SIString.TryDec(_tempAmt8);
+                        payment = new t_payment_info() { rate = 1M, pay_way = "ZFBQR", pay_name = "支付宝扫码收款" };
+                        payflow = SetPayFlowInfo(payAmtPaid, payment, _saleTotalAmt, _currentFlowNo, _card, _memo);
+                        _listPayFlow.Add(payflow);
+                        break;
                     case "ZFB":
                         decimal _tempAmt4 = _saleTotalAmt - GetTotalPayedAmt();
                         if (isRedirect)
@@ -4233,9 +4259,9 @@
             {
                 LoggerHelper.Log("MsmkLogger", ex.ToString(), LogEnum.ExceptionLog);
             }
-            if (payWay.Equals("COU"))
+            if (payWay.ToUpper().Equals("COU"))
             {
-                
+                //购物券
 
 
                 FrmPayCou card = new FrmPayCou(this.SaleTotalAmt);
@@ -5201,7 +5227,16 @@
                         strPayWay = "挂账";
                         break;
                     case "ZFB":
-                        strPayWay = "支付宝";
+                        strPayWay = "支付宝支付";
+                        break;
+                    case "WECHAT":
+                        strPayWay = "微信支付";
+                        break;
+                    case "ZFBQR":
+                        strPayWay = "支付宝扫码收款";
+                        break;
+                    case "WXQR":
+                        strPayWay = "微信扫码收款";
                         break;
                     default:
                         break;
@@ -5862,11 +5897,11 @@
                         t_cur_payflow _pay = payinfo;
                         if (payinfo.flow_id == pay_flow_id)
                         {
-                            _pay.memo = memo;
+                            _pay.memo = (memo == "" ? payinfo.memo : memo);
                         }
                         else if (payinfo.flow_id == s_flow_id)
                         {
-                            _pay.memo = memo;
+                            _pay.memo = (memo == "" ? payinfo.memo : memo);
                         }
                         if (!string.IsNullOrEmpty(payinfo.voucher_no))
                         {

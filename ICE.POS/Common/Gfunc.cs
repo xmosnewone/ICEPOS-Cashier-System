@@ -881,13 +881,13 @@
                     "gdj",  "vip", "dou", "tot", "oth", 
                     "exit", "rmb","cdt", "csc", "gwq", 
                     "payother", "ads", "aca", "payesc","ret",
-            "lok","enter","opd","yezf","azs","agz","zfb","wechat"};
+            "lok","enter","opd","yezf","azs","agz","zfb","wechat","coupon"};
             PosOpType[] types = new PosOpType[] { 
                     PosOpType.PLU, PosOpType.数量, PosOpType.删除, PosOpType.单价, PosOpType.折扣, 
                     PosOpType.挂单, PosOpType.会员, PosOpType.营业员, PosOpType.结算, PosOpType.其他, 
                     PosOpType.退出, PosOpType.现金, PosOpType.银行卡, PosOpType.储值卡, PosOpType.购物券,      
                     PosOpType.其他方式, PosOpType.整单折扣, PosOpType.整单取消, PosOpType.支付退出, PosOpType.退货,
-            PosOpType.交易查询,PosOpType.现金,PosOpType.开钱箱,PosOpType.余额支付,PosOpType.整单赠送,PosOpType.挂账,PosOpType.支付宝,PosOpType.微信支付};
+            PosOpType.交易查询,PosOpType.现金,PosOpType.开钱箱,PosOpType.余额支付,PosOpType.整单赠送,PosOpType.挂账,PosOpType.支付宝,PosOpType.微信支付,PosOpType.优惠券};
             for (int index = 0; index < _dicTag.Length; index++)
             {
                 Gattr.DicPosOpType.Add(_dicTag[index], types[index]);
