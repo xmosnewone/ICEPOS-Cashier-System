@@ -40,6 +40,8 @@ namespace ICE.POS
             this.DialogResult = DialogResult.No;
 
             this.PayStatus = false;
+
+            this.auth_code.Focus();
         }
 
         private bool checkNetworkStatus() {
@@ -53,7 +55,7 @@ namespace ICE.POS
                     return false;
             }
             catch (Exception e) {
-                LoggerHelper.Log("MsmkLogger", Gattr.OperId + "微信刷卡网络异常！", LogEnum.SysLog);
+                LoggerHelper.Log("MsmkLogger", Gattr.OperId + "网络异常！请检查是否已联网", LogEnum.SysLog);
                 return false;
             }
           
@@ -62,44 +64,6 @@ namespace ICE.POS
         private void wechatpayCancle(object sender, EventArgs e)
         {
             this.Hide();
-        }
-
-        //检测扫码录入行为
-        private void onScancode(object sender, EventArgs e)
-        {
-            //MessageBox.Show(this.auth_code.Text);
-            String _result = String.Empty;
-             this._returnCode = this.auth_code.Text;
-             if (this._returnCode.Length>=18)
-             {
-                 //判读联网状态
-                 //if (checkNetworkStatus() == false)
-                 //{
-                   //  MessageBox.Show("微信支付需要在有网络状态下使用");
-                    // return;
-                 //}
-
-                 this.mention.Text = "扫码支付中,请稍后..";
-                 //执行支付
-                 _result=this.Execute_Wechatpay(this._returnCode, this.flow_no, this._payAmt);
-                 if (_result == "1")
-                 {
-                        this.PayStatus = true;
-                        this.mention.Text = "微信支付成功";
-                 }
-                 else if (Convert.ToString(_result) == "-3")
-                 {
-                        this.PayStatus = false;
-                        this.mention.Text = "缺少微信商户参数配置，请到后台设置";
-                 }
-                 else {
-                        this.PayStatus = false;
-                        this.mention.Text = "微信支付失败，请重试";
-                 }
-                
-              }
-
-             return;
         }
 
         //执行微信支付接口买单
@@ -216,5 +180,50 @@ namespace ICE.POS
             return isPaySuccess;
         }
 
+        private void onScancode(object sender, KeyEventArgs e)
+        {
+            if (e.Control)
+            {
+                return;
+            }
+
+            if (e.KeyCode== Keys.Enter) {
+
+                String _result = String.Empty;
+                this._returnCode = this.auth_code.Text;
+                if (this._returnCode.Length >= 18)
+                {
+                    //判读联网状态
+                    //if (checkNetworkStatus() == false)
+                    //{
+                    //  MessageBox.Show("微信支付需要在有网络状态下使用");
+                    // return;
+                    //}
+
+                    this.mention.Text = "扫码支付中,请稍后..";
+                    //执行支付
+                    _result = this.Execute_Wechatpay(this._returnCode, this.flow_no, this._payAmt);
+                    if (_result == "1")
+                    {
+                        this.PayStatus = true;
+                        this.mention.Text = "微信支付成功";
+                    }
+                    else if (Convert.ToString(_result) == "-3")
+                    {
+                        this.PayStatus = false;
+                        this.mention.Text = "缺少微信商户参数配置，请到后台设置";
+                    }
+                    else
+                    {
+                        this.PayStatus = false;
+                        this.mention.Text = "微信支付失败，请重试";
+                    }
+
+                }
+
+            }
+
+            return;
+        }
     }
 }

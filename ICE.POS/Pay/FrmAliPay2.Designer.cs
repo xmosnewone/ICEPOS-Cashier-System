@@ -62,7 +62,7 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Location = new System.Drawing.Point(7, 56);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(428, 128);
             this.panel1.TabIndex = 1;
@@ -81,11 +81,12 @@
             this.auth_code.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.auth_code.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.auth_code.Location = new System.Drawing.Point(12, 55);
-            this.auth_code.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.auth_code.Margin = new System.Windows.Forms.Padding(4);
             this.auth_code.Name = "auth_code";
             this.auth_code.Size = new System.Drawing.Size(411, 35);
             this.auth_code.TabIndex = 3;
             this.auth_code.Tag = "scancodetxt";
+            this.auth_code.KeyDown += new System.Windows.Forms.KeyEventHandler(this.onScancode);
             // 
             // AliPayAmt
             // 
@@ -121,7 +122,7 @@
             // surepay
             // 
             this.surepay.Location = new System.Drawing.Point(7, 192);
-            this.surepay.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.surepay.Margin = new System.Windows.Forms.Padding(4);
             this.surepay.Name = "surepay";
             this.surepay.Size = new System.Drawing.Size(127, 41);
             this.surepay.TabIndex = 2;
@@ -132,7 +133,7 @@
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(156, 192);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(127, 41);
             this.button2.TabIndex = 3;
@@ -143,7 +144,7 @@
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(308, 191);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(127, 41);
             this.button3.TabIndex = 4;
@@ -161,7 +162,7 @@
             this.Controls.Add(this.surepay);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "FrmAliPay2";
             this.Text = "支付宝扫码支付";
             this.panel1.ResumeLayout(false);

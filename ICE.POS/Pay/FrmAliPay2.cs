@@ -36,6 +36,8 @@ namespace ICE.POS
             this.DialogResult = DialogResult.No;
 
             this.PayStatus = false;
+
+            this.auth_code.Focus();
         }
 
         private void alipayCancle(object sender, EventArgs e)
@@ -44,84 +46,6 @@ namespace ICE.POS
 
         }
 
-        //检测扫码录入行为
-        private void onScancode(object sender, EventArgs e)
-        {
-            //MessageBox.Show(this.auth_code.Text);
-            String _result = String.Empty;
-            this._returnCode = this.auth_code.Text;
-            if (this._returnCode.Length >= 18)
-            {
-                //判读联网状态
-                //if (checkNetworkStatus() == false)
-                //{
-                //  MessageBox.Show("支付宝支付需要在有网络状态下使用");
-                // return;
-                //}
-
-                this.mention.Text = "扫码支付中,请稍后..";
-                //执行支付
-                _result = this.Execute_Wechatpay(this._returnCode, this.flow_no, this._payAmt);
-                string res = Convert.ToString(_result);
-                if (res == "1")
-                {
-                    this.PayStatus = true;
-                    this.mention.Text = "支付宝支付成功";
-                }
-                else if (res == "-3")
-                {
-                    this.PayStatus = false;
-                    this.mention.Text = "缺少支付宝商户参数配置，请到后台设置";
-                }
-                else if (res == "-9")
-                {
-                    this.PayStatus = false;
-                    this.mention.Text = "";
-                }
-                else
-                {
-                    this.PayStatus = false;
-                    this.mention.Text = "支付宝支付失败，请重试";
-                }
-
-            }
-
-            return;
-        }
-
-        //执行支付宝支付接口买单
-        public string Execute_Wechatpay(String auth_code, String flow_no, decimal pay_amt)
-        {
-            String wxResult = String.Empty;
-            bool isok = true;
-            string errorMessage = string.Empty;
-            Dictionary<string, object> _dic = new Dictionary<string, object>();
-            try
-            {
-                _dic.Add("username", Gattr.OperId);
-                _dic.Add("password", Gattr.Oper_Pwd);
-                _dic.Add("access_token", Gattr.access_token);
-                _dic.Add("client_id", Gattr.client_id);
-                _dic.Add("branch_no", Gattr.BranchNo);
-                _dic.Add("pay_amount", pay_amt);
-                _dic.Add("flow_no", flow_no);
-                _dic.Add("auth_code", auth_code);
-                wxResult = PServiceProvider.Instance.InvokeMethod(Gattr.serverUrl + "/aliPayFtf", _dic, ref isok, ref errorMessage);
-                if (wxResult == "1")
-                {
-                    LoggerHelper.Log("MsmkLogger", Gattr.OperId + "支付宝刷卡支付成功！", LogEnum.SysLog);
-                }
-                else
-                {
-                    LoggerHelper.Log("MsmkLogger", Gattr.OperId + "支付宝刷卡支付失败！", LogEnum.SysLog);
-                }
-            }
-            catch (Exception ex)
-            {
-                LoggerHelper.Log("MsmkLogger", "ICE.POS->FrmWechatPay-->Execute_Wechatpay:" + ex.ToString(), LogEnum.ExceptionLog);
-            }
-            return wxResult;
-        }
 
         public decimal ReturnMoney
         {
@@ -203,5 +127,87 @@ namespace ICE.POS
             }
             return isPaySuccess;
         }
+
+        private void onScancode(object sender, KeyEventArgs e)
+        {
+            if (e.Control)
+            {
+                return;
+            }
+
+            if (e.KeyCode == Keys.Enter)
+            {
+                String _result = String.Empty;
+                this._returnCode = this.auth_code.Text;
+                if (this._returnCode.Length >= 18)
+                {
+
+                    this.mention.Text = "扫码支付中,请稍后..";
+                    //执行支付
+                    _result = this.Execute_Alipay(this._returnCode, this.flow_no, this._payAmt);
+                    string res = Convert.ToString(_result);
+                    if (res == "1")
+                    {
+                        this.PayStatus = true;
+                        this.mention.Text = "支付宝支付成功";
+                    }
+                    else if (res == "-3")
+                    {
+                        this.PayStatus = false;
+                        this.mention.Text = "缺少支付宝商户参数配置，请到后台设置";
+                    }
+                    else if (res == "-9")
+                    {
+                        this.PayStatus = false;
+                        this.mention.Text = "";
+                    }
+                    else
+                    {
+                        this.PayStatus = false;
+                        this.mention.Text = "支付宝支付失败，请重试";
+                    }
+
+                }
+
+                return;
+
+            }
+        }
+
+        //执行支付宝支付接口买单
+        public string Execute_Alipay(String auth_code, String flow_no, decimal pay_amt)
+        {
+            String wxResult = String.Empty;
+            bool isok = true;
+            string errorMessage = string.Empty;
+            Dictionary<string, object> _dic = new Dictionary<string, object>();
+            try
+            {
+                _dic.Add("username", Gattr.OperId);
+                _dic.Add("password", Gattr.Oper_Pwd);
+                _dic.Add("access_token", Gattr.access_token);
+                _dic.Add("client_id", Gattr.client_id);
+                _dic.Add("branch_no", Gattr.BranchNo);
+                _dic.Add("pay_amount", pay_amt);
+                _dic.Add("flow_no", flow_no);
+                _dic.Add("auth_code", auth_code);
+                wxResult = PServiceProvider.Instance.InvokeMethod(Gattr.serverUrl + "/aliPayFtf", _dic, ref isok, ref errorMessage);
+                if (wxResult == "1")
+                {
+                    LoggerHelper.Log("MsmkLogger", Gattr.OperId + "支付宝刷卡支付成功！", LogEnum.SysLog);
+                }
+                else
+                {
+                    LoggerHelper.Log("MsmkLogger", Gattr.OperId + "支付宝刷卡支付失败！", LogEnum.SysLog);
+                }
+            }
+            catch (Exception ex)
+            {
+                LoggerHelper.Log("MsmkLogger", "ICE.POS->FrmWechatPay-->Execute_Wechatpay:" + ex.ToString(), LogEnum.ExceptionLog);
+            }
+            return wxResult;
+        }
+
+
     }
 }

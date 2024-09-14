@@ -62,7 +62,7 @@
             this.panel1.Controls.Add(this.auth_code);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Location = new System.Drawing.Point(7, 58);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(428, 128);
             this.panel1.TabIndex = 1;
@@ -105,13 +105,13 @@
             this.auth_code.Font = new System.Drawing.Font("宋体", 14F);
             this.auth_code.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.auth_code.Location = new System.Drawing.Point(12, 55);
-            this.auth_code.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.auth_code.Margin = new System.Windows.Forms.Padding(4);
             this.auth_code.MaxLength = 20;
             this.auth_code.Name = "auth_code";
             this.auth_code.Size = new System.Drawing.Size(411, 34);
             this.auth_code.TabIndex = 1;
             this.auth_code.Tag = "scancodetxt";
-            this.auth_code.TextChanged += new System.EventHandler(this.onScancode);
+            this.auth_code.KeyDown += new System.Windows.Forms.KeyEventHandler(this.onScancode);
             // 
             // label2
             // 
@@ -126,19 +126,18 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(308, 192);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(127, 41);
             this.button1.TabIndex = 4;
             this.button1.Text = "取消支付(ESC)";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.TextChanged += new System.EventHandler(this.onScancode);
             this.button1.Click += new System.EventHandler(this.wechatpayCancle);
             // 
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(160, 192);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(127, 41);
             this.button2.TabIndex = 3;
@@ -149,7 +148,7 @@
             // surepay
             // 
             this.surepay.Location = new System.Drawing.Point(7, 194);
-            this.surepay.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.surepay.Margin = new System.Windows.Forms.Padding(4);
             this.surepay.Name = "surepay";
             this.surepay.Size = new System.Drawing.Size(127, 41);
             this.surepay.TabIndex = 2;
@@ -167,7 +166,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "FrmWechatPay";
             this.Text = "微信扫码支付";
             this.panel1.ResumeLayout(false);
