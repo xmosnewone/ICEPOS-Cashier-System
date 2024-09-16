@@ -28,31 +28,51 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.surepay = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.wxPayAmt = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.mention = new System.Windows.Forms.Label();
             this.auth_code = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.surepay = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label1
+            // surepay
             // 
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(181)))), ((int)(((byte)(73)))));
-            this.label1.Font = new System.Drawing.Font("宋体", 14F);
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(1, -1);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(451, 54);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "微信扫码支付";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.surepay.Location = new System.Drawing.Point(7, 194);
+            this.surepay.Margin = new System.Windows.Forms.Padding(4);
+            this.surepay.Name = "surepay";
+            this.surepay.Size = new System.Drawing.Size(127, 41);
+            this.surepay.TabIndex = 2;
+            this.surepay.Text = "确认已支付";
+            this.surepay.UseVisualStyleBackColor = true;
+            this.surepay.Click += new System.EventHandler(this.paysuccess);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(160, 192);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(127, 41);
+            this.button2.TabIndex = 3;
+            this.button2.Text = "查询支付状态";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.checkPayStatus);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(308, 192);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(127, 41);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "取消支付(ESC)";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.wechatpayCancle);
             // 
             // panel1
             // 
@@ -123,38 +143,18 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "请扫描客户微信付款码";
             // 
-            // button1
+            // label1
             // 
-            this.button1.Location = new System.Drawing.Point(308, 192);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(127, 41);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "取消支付(ESC)";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.wechatpayCancle);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(160, 192);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(127, 41);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "查询支付状态";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.checkPayStatus);
-            // 
-            // surepay
-            // 
-            this.surepay.Location = new System.Drawing.Point(7, 194);
-            this.surepay.Margin = new System.Windows.Forms.Padding(4);
-            this.surepay.Name = "surepay";
-            this.surepay.Size = new System.Drawing.Size(127, 41);
-            this.surepay.TabIndex = 2;
-            this.surepay.Text = "确认已支付";
-            this.surepay.UseVisualStyleBackColor = true;
-            this.surepay.Click += new System.EventHandler(this.paysuccess);
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(181)))), ((int)(((byte)(73)))));
+            this.label1.Font = new System.Drawing.Font("宋体", 14F);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(1, -1);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(451, 54);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "微信扫码支付";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FrmWechatPay
             // 

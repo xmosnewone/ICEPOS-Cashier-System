@@ -42,7 +42,7 @@ namespace ICE.POS
 
         private void alipayCancle(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
 
         }
 
@@ -171,6 +171,10 @@ namespace ICE.POS
 
                 return;
 
+            } else if (e.KeyCode == Keys.Escape) {
+
+                base.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+
             }
         }
 
@@ -207,7 +211,6 @@ namespace ICE.POS
             }
             return wxResult;
         }
-
 
     }
 }

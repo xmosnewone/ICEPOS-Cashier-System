@@ -28,31 +28,51 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.surepay = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.mention = new System.Windows.Forms.Label();
             this.auth_code = new System.Windows.Forms.TextBox();
             this.AliPayAmt = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.surepay = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label1
+            // button3
             // 
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label1.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(1, -1);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(451, 54);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "支付宝扫码支付";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.button3.Location = new System.Drawing.Point(308, 191);
+            this.button3.Margin = new System.Windows.Forms.Padding(4);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(127, 41);
+            this.button3.TabIndex = 4;
+            this.button3.Text = "取消支付(ESC)";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.alipayCancle);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(156, 192);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(127, 41);
+            this.button2.TabIndex = 3;
+            this.button2.Text = "查询支付状态";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.checkPayStatus);
+            // 
+            // surepay
+            // 
+            this.surepay.Location = new System.Drawing.Point(7, 192);
+            this.surepay.Margin = new System.Windows.Forms.Padding(4);
+            this.surepay.Name = "surepay";
+            this.surepay.Size = new System.Drawing.Size(127, 41);
+            this.surepay.TabIndex = 2;
+            this.surepay.Text = "确认支付";
+            this.surepay.UseVisualStyleBackColor = true;
+            this.surepay.Click += new System.EventHandler(this.paysuccess);
             // 
             // panel1
             // 
@@ -119,38 +139,18 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "请扫描客户支付宝付款码";
             // 
-            // surepay
+            // label1
             // 
-            this.surepay.Location = new System.Drawing.Point(7, 192);
-            this.surepay.Margin = new System.Windows.Forms.Padding(4);
-            this.surepay.Name = "surepay";
-            this.surepay.Size = new System.Drawing.Size(127, 41);
-            this.surepay.TabIndex = 2;
-            this.surepay.Text = "确认支付";
-            this.surepay.UseVisualStyleBackColor = true;
-            this.surepay.Click += new System.EventHandler(this.paysuccess);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(156, 192);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(127, 41);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "查询支付状态";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.checkPayStatus);
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(308, 191);
-            this.button3.Margin = new System.Windows.Forms.Padding(4);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(127, 41);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "取消支付(ESC)";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.alipayCancle);
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label1.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(1, -1);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(451, 54);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "支付宝扫码支付";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FrmAliPay2
             // 

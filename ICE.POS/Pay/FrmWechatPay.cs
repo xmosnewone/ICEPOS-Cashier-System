@@ -222,6 +222,12 @@ namespace ICE.POS
                 }
 
             }
+            else if (e.KeyCode == Keys.Escape)
+            {
+
+                base.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+
+            }
 
             return;
         }

@@ -2,4 +2,3 @@ D:\Avooa\ICE.POS\ICE.POS.Model\bin\Release\ICE.POS.Model.dll
 D:\Avooa\ICE.POS\ICE.POS.Model\obj\Release\ICE.POS.Model.dll
 D:\wamp\www\iceposgithub\ICEPOS-Cashier-System\ICE.POS.Model\bin\Release\ICE.POS.Model.dll
 D:\wamp\www\iceposgithub\ICEPOS-Cashier-System\ICE.POS.Model\obj\Release\ICE.POS.Model.dll
-D:\wamp\www\iceposgithub\ICEPOS-Cashier-System\ICE.POS.Model\obj\Release\ICE.POS.Model.csprojResolveAssemblyReference.cache
