@@ -149,7 +149,7 @@ namespace ICE.POS.Model
             set { _is_stop = value; }
         }
 
-        private bool _isSelect = false;
+        private bool _isSelect = true;
         
         public bool isSelect
         {

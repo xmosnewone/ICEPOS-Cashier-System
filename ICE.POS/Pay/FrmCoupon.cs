@@ -36,7 +36,10 @@ namespace ICE.POS
        //DataGrid 数据
         public List<t_pos_coupon> couponList;
 
-        public FrmCoupon(decimal payAmt)
+        //记录主窗口当前账单所有已使用的优惠券
+        public List<t_pos_coupon> FrmcouponUsed;
+
+        public FrmCoupon(decimal payAmt,List<t_pos_coupon> _couponUsed)
         {
             InitializeComponent();
 
@@ -47,6 +50,10 @@ namespace ICE.POS
             this.dgItem.AutoGenerateColumns = false;
 
             this.couponList = new List<t_pos_coupon>();
+
+            this.FrmcouponUsed = new List<t_pos_coupon>();
+
+            this.FrmcouponUsed = _couponUsed;
         }
 
         private void couponCancle(object sender, EventArgs e)
@@ -166,11 +173,25 @@ namespace ICE.POS
         private void onScancode()
         {
             String _result = String.Empty;
-            this._returnCode = this.cpNo.Text;
+            this._returnCode = this.cpNo.Text.Trim();
 
             if (this._returnCode=="") {
                 return;
             }
+
+            //查询主窗口券码是否已存在
+            if (this.FrmcouponUsed.Count>0)
+            {
+                for (int i = 0; i < this.FrmcouponUsed.Count; i++)
+                {
+                    t_pos_coupon tpc = this.FrmcouponUsed[i];
+                    String g_no = tpc.giftcert_no;
+                    if (g_no== _returnCode) {
+                        this.mention.Text = "该券码已在本单中使用";
+                        return;
+                    }
+                }
+             }
 
             this.mention.Text = "券码检测中,请稍后..";
             //执行查询
