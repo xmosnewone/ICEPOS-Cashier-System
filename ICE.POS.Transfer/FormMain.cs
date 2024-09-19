@@ -297,6 +297,7 @@
             DataTable tableFlowNo = null;
             DataTable tablePayFlow = null;
             DataTable tableSaleFlow = null;
+            DataTable tableCoupon = null;
             try
             {
                 tableFlowNo = UploadInfoBLL.Instance.GetUploadPayNo(GlobalSet.dbsaleconn);
@@ -306,6 +307,7 @@
                     {
                         tablePayFlow = UploadInfoBLL.Instance.GetUploadPayInfoByFlowNo(GlobalSet.dbsaleconn, dr[0].ToString());
                         tableSaleFlow = UploadInfoBLL.Instance.GetUploadSaleInfoByFlowNo(GlobalSet.dbsaleconn, dr[0].ToString());
+                        tableCoupon = UploadInfoBLL.Instance.GetUploadCouponByFlowNo(GlobalSet.dbsaleconn, dr[0].ToString());
                         if ((tablePayFlow != null && tablePayFlow.Rows.Count > 0) || (tableSaleFlow != null && tableSaleFlow.Rows.Count > 0))
                         {
                             StringBuilder sb = new StringBuilder();
@@ -324,6 +326,14 @@
                             _dic.Add("access_token", GlobalSet.access_token);
                             _dic.Add("pay", JsonUtility.Instance.DataTableToJson(tablePayFlow));
                             _dic.Add("sale", JsonUtility.Instance.DataTableToJson(tableSaleFlow));
+                            if (tableCoupon != null && tableCoupon.Rows.Count > 0)
+                            {
+                                _dic.Add("coupon", JsonUtility.Instance.DataTableToJson(tableCoupon));//优惠券
+                            }
+                            else {
+                                _dic.Add("coupon", "");//优惠券
+                            }
+                            
                             string errorMessage = string.Empty;
                             bool isok11 = true;
                             string isConnect = PServiceProvider.Instance.InvokeMethod(GlobalSet.serverUrl + "/Testconn", _dic, ref isok11, ref errorMessage);
@@ -338,7 +348,11 @@
                                         if (result == 1)
                                         {
                                             UploadInfoBLL.Instance.UpdateFlowComFlag(GlobalSet.dbsaleconn, dr[0].ToString());
-                     
+                                            if (tableCoupon != null && tableCoupon.Rows.Count > 0)
+                                            {
+                                                UploadInfoBLL.Instance.UpdateCouponComFlag(GlobalSet.dbsaleconn, dr[0].ToString());//优惠券
+                                            }
+
                                             if (tablePayFlow != null && tablePayFlow.Rows.Count > 0)
                                             {
                                                 sb.AppendLine("流水号:" + dr[0].ToString() + "支付记录条数:" + tablePayFlow.Rows.Count);

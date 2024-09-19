@@ -46,7 +46,17 @@
             return UploadInfoDAL.GetUploadSaleInfoByFlowNo(connectionString, flowno);
         }
 
-        
+        public DataTable GetUploadCouponByFlowNo(String connectionString, String flowno)
+        {
+            return UploadInfoDAL.GetUploadCouponByFlowNo(connectionString, flowno);
+        }
+
+        public bool UpdateCouponComFlag(String connectionString, String flowno)
+        {
+            return UploadInfoDAL.UpdateCouponComFlag(connectionString, flowno);
+        }
+
+
         public bool UpdateFlowComFlag(String connectionString, String flowno)
         {
             return UploadInfoDAL.UpdateFlowComFlag(connectionString, flowno);

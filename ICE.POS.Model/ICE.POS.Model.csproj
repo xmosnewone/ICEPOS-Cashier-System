@@ -64,6 +64,7 @@
     <Compile Include="t_pos_printer_out.cs" />
     <Compile Include="t_pos_saleflow.cs" />
     <Compile Include="t_product_food.cs" />
+    <Compile Include="t_pos_coupon.cs" />
     <Compile Include="t_rm_plan_master.cs" />
     <Compile Include="t_sys_pos_set.cs" />
     <Compile Include="t_vip_acclist.cs" />

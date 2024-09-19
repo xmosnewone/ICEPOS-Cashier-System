@@ -1143,12 +1143,55 @@ namespace ICE.POS
         }
         #endregion
 
+
+        public void SaveCoupon(List<t_pos_coupon> listCoupon, IDbTransaction objTrans)
+        {
+            StringBuilder builder = new StringBuilder();
+            builder.Append("Insert into t_app_coupon(flow_no,giftcert_no,gift_type,branch_no,oper_uid,oper_date)");
+            builder.Append(" values(@flow_no,@giftcert_no,@gift_type,@branch_no,@oper_uid,@oper_date)");
+       
+            try
+            {
+                SQLiteCommand cmd = new SQLiteCommand
+                {
+                    Connection = base.dbPosSale,
+                    Transaction = objTrans as SQLiteTransaction,
+                    CommandText = builder.ToString()
+                };
+                foreach (t_pos_coupon _coupoon in listCoupon)
+                {
+                    this.PrepareCommandForCouponRow(cmd, _coupoon);
+                    cmd.ExecuteNonQuery();
+                }
+                cmd.Parameters.Clear();
+            }
+            catch (SQLiteException)
+            {
+                throw new Exception("优惠券数据保存失败!请联系系统管理员!!!");
+            }
+            catch (Exception)
+            {
+                throw new Exception("优惠券数据保存失败!请联系系统管理员!!!");
+            }
+        }
+        private void PrepareCommandForCouponRow(SQLiteCommand cmd, t_pos_coupon coupon)
+        {
+            cmd.Parameters.Clear();
+            cmd.Parameters.Add(new SQLiteParameter("@flow_no", coupon.flow_no));
+            cmd.Parameters.Add(new SQLiteParameter("@giftcert_no", coupon.giftcert_no));
+            cmd.Parameters.Add(new SQLiteParameter("@gift_type", coupon.gift_type));
+            cmd.Parameters.Add(new SQLiteParameter("@branch_no", coupon.branch_no));
+            cmd.Parameters.Add(new SQLiteParameter("@oper_uid", coupon.oper_uid));
+            cmd.Parameters.Add(new SQLiteParameter("@oper_date", ExtendUtility.Instance.ParseToDateTime(coupon.oper_date).ToString("s")));
+        }
+
+
         #region 开启事务
-        
-        
-        
-        
-        
+
+
+
+
+
         public bool BeginSQLTrans(ref IDbTransaction objTrans)
         {
             objTrans = base.dbPosSale.BeginTransaction();

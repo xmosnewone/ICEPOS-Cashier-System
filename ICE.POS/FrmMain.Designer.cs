@@ -24,19 +24,47 @@ namespace ICE.POS
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.tNowTime = new System.Windows.Forms.Timer(this.components);
             this.timeCursor = new System.Windows.Forms.Timer(this.components);
-            this.bindingPayFlow = new System.Windows.Forms.BindingSource(this.components);
-            this.bindingSaleFlow = new System.Windows.Forms.BindingSource(this.components);
             this.plOtherFunc = new ICE.POS.Common.PanelEx(this.components);
             this.lbxFunc = new System.Windows.Forms.ListBox();
             this.tblPanelBalance = new ICE.POS.Common.TableLayoutPanelEx(this.components);
             this.GvPayFlow = new System.Windows.Forms.DataGridView();
-            this.plPayListTilte = new ICE.POS.Common.PanelEx(this.components);
             this.plPayInfo = new ICE.POS.Common.PanelEx(this.components);
             this.gbPayInput = new System.Windows.Forms.GroupBox();
+            this.gbPayInfo = new System.Windows.Forms.GroupBox();
+            this.plPayTitle = new ICE.POS.Common.PanelEx(this.components);
+            this.tblPayWay = new ICE.POS.Common.TableLayoutPanelEx(this.components);
+            this.tlpMain = new ICE.POS.Common.TableLayoutPanelEx(this.components);
+            this.plButton = new ICE.POS.Common.PanelEx(this.components);
+            this.tlpBottom = new ICE.POS.Common.TableLayoutPanelEx(this.components);
+            this.tlpCenter = new ICE.POS.Common.TableLayoutPanelEx(this.components);
+            this.tlpCenterRight = new ICE.POS.Common.TableLayoutPanelEx(this.components);
+            this.plItem = new ICE.POS.Common.PanelEx(this.components);
+            this.plClsBig = new ICE.POS.Common.PanelEx(this.components);
+            this.plClsSmall = new ICE.POS.Common.PanelEx(this.components);
+            this.tlpSale = new ICE.POS.Common.TableLayoutPanelEx(this.components);
+            this.lbMessage = new System.Windows.Forms.Label();
+            this.GvSaleFlow = new System.Windows.Forms.DataGridView();
+            this.plSaleDown = new ICE.POS.Common.PanelEx(this.components);
+            this.tlpMiddleRight = new ICE.POS.Common.TableLayoutPanelEx(this.components);
+            this.tlpMiddleLeft = new ICE.POS.Common.PanelEx(this.components);
+            this.labelNetStatus = new System.Windows.Forms.Label();
+            this.lbVip = new System.Windows.Forms.Label();
+            this.lbShopAssistant = new System.Windows.Forms.Label();
+            this.lbShopAssistantValue = new System.Windows.Forms.Label();
+            this.lbVipValue = new System.Windows.Forms.Label();
+            this.lbNowTime = new System.Windows.Forms.Label();
+            this.lbCheckStandValue = new System.Windows.Forms.Label();
+            this.lbCheckStand = new System.Windows.Forms.Label();
+            this.plNumInput = new ICE.POS.Common.PanelEx(this.components);
+            this.lbCursor = new System.Windows.Forms.Label();
+            this.lbInput = new System.Windows.Forms.Label();
+            this.tblNum = new ICE.POS.Common.TableLayoutPanelEx(this.components);
+            this.bindingPayFlow = new System.Windows.Forms.BindingSource(this.components);
+            this.plPayListTilte = new ICE.POS.Common.PanelEx(this.components);
             this.plPayKey = new ICE.POS.Common.PanelEx(this.components);
             this.picPayNumEnter = new System.Windows.Forms.PictureBox();
             this.picPayNum3 = new System.Windows.Forms.PictureBox();
@@ -56,14 +84,11 @@ namespace ICE.POS
             this.plPayInput = new ICE.POS.Common.PanelEx(this.components);
             this.lbPayCursor = new System.Windows.Forms.Label();
             this.lbPayInput = new System.Windows.Forms.Label();
-            this.gbPayInfo = new System.Windows.Forms.GroupBox();
             this.plPayLeft = new ICE.POS.Common.PanelEx(this.components);
             this.lbPayAmtChange = new System.Windows.Forms.Label();
             this.lbPayAmtPaid = new System.Windows.Forms.Label();
             this.lbPayAmtRec = new System.Windows.Forms.Label();
             this.lbPayTotalAmt = new System.Windows.Forms.Label();
-            this.plPayTitle = new ICE.POS.Common.PanelEx(this.components);
-            this.tblPayWay = new ICE.POS.Common.TableLayoutPanelEx(this.components);
             this.btnPicFunWechat = new ICE.POS.Common.ButtonForPos();
             this.btnPicFuncPayEsc = new ICE.POS.Common.ButtonForPos();
             this.btnPicFunRmb = new ICE.POS.Common.ButtonForPos();
@@ -75,9 +100,6 @@ namespace ICE.POS
             this.btnPicFunAllcan = new ICE.POS.Common.ButtonForPos();
             this.btnPicFunAzs = new ICE.POS.Common.ButtonForPos();
             this.btnPicFunAgz = new ICE.POS.Common.ButtonForPos();
-            this.tlpMain = new ICE.POS.Common.TableLayoutPanelEx(this.components);
-            this.plButton = new ICE.POS.Common.PanelEx(this.components);
-            this.tlpBottom = new ICE.POS.Common.TableLayoutPanelEx(this.components);
             this.btnFastOther = new ICE.POS.Common.ButtonForPos();
             this.btnFastExit = new ICE.POS.Common.ButtonForPos();
             this.btnFastTot = new ICE.POS.Common.ButtonForPos();
@@ -88,23 +110,14 @@ namespace ICE.POS
             this.btnFastPnr = new ICE.POS.Common.ButtonForPos();
             this.btnFastDou = new ICE.POS.Common.ButtonForPos();
             this.btnFastVip = new ICE.POS.Common.ButtonForPos();
-            this.tlpCenter = new ICE.POS.Common.TableLayoutPanelEx(this.components);
-            this.tlpCenterRight = new ICE.POS.Common.TableLayoutPanelEx(this.components);
-            this.plItem = new ICE.POS.Common.PanelEx(this.components);
-            this.plClsBig = new ICE.POS.Common.PanelEx(this.components);
             this.btnClsNextPage = new ICE.POS.Common.ButtonForPos();
-            this.plClsSmall = new ICE.POS.Common.PanelEx(this.components);
             this.btnClsSmallLeft = new ICE.POS.Common.ButtonForPos();
             this.btnClsPriorPage = new ICE.POS.Common.ButtonForPos();
             this.btnClsSmallRight = new ICE.POS.Common.ButtonForPos();
-            this.tlpSale = new ICE.POS.Common.TableLayoutPanelEx(this.components);
-            this.lbMessage = new System.Windows.Forms.Label();
             this.plSaleTitle = new ICE.POS.Common.PanelEx(this.components);
-            this.GvSaleFlow = new System.Windows.Forms.DataGridView();
-            this.plSaleDown = new ICE.POS.Common.PanelEx(this.components);
+            this.bindingSaleFlow = new System.Windows.Forms.BindingSource(this.components);
             this.btnSaleDown = new ICE.POS.Common.ButtonForPos();
             this.btnSaleUp = new ICE.POS.Common.ButtonForPos();
-            this.tlpMiddleRight = new ICE.POS.Common.TableLayoutPanelEx(this.components);
             this.plQtyLeft = new ICE.POS.Common.PanelEx(this.components);
             this.plQtyRight = new ICE.POS.Common.PanelEx(this.components);
             this.plQtyCenter = new ICE.POS.Common.PanelEx(this.components);
@@ -118,19 +131,6 @@ namespace ICE.POS
             this.plTop = new ICE.POS.Common.PanelEx(this.components);
             this.picLogo = new System.Windows.Forms.PictureBox();
             this.lbApplication = new System.Windows.Forms.Label();
-            this.tlpMiddleLeft = new ICE.POS.Common.PanelEx(this.components);
-            this.labelNetStatus = new System.Windows.Forms.Label();
-            this.lbVip = new System.Windows.Forms.Label();
-            this.lbShopAssistant = new System.Windows.Forms.Label();
-            this.lbShopAssistantValue = new System.Windows.Forms.Label();
-            this.lbVipValue = new System.Windows.Forms.Label();
-            this.lbNowTime = new System.Windows.Forms.Label();
-            this.lbCheckStandValue = new System.Windows.Forms.Label();
-            this.lbCheckStand = new System.Windows.Forms.Label();
-            this.plNumInput = new ICE.POS.Common.PanelEx(this.components);
-            this.lbCursor = new System.Windows.Forms.Label();
-            this.lbInput = new System.Windows.Forms.Label();
-            this.tblNum = new ICE.POS.Common.TableLayoutPanelEx(this.components);
             this.btnSaleNum0 = new ICE.POS.Common.ButtonForPos();
             this.btnSaleNumEnter = new ICE.POS.Common.ButtonForPos();
             this.btnSaleNumDot = new ICE.POS.Common.ButtonForPos();
@@ -146,13 +146,27 @@ namespace ICE.POS
             this.btnSaleNumReset = new ICE.POS.Common.ButtonForPos();
             this.btnSaleNumBack = new ICE.POS.Common.ButtonForPos();
             this.btnSaleNumDiv = new ICE.POS.Common.ButtonForPos();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingPayFlow)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSaleFlow)).BeginInit();
             this.plOtherFunc.SuspendLayout();
             this.tblPanelBalance.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GvPayFlow)).BeginInit();
             this.plPayInfo.SuspendLayout();
             this.gbPayInput.SuspendLayout();
+            this.gbPayInfo.SuspendLayout();
+            this.plPayTitle.SuspendLayout();
+            this.tblPayWay.SuspendLayout();
+            this.tlpMain.SuspendLayout();
+            this.plButton.SuspendLayout();
+            this.tlpBottom.SuspendLayout();
+            this.tlpCenter.SuspendLayout();
+            this.tlpCenterRight.SuspendLayout();
+            this.tlpSale.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GvSaleFlow)).BeginInit();
+            this.plSaleDown.SuspendLayout();
+            this.tlpMiddleRight.SuspendLayout();
+            this.tlpMiddleLeft.SuspendLayout();
+            this.plNumInput.SuspendLayout();
+            this.tblNum.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingPayFlow)).BeginInit();
             this.plPayKey.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picPayNumEnter)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPayNum3)).BeginInit();
@@ -170,10 +184,7 @@ namespace ICE.POS
             ((System.ComponentModel.ISupportInitialize)(this.picPayNum7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.plPayInput.SuspendLayout();
-            this.gbPayInfo.SuspendLayout();
             this.plPayLeft.SuspendLayout();
-            this.plPayTitle.SuspendLayout();
-            this.tblPayWay.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnPicFunWechat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnPicFuncPayEsc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnPicFunRmb)).BeginInit();
@@ -185,9 +196,6 @@ namespace ICE.POS
             ((System.ComponentModel.ISupportInitialize)(this.btnPicFunAllcan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnPicFunAzs)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnPicFunAgz)).BeginInit();
-            this.tlpMain.SuspendLayout();
-            this.plButton.SuspendLayout();
-            this.tlpBottom.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnFastOther)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnFastExit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnFastTot)).BeginInit();
@@ -198,25 +206,17 @@ namespace ICE.POS
             ((System.ComponentModel.ISupportInitialize)(this.btnFastPnr)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnFastDou)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnFastVip)).BeginInit();
-            this.tlpCenter.SuspendLayout();
-            this.tlpCenterRight.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnClsNextPage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClsSmallLeft)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClsPriorPage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClsSmallRight)).BeginInit();
-            this.tlpSale.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.GvSaleFlow)).BeginInit();
-            this.plSaleDown.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSaleFlow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSaleDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSaleUp)).BeginInit();
-            this.tlpMiddleRight.SuspendLayout();
             this.plQtyCenter.SuspendLayout();
             this.plAmtCenter.SuspendLayout();
             this.plTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
-            this.tlpMiddleLeft.SuspendLayout();
-            this.plNumInput.SuspendLayout();
-            this.tblNum.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnSaleNum0)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSaleNumEnter)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSaleNumDot)).BeginInit();
@@ -328,7 +328,7 @@ namespace ICE.POS
             this.GvPayFlow.AutoGenerateColumns = false;
             this.GvPayFlow.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.GvPayFlow.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.GvPayFlow.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.GvPayFlow.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.GvPayFlow.ColumnHeadersVisible = false;
             this.GvPayFlow.DataSource = this.bindingPayFlow;
             this.GvPayFlow.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -343,17 +343,6 @@ namespace ICE.POS
             this.GvPayFlow.Size = new System.Drawing.Size(677, 88);
             this.GvPayFlow.TabIndex = 0;
             this.GvPayFlow.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.GvPayFlow_DataError);
-            // 
-            // plPayListTilte
-            // 
-            this.plPayListTilte.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.plPayListTilte.BackgroundImage = global::ICE.POS.Properties.Resources.pay_title;
-            this.plPayListTilte.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.plPayListTilte.Location = new System.Drawing.Point(5, 321);
-            this.plPayListTilte.Margin = new System.Windows.Forms.Padding(1, 0, 0, 0);
-            this.plPayListTilte.Name = "plPayListTilte";
-            this.plPayListTilte.Size = new System.Drawing.Size(677, 26);
-            this.plPayListTilte.TabIndex = 2;
             // 
             // plPayInfo
             // 
@@ -379,6 +368,494 @@ namespace ICE.POS
             this.gbPayInput.TabIndex = 1;
             this.gbPayInput.TabStop = false;
             this.gbPayInput.Text = "金额输入";
+            // 
+            // gbPayInfo
+            // 
+            this.gbPayInfo.Controls.Add(this.plPayLeft);
+            this.gbPayInfo.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.gbPayInfo.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.gbPayInfo.Location = new System.Drawing.Point(3, 1);
+            this.gbPayInfo.Name = "gbPayInfo";
+            this.gbPayInfo.Size = new System.Drawing.Size(300, 243);
+            this.gbPayInfo.TabIndex = 0;
+            this.gbPayInfo.TabStop = false;
+            this.gbPayInfo.Text = "付款信息";
+            // 
+            // plPayTitle
+            // 
+            this.plPayTitle.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.plPayTitle.Controls.Add(this.tblPayWay);
+            this.plPayTitle.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.plPayTitle.Location = new System.Drawing.Point(4, 4);
+            this.plPayTitle.Margin = new System.Windows.Forms.Padding(0);
+            this.plPayTitle.Name = "plPayTitle";
+            this.plPayTitle.Size = new System.Drawing.Size(678, 69);
+            this.plPayTitle.TabIndex = 4;
+            // 
+            // tblPayWay
+            // 
+            this.tblPayWay.BackColor = System.Drawing.Color.Transparent;
+            this.tblPayWay.ColumnCount = 11;
+            this.tblPayWay.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tblPayWay.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tblPayWay.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tblPayWay.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tblPayWay.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tblPayWay.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tblPayWay.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tblPayWay.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tblPayWay.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tblPayWay.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tblPayWay.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 54F));
+            this.tblPayWay.Controls.Add(this.btnPicFunWechat, 3, 0);
+            this.tblPayWay.Controls.Add(this.btnPicFuncPayEsc, 9, 0);
+            this.tblPayWay.Controls.Add(this.btnPicFunRmb, 0, 0);
+            this.tblPayWay.Controls.Add(this.btnPicFunCup, 1, 0);
+            this.tblPayWay.Controls.Add(this.btnPicFunZfb, 2, 0);
+            this.tblPayWay.Controls.Add(this.btnPicFunCou, 4, 0);
+            this.tblPayWay.Controls.Add(this.btnPicFunPayOther, 5, 0);
+            this.tblPayWay.Controls.Add(this.btnPicFunAllDis, 5, 0);
+            this.tblPayWay.Controls.Add(this.btnPicFunAllcan, 8, 0);
+            this.tblPayWay.Controls.Add(this.btnPicFunAzs, 6, 0);
+            this.tblPayWay.Controls.Add(this.btnPicFunAgz, 7, 0);
+            this.tblPayWay.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tblPayWay.Location = new System.Drawing.Point(0, 0);
+            this.tblPayWay.Margin = new System.Windows.Forms.Padding(0);
+            this.tblPayWay.Name = "tblPayWay";
+            this.tblPayWay.RowCount = 1;
+            this.tblPayWay.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tblPayWay.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tblPayWay.Size = new System.Drawing.Size(678, 69);
+            this.tblPayWay.TabIndex = 1;
+            // 
+            // tlpMain
+            // 
+            this.tlpMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(212)))), ((int)(((byte)(219)))));
+            this.tlpMain.ColumnCount = 2;
+            this.tlpMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 400F));
+            this.tlpMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpMain.Controls.Add(this.plButton, 0, 3);
+            this.tlpMain.Controls.Add(this.tlpCenter, 0, 2);
+            this.tlpMain.Controls.Add(this.tlpMiddleRight, 1, 1);
+            this.tlpMain.Controls.Add(this.plTop, 0, 0);
+            this.tlpMain.Controls.Add(this.tlpMiddleLeft, 0, 1);
+            this.tlpMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpMain.Location = new System.Drawing.Point(0, 0);
+            this.tlpMain.Margin = new System.Windows.Forms.Padding(0);
+            this.tlpMain.Name = "tlpMain";
+            this.tlpMain.RowCount = 4;
+            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
+            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 105F));
+            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 80F));
+            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpMain.Size = new System.Drawing.Size(796, 574);
+            this.tlpMain.TabIndex = 7;
+            // 
+            // plButton
+            // 
+            this.plButton.BackColor = System.Drawing.Color.LightGreen;
+            this.tlpMain.SetColumnSpan(this.plButton, 2);
+            this.plButton.Controls.Add(this.tlpBottom);
+            this.plButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.plButton.Location = new System.Drawing.Point(0, 494);
+            this.plButton.Margin = new System.Windows.Forms.Padding(0);
+            this.plButton.Name = "plButton";
+            this.plButton.Size = new System.Drawing.Size(796, 80);
+            this.plButton.TabIndex = 8;
+            // 
+            // tlpBottom
+            // 
+            this.tlpBottom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.tlpBottom.ColumnCount = 10;
+            this.tlpBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.999999F));
+            this.tlpBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.999999F));
+            this.tlpBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.999999F));
+            this.tlpBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.999999F));
+            this.tlpBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.999999F));
+            this.tlpBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.999999F));
+            this.tlpBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.999999F));
+            this.tlpBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.999999F));
+            this.tlpBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.999999F));
+            this.tlpBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.999999F));
+            this.tlpBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpBottom.Controls.Add(this.btnFastOther, 8, 0);
+            this.tlpBottom.Controls.Add(this.btnFastExit, 9, 0);
+            this.tlpBottom.Controls.Add(this.btnFastTot, 7, 0);
+            this.tlpBottom.Controls.Add(this.btnFastNum, 0, 0);
+            this.tlpBottom.Controls.Add(this.btnFastDel, 1, 0);
+            this.tlpBottom.Controls.Add(this.btnFastPrc, 2, 0);
+            this.tlpBottom.Controls.Add(this.btnFastDct, 3, 0);
+            this.tlpBottom.Controls.Add(this.btnFastPnr, 4, 0);
+            this.tlpBottom.Controls.Add(this.btnFastDou, 6, 0);
+            this.tlpBottom.Controls.Add(this.btnFastVip, 5, 0);
+            this.tlpBottom.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpBottom.Location = new System.Drawing.Point(0, 0);
+            this.tlpBottom.Margin = new System.Windows.Forms.Padding(5);
+            this.tlpBottom.Name = "tlpBottom";
+            this.tlpBottom.RowCount = 2;
+            this.tlpBottom.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 80F));
+            this.tlpBottom.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpBottom.Size = new System.Drawing.Size(796, 80);
+            this.tlpBottom.TabIndex = 1;
+            // 
+            // tlpCenter
+            // 
+            this.tlpCenter.ColumnCount = 2;
+            this.tlpMain.SetColumnSpan(this.tlpCenter, 2);
+            this.tlpCenter.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 400F));
+            this.tlpCenter.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpCenter.Controls.Add(this.tlpCenterRight, 0, 0);
+            this.tlpCenter.Controls.Add(this.tlpSale, 0, 0);
+            this.tlpCenter.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpCenter.Location = new System.Drawing.Point(0, 150);
+            this.tlpCenter.Margin = new System.Windows.Forms.Padding(0);
+            this.tlpCenter.Name = "tlpCenter";
+            this.tlpCenter.RowCount = 1;
+            this.tlpCenter.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpCenter.Size = new System.Drawing.Size(796, 344);
+            this.tlpCenter.TabIndex = 3;
+            // 
+            // tlpCenterRight
+            // 
+            this.tlpCenterRight.ColumnCount = 4;
+            this.tlpCenterRight.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tlpCenterRight.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpCenterRight.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 38F));
+            this.tlpCenterRight.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tlpCenterRight.Controls.Add(this.plItem, 0, 1);
+            this.tlpCenterRight.Controls.Add(this.plClsBig, 2, 2);
+            this.tlpCenterRight.Controls.Add(this.btnClsNextPage, 2, 3);
+            this.tlpCenterRight.Controls.Add(this.plClsSmall, 1, 0);
+            this.tlpCenterRight.Controls.Add(this.btnClsSmallLeft, 0, 0);
+            this.tlpCenterRight.Controls.Add(this.btnClsPriorPage, 2, 1);
+            this.tlpCenterRight.Controls.Add(this.btnClsSmallRight, 3, 0);
+            this.tlpCenterRight.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpCenterRight.Location = new System.Drawing.Point(400, 0);
+            this.tlpCenterRight.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
+            this.tlpCenterRight.Name = "tlpCenterRight";
+            this.tlpCenterRight.RowCount = 4;
+            this.tlpCenterRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 80F));
+            this.tlpCenterRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tlpCenterRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpCenterRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tlpCenterRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpCenterRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpCenterRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpCenterRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpCenterRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpCenterRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpCenterRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpCenterRight.Size = new System.Drawing.Size(393, 344);
+            this.tlpCenterRight.TabIndex = 2;
+            // 
+            // plItem
+            // 
+            this.plItem.BackColor = System.Drawing.Color.Silver;
+            this.tlpCenterRight.SetColumnSpan(this.plItem, 2);
+            this.plItem.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.plItem.Location = new System.Drawing.Point(0, 80);
+            this.plItem.Margin = new System.Windows.Forms.Padding(0);
+            this.plItem.Name = "plItem";
+            this.tlpCenterRight.SetRowSpan(this.plItem, 3);
+            this.plItem.Size = new System.Drawing.Size(305, 264);
+            this.plItem.TabIndex = 10;
+            // 
+            // plClsBig
+            // 
+            this.plClsBig.BackColor = System.Drawing.Color.LightGray;
+            this.tlpCenterRight.SetColumnSpan(this.plClsBig, 2);
+            this.plClsBig.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.plClsBig.Location = new System.Drawing.Point(305, 130);
+            this.plClsBig.Margin = new System.Windows.Forms.Padding(0, 0, 2, 0);
+            this.plClsBig.Name = "plClsBig";
+            this.plClsBig.Size = new System.Drawing.Size(86, 164);
+            this.plClsBig.TabIndex = 3;
+            // 
+            // plClsSmall
+            // 
+            this.plClsSmall.BackColor = System.Drawing.Color.LightGray;
+            this.tlpCenterRight.SetColumnSpan(this.plClsSmall, 2);
+            this.plClsSmall.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.plClsSmall.Location = new System.Drawing.Point(50, 0);
+            this.plClsSmall.Margin = new System.Windows.Forms.Padding(0);
+            this.plClsSmall.Name = "plClsSmall";
+            this.plClsSmall.Size = new System.Drawing.Size(293, 80);
+            this.plClsSmall.TabIndex = 6;
+            // 
+            // tlpSale
+            // 
+            this.tlpSale.BackColor = System.Drawing.Color.Gray;
+            this.tlpSale.ColumnCount = 1;
+            this.tlpSale.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpSale.Controls.Add(this.lbMessage, 0, 3);
+            this.tlpSale.Controls.Add(this.plSaleTitle, 0, 0);
+            this.tlpSale.Controls.Add(this.GvSaleFlow, 0, 1);
+            this.tlpSale.Controls.Add(this.plSaleDown, 0, 2);
+            this.tlpSale.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpSale.Location = new System.Drawing.Point(0, 0);
+            this.tlpSale.Margin = new System.Windows.Forms.Padding(0);
+            this.tlpSale.Name = "tlpSale";
+            this.tlpSale.RowCount = 4;
+            this.tlpSale.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 36F));
+            this.tlpSale.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpSale.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tlpSale.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tlpSale.Size = new System.Drawing.Size(400, 344);
+            this.tlpSale.TabIndex = 0;
+            // 
+            // lbMessage
+            // 
+            this.lbMessage.BackColor = System.Drawing.SystemColors.Control;
+            this.lbMessage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbMessage.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lbMessage.Location = new System.Drawing.Point(0, 304);
+            this.lbMessage.Margin = new System.Windows.Forms.Padding(0);
+            this.lbMessage.Name = "lbMessage";
+            this.lbMessage.Size = new System.Drawing.Size(400, 40);
+            this.lbMessage.TabIndex = 0;
+            this.lbMessage.Text = "Messages";
+            this.lbMessage.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // GvSaleFlow
+            // 
+            this.GvSaleFlow.AllowUserToAddRows = false;
+            this.GvSaleFlow.AllowUserToDeleteRows = false;
+            this.GvSaleFlow.AutoGenerateColumns = false;
+            this.GvSaleFlow.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GvSaleFlow.DataSource = this.bindingSaleFlow;
+            this.GvSaleFlow.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.GvSaleFlow.Location = new System.Drawing.Point(0, 36);
+            this.GvSaleFlow.Margin = new System.Windows.Forms.Padding(0);
+            this.GvSaleFlow.MultiSelect = false;
+            this.GvSaleFlow.Name = "GvSaleFlow";
+            this.GvSaleFlow.ReadOnly = true;
+            this.GvSaleFlow.RowTemplate.Height = 52;
+            this.GvSaleFlow.RowTemplate.ReadOnly = true;
+            this.GvSaleFlow.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.GvSaleFlow.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.GvSaleFlow.Size = new System.Drawing.Size(400, 228);
+            this.GvSaleFlow.TabIndex = 2;
+            // 
+            // plSaleDown
+            // 
+            this.plSaleDown.BackColor = System.Drawing.Color.White;
+            this.plSaleDown.Controls.Add(this.btnSaleDown);
+            this.plSaleDown.Controls.Add(this.btnSaleUp);
+            this.plSaleDown.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.plSaleDown.Location = new System.Drawing.Point(0, 264);
+            this.plSaleDown.Margin = new System.Windows.Forms.Padding(0);
+            this.plSaleDown.Name = "plSaleDown";
+            this.plSaleDown.Size = new System.Drawing.Size(400, 40);
+            this.plSaleDown.TabIndex = 3;
+            // 
+            // tlpMiddleRight
+            // 
+            this.tlpMiddleRight.BackColor = System.Drawing.Color.Silver;
+            this.tlpMiddleRight.ColumnCount = 6;
+            this.tlpMiddleRight.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 18F));
+            this.tlpMiddleRight.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpMiddleRight.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 19F));
+            this.tlpMiddleRight.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 17F));
+            this.tlpMiddleRight.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpMiddleRight.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 18F));
+            this.tlpMiddleRight.Controls.Add(this.plQtyLeft, 3, 0);
+            this.tlpMiddleRight.Controls.Add(this.plQtyRight, 5, 0);
+            this.tlpMiddleRight.Controls.Add(this.plQtyCenter, 4, 0);
+            this.tlpMiddleRight.Controls.Add(this.plAmtRight, 2, 0);
+            this.tlpMiddleRight.Controls.Add(this.plAmtCenter, 1, 0);
+            this.tlpMiddleRight.Controls.Add(this.plAmtLeft, 0, 0);
+            this.tlpMiddleRight.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpMiddleRight.Location = new System.Drawing.Point(400, 45);
+            this.tlpMiddleRight.Margin = new System.Windows.Forms.Padding(0);
+            this.tlpMiddleRight.Name = "tlpMiddleRight";
+            this.tlpMiddleRight.RowCount = 1;
+            this.tlpMiddleRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpMiddleRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpMiddleRight.Size = new System.Drawing.Size(396, 105);
+            this.tlpMiddleRight.TabIndex = 1;
+            // 
+            // tlpMiddleLeft
+            // 
+            this.tlpMiddleLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(234)))), ((int)(((byte)(238)))));
+            this.tlpMiddleLeft.Controls.Add(this.labelNetStatus);
+            this.tlpMiddleLeft.Controls.Add(this.lbVip);
+            this.tlpMiddleLeft.Controls.Add(this.lbShopAssistant);
+            this.tlpMiddleLeft.Controls.Add(this.lbShopAssistantValue);
+            this.tlpMiddleLeft.Controls.Add(this.lbVipValue);
+            this.tlpMiddleLeft.Controls.Add(this.lbNowTime);
+            this.tlpMiddleLeft.Controls.Add(this.lbCheckStandValue);
+            this.tlpMiddleLeft.Controls.Add(this.lbCheckStand);
+            this.tlpMiddleLeft.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpMiddleLeft.Location = new System.Drawing.Point(0, 45);
+            this.tlpMiddleLeft.Margin = new System.Windows.Forms.Padding(0);
+            this.tlpMiddleLeft.Name = "tlpMiddleLeft";
+            this.tlpMiddleLeft.Size = new System.Drawing.Size(400, 105);
+            this.tlpMiddleLeft.TabIndex = 6;
+            // 
+            // labelNetStatus
+            // 
+            this.labelNetStatus.AutoSize = true;
+            this.labelNetStatus.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labelNetStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.labelNetStatus.Location = new System.Drawing.Point(218, 43);
+            this.labelNetStatus.Name = "labelNetStatus";
+            this.labelNetStatus.Size = new System.Drawing.Size(92, 27);
+            this.labelNetStatus.TabIndex = 30;
+            this.labelNetStatus.Text = "联网状态";
+            // 
+            // lbVip
+            // 
+            this.lbVip.AutoSize = true;
+            this.lbVip.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lbVip.Location = new System.Drawing.Point(3, 75);
+            this.lbVip.Name = "lbVip";
+            this.lbVip.Size = new System.Drawing.Size(75, 27);
+            this.lbVip.TabIndex = 0;
+            this.lbVip.Text = "会   员:";
+            // 
+            // lbShopAssistant
+            // 
+            this.lbShopAssistant.AutoSize = true;
+            this.lbShopAssistant.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lbShopAssistant.Location = new System.Drawing.Point(3, 42);
+            this.lbShopAssistant.Name = "lbShopAssistant";
+            this.lbShopAssistant.Size = new System.Drawing.Size(77, 27);
+            this.lbShopAssistant.TabIndex = 0;
+            this.lbShopAssistant.Text = "收银员:";
+            // 
+            // lbShopAssistantValue
+            // 
+            this.lbShopAssistantValue.AutoSize = true;
+            this.lbShopAssistantValue.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lbShopAssistantValue.Location = new System.Drawing.Point(71, 47);
+            this.lbShopAssistantValue.Name = "lbShopAssistantValue";
+            this.lbShopAssistantValue.Size = new System.Drawing.Size(143, 18);
+            this.lbShopAssistantValue.TabIndex = 0;
+            this.lbShopAssistantValue.Text = "【10002】管理员";
+            // 
+            // lbVipValue
+            // 
+            this.lbVipValue.AutoSize = true;
+            this.lbVipValue.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lbVipValue.Location = new System.Drawing.Point(70, 80);
+            this.lbVipValue.Name = "lbVipValue";
+            this.lbVipValue.Size = new System.Drawing.Size(0, 18);
+            this.lbVipValue.TabIndex = 0;
+            // 
+            // lbNowTime
+            // 
+            this.lbNowTime.AutoSize = true;
+            this.lbNowTime.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lbNowTime.Location = new System.Drawing.Point(196, 12);
+            this.lbNowTime.Name = "lbNowTime";
+            this.lbNowTime.Size = new System.Drawing.Size(214, 27);
+            this.lbNowTime.TabIndex = 0;
+            this.lbNowTime.Text = "0000-00-00 00:00:00";
+            // 
+            // lbCheckStandValue
+            // 
+            this.lbCheckStandValue.AutoSize = true;
+            this.lbCheckStandValue.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lbCheckStandValue.Location = new System.Drawing.Point(71, 12);
+            this.lbCheckStandValue.Name = "lbCheckStandValue";
+            this.lbCheckStandValue.Size = new System.Drawing.Size(89, 18);
+            this.lbCheckStandValue.TabIndex = 0;
+            this.lbCheckStandValue.Text = "【10002】";
+            // 
+            // lbCheckStand
+            // 
+            this.lbCheckStand.AutoSize = true;
+            this.lbCheckStand.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lbCheckStand.Location = new System.Drawing.Point(3, 7);
+            this.lbCheckStand.Name = "lbCheckStand";
+            this.lbCheckStand.Size = new System.Drawing.Size(77, 27);
+            this.lbCheckStand.TabIndex = 0;
+            this.lbCheckStand.Text = "收银台:";
+            // 
+            // plNumInput
+            // 
+            this.plNumInput.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tblNum.SetColumnSpan(this.plNumInput, 5);
+            this.plNumInput.Controls.Add(this.lbCursor);
+            this.plNumInput.Controls.Add(this.lbInput);
+            this.plNumInput.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.plNumInput.Location = new System.Drawing.Point(3, 3);
+            this.plNumInput.Name = "plNumInput";
+            this.plNumInput.Size = new System.Drawing.Size(459, 64);
+            this.plNumInput.TabIndex = 0;
+            // 
+            // lbCursor
+            // 
+            this.lbCursor.BackColor = System.Drawing.Color.Black;
+            this.lbCursor.Font = new System.Drawing.Font("宋体", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lbCursor.Location = new System.Drawing.Point(100, 40);
+            this.lbCursor.Name = "lbCursor";
+            this.lbCursor.Size = new System.Drawing.Size(3, 50);
+            this.lbCursor.TabIndex = 1;
+            // 
+            // lbInput
+            // 
+            this.lbInput.BackColor = System.Drawing.Color.White;
+            this.lbInput.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbInput.Font = new System.Drawing.Font("宋体", 40F, System.Drawing.FontStyle.Bold);
+            this.lbInput.Location = new System.Drawing.Point(0, 0);
+            this.lbInput.Margin = new System.Windows.Forms.Padding(0);
+            this.lbInput.Name = "lbInput";
+            this.lbInput.Size = new System.Drawing.Size(459, 64);
+            this.lbInput.TabIndex = 0;
+            this.lbInput.Text = "1234567890123";
+            this.lbInput.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // tblNum
+            // 
+            this.tblNum.BackColor = System.Drawing.Color.Transparent;
+            this.tblNum.ColumnCount = 5;
+            this.tblNum.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tblNum.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0005F));
+            this.tblNum.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0005F));
+            this.tblNum.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0005F));
+            this.tblNum.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.9985F));
+            this.tblNum.Controls.Add(this.btnSaleNum0, 0, 3);
+            this.tblNum.Controls.Add(this.plNumInput, 0, 0);
+            this.tblNum.Controls.Add(this.btnSaleNumEnter, 4, 3);
+            this.tblNum.Controls.Add(this.btnSaleNumDot, 0, 2);
+            this.tblNum.Controls.Add(this.btnSaleNum8, 2, 1);
+            this.tblNum.Controls.Add(this.btnSaleNum1, 1, 3);
+            this.tblNum.Controls.Add(this.btnSaleNum9, 3, 1);
+            this.tblNum.Controls.Add(this.btnSaleNum3, 3, 3);
+            this.tblNum.Controls.Add(this.btnSaleNum7, 1, 1);
+            this.tblNum.Controls.Add(this.btnSaleNum2, 2, 3);
+            this.tblNum.Controls.Add(this.btnSaleNum4, 1, 2);
+            this.tblNum.Controls.Add(this.btnSaleNum5, 2, 2);
+            this.tblNum.Controls.Add(this.btnSaleNum6, 3, 2);
+            this.tblNum.Controls.Add(this.btnSaleNumReset, 4, 2);
+            this.tblNum.Controls.Add(this.btnSaleNumBack, 4, 1);
+            this.tblNum.Controls.Add(this.btnSaleNumDiv, 0, 1);
+            this.tblNum.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tblNum.Location = new System.Drawing.Point(0, 0);
+            this.tblNum.Margin = new System.Windows.Forms.Padding(0);
+            this.tblNum.Name = "tblNum";
+            this.tblNum.RowCount = 4;
+            this.tblNum.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.00012F));
+            this.tblNum.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 24.99872F));
+            this.tblNum.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.00058F));
+            this.tblNum.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.00058F));
+            this.tblNum.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tblNum.Size = new System.Drawing.Size(465, 281);
+            this.tblNum.TabIndex = 0;
+            this.tblNum.Visible = false;
+            // 
+            // plPayListTilte
+            // 
+            this.plPayListTilte.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.plPayListTilte.BackgroundImage = global::ICE.POS.Properties.Resources.pay_title;
+            this.plPayListTilte.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.plPayListTilte.Location = new System.Drawing.Point(5, 321);
+            this.plPayListTilte.Margin = new System.Windows.Forms.Padding(1, 0, 0, 0);
+            this.plPayListTilte.Name = "plPayListTilte";
+            this.plPayListTilte.Size = new System.Drawing.Size(677, 26);
+            this.plPayListTilte.TabIndex = 2;
             // 
             // plPayKey
             // 
@@ -601,18 +1078,6 @@ namespace ICE.POS
             this.lbPayInput.Text = "1234567890123";
             this.lbPayInput.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // gbPayInfo
-            // 
-            this.gbPayInfo.Controls.Add(this.plPayLeft);
-            this.gbPayInfo.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.gbPayInfo.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.gbPayInfo.Location = new System.Drawing.Point(3, 1);
-            this.gbPayInfo.Name = "gbPayInfo";
-            this.gbPayInfo.Size = new System.Drawing.Size(300, 243);
-            this.gbPayInfo.TabIndex = 0;
-            this.gbPayInfo.TabStop = false;
-            this.gbPayInfo.Text = "付款信息";
-            // 
             // plPayLeft
             // 
             this.plPayLeft.BackgroundImage = global::ICE.POS.Properties.Resources.touch_pay_info;
@@ -668,53 +1133,6 @@ namespace ICE.POS
             this.lbPayTotalAmt.TabIndex = 0;
             this.lbPayTotalAmt.Text = "0.00";
             this.lbPayTotalAmt.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // plPayTitle
-            // 
-            this.plPayTitle.BackColor = System.Drawing.Color.AntiqueWhite;
-            this.plPayTitle.Controls.Add(this.tblPayWay);
-            this.plPayTitle.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.plPayTitle.Location = new System.Drawing.Point(4, 4);
-            this.plPayTitle.Margin = new System.Windows.Forms.Padding(0);
-            this.plPayTitle.Name = "plPayTitle";
-            this.plPayTitle.Size = new System.Drawing.Size(678, 69);
-            this.plPayTitle.TabIndex = 4;
-            // 
-            // tblPayWay
-            // 
-            this.tblPayWay.BackColor = System.Drawing.Color.Transparent;
-            this.tblPayWay.ColumnCount = 11;
-            this.tblPayWay.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tblPayWay.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tblPayWay.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tblPayWay.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tblPayWay.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tblPayWay.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tblPayWay.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tblPayWay.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tblPayWay.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tblPayWay.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tblPayWay.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 54F));
-            this.tblPayWay.Controls.Add(this.btnPicFunWechat, 3, 0);
-            this.tblPayWay.Controls.Add(this.btnPicFuncPayEsc, 9, 0);
-            this.tblPayWay.Controls.Add(this.btnPicFunRmb, 0, 0);
-            this.tblPayWay.Controls.Add(this.btnPicFunCup, 1, 0);
-            this.tblPayWay.Controls.Add(this.btnPicFunZfb, 2, 0);
-            this.tblPayWay.Controls.Add(this.btnPicFunCou, 4, 0);
-            this.tblPayWay.Controls.Add(this.btnPicFunPayOther, 5, 0);
-            this.tblPayWay.Controls.Add(this.btnPicFunAllDis, 5, 0);
-            this.tblPayWay.Controls.Add(this.btnPicFunAllcan, 8, 0);
-            this.tblPayWay.Controls.Add(this.btnPicFunAzs, 6, 0);
-            this.tblPayWay.Controls.Add(this.btnPicFunAgz, 7, 0);
-            this.tblPayWay.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tblPayWay.Location = new System.Drawing.Point(0, 0);
-            this.tblPayWay.Margin = new System.Windows.Forms.Padding(0);
-            this.tblPayWay.Name = "tblPayWay";
-            this.tblPayWay.RowCount = 1;
-            this.tblPayWay.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tblPayWay.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tblPayWay.Size = new System.Drawing.Size(678, 69);
-            this.tblPayWay.TabIndex = 1;
             // 
             // btnPicFunWechat
             // 
@@ -925,77 +1343,6 @@ namespace ICE.POS
             this.btnPicFunAgz.Tag = "agz";
             this.btnPicFunAgz.Click += new System.EventHandler(this.picPayNum_Click);
             // 
-            // tlpMain
-            // 
-            this.tlpMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(212)))), ((int)(((byte)(219)))));
-            this.tlpMain.ColumnCount = 2;
-            this.tlpMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 400F));
-            this.tlpMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpMain.Controls.Add(this.plButton, 0, 3);
-            this.tlpMain.Controls.Add(this.tlpCenter, 0, 2);
-            this.tlpMain.Controls.Add(this.tlpMiddleRight, 1, 1);
-            this.tlpMain.Controls.Add(this.plTop, 0, 0);
-            this.tlpMain.Controls.Add(this.tlpMiddleLeft, 0, 1);
-            this.tlpMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpMain.Location = new System.Drawing.Point(0, 0);
-            this.tlpMain.Margin = new System.Windows.Forms.Padding(0);
-            this.tlpMain.Name = "tlpMain";
-            this.tlpMain.RowCount = 4;
-            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
-            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 105F));
-            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 80F));
-            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpMain.Size = new System.Drawing.Size(796, 574);
-            this.tlpMain.TabIndex = 7;
-            // 
-            // plButton
-            // 
-            this.plButton.BackColor = System.Drawing.Color.LightGreen;
-            this.tlpMain.SetColumnSpan(this.plButton, 2);
-            this.plButton.Controls.Add(this.tlpBottom);
-            this.plButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.plButton.Location = new System.Drawing.Point(0, 494);
-            this.plButton.Margin = new System.Windows.Forms.Padding(0);
-            this.plButton.Name = "plButton";
-            this.plButton.Size = new System.Drawing.Size(796, 80);
-            this.plButton.TabIndex = 8;
-            // 
-            // tlpBottom
-            // 
-            this.tlpBottom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.tlpBottom.ColumnCount = 10;
-            this.tlpBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.999999F));
-            this.tlpBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.999999F));
-            this.tlpBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.999999F));
-            this.tlpBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.999999F));
-            this.tlpBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.999999F));
-            this.tlpBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.999999F));
-            this.tlpBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.999999F));
-            this.tlpBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.999999F));
-            this.tlpBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.999999F));
-            this.tlpBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.999999F));
-            this.tlpBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpBottom.Controls.Add(this.btnFastOther, 8, 0);
-            this.tlpBottom.Controls.Add(this.btnFastExit, 9, 0);
-            this.tlpBottom.Controls.Add(this.btnFastTot, 7, 0);
-            this.tlpBottom.Controls.Add(this.btnFastNum, 0, 0);
-            this.tlpBottom.Controls.Add(this.btnFastDel, 1, 0);
-            this.tlpBottom.Controls.Add(this.btnFastPrc, 2, 0);
-            this.tlpBottom.Controls.Add(this.btnFastDct, 3, 0);
-            this.tlpBottom.Controls.Add(this.btnFastPnr, 4, 0);
-            this.tlpBottom.Controls.Add(this.btnFastDou, 6, 0);
-            this.tlpBottom.Controls.Add(this.btnFastVip, 5, 0);
-            this.tlpBottom.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpBottom.Location = new System.Drawing.Point(0, 0);
-            this.tlpBottom.Margin = new System.Windows.Forms.Padding(5);
-            this.tlpBottom.Name = "tlpBottom";
-            this.tlpBottom.RowCount = 2;
-            this.tlpBottom.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 80F));
-            this.tlpBottom.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpBottom.Size = new System.Drawing.Size(796, 80);
-            this.tlpBottom.TabIndex = 1;
-            // 
             // btnFastOther
             // 
             this.btnFastOther.BackColor = System.Drawing.Color.Transparent;
@@ -1176,79 +1523,6 @@ namespace ICE.POS
             this.btnFastVip.Tag = "vip";
             this.btnFastVip.Click += new System.EventHandler(this.btnSaleFunc_Click);
             // 
-            // tlpCenter
-            // 
-            this.tlpCenter.ColumnCount = 2;
-            this.tlpMain.SetColumnSpan(this.tlpCenter, 2);
-            this.tlpCenter.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 400F));
-            this.tlpCenter.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpCenter.Controls.Add(this.tlpCenterRight, 0, 0);
-            this.tlpCenter.Controls.Add(this.tlpSale, 0, 0);
-            this.tlpCenter.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpCenter.Location = new System.Drawing.Point(0, 150);
-            this.tlpCenter.Margin = new System.Windows.Forms.Padding(0);
-            this.tlpCenter.Name = "tlpCenter";
-            this.tlpCenter.RowCount = 1;
-            this.tlpCenter.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpCenter.Size = new System.Drawing.Size(796, 344);
-            this.tlpCenter.TabIndex = 3;
-            // 
-            // tlpCenterRight
-            // 
-            this.tlpCenterRight.ColumnCount = 4;
-            this.tlpCenterRight.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tlpCenterRight.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpCenterRight.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 38F));
-            this.tlpCenterRight.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tlpCenterRight.Controls.Add(this.plItem, 0, 1);
-            this.tlpCenterRight.Controls.Add(this.plClsBig, 2, 2);
-            this.tlpCenterRight.Controls.Add(this.btnClsNextPage, 2, 3);
-            this.tlpCenterRight.Controls.Add(this.plClsSmall, 1, 0);
-            this.tlpCenterRight.Controls.Add(this.btnClsSmallLeft, 0, 0);
-            this.tlpCenterRight.Controls.Add(this.btnClsPriorPage, 2, 1);
-            this.tlpCenterRight.Controls.Add(this.btnClsSmallRight, 3, 0);
-            this.tlpCenterRight.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpCenterRight.Location = new System.Drawing.Point(400, 0);
-            this.tlpCenterRight.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
-            this.tlpCenterRight.Name = "tlpCenterRight";
-            this.tlpCenterRight.RowCount = 4;
-            this.tlpCenterRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 80F));
-            this.tlpCenterRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tlpCenterRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpCenterRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tlpCenterRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpCenterRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpCenterRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpCenterRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpCenterRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpCenterRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpCenterRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpCenterRight.Size = new System.Drawing.Size(393, 344);
-            this.tlpCenterRight.TabIndex = 2;
-            // 
-            // plItem
-            // 
-            this.plItem.BackColor = System.Drawing.Color.Silver;
-            this.tlpCenterRight.SetColumnSpan(this.plItem, 2);
-            this.plItem.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.plItem.Location = new System.Drawing.Point(0, 80);
-            this.plItem.Margin = new System.Windows.Forms.Padding(0);
-            this.plItem.Name = "plItem";
-            this.tlpCenterRight.SetRowSpan(this.plItem, 3);
-            this.plItem.Size = new System.Drawing.Size(305, 264);
-            this.plItem.TabIndex = 10;
-            // 
-            // plClsBig
-            // 
-            this.plClsBig.BackColor = System.Drawing.Color.LightGray;
-            this.tlpCenterRight.SetColumnSpan(this.plClsBig, 2);
-            this.plClsBig.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.plClsBig.Location = new System.Drawing.Point(305, 130);
-            this.plClsBig.Margin = new System.Windows.Forms.Padding(0, 0, 2, 0);
-            this.plClsBig.Name = "plClsBig";
-            this.plClsBig.Size = new System.Drawing.Size(86, 164);
-            this.plClsBig.TabIndex = 3;
-            // 
             // btnClsNextPage
             // 
             this.btnClsNextPage.BackColor = System.Drawing.Color.Transparent;
@@ -1267,17 +1541,6 @@ namespace ICE.POS
             this.btnClsNextPage.TabStop = false;
             this.btnClsNextPage.Tag = "BigCls&NextPage";
             this.btnClsNextPage.Click += new System.EventHandler(this.btnTouchScreenForBigCls_Click);
-            // 
-            // plClsSmall
-            // 
-            this.plClsSmall.BackColor = System.Drawing.Color.LightGray;
-            this.tlpCenterRight.SetColumnSpan(this.plClsSmall, 2);
-            this.plClsSmall.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.plClsSmall.Location = new System.Drawing.Point(50, 0);
-            this.plClsSmall.Margin = new System.Windows.Forms.Padding(0);
-            this.plClsSmall.Name = "plClsSmall";
-            this.plClsSmall.Size = new System.Drawing.Size(293, 80);
-            this.plClsSmall.TabIndex = 6;
             // 
             // btnClsSmallLeft
             // 
@@ -1333,40 +1596,6 @@ namespace ICE.POS
             this.btnClsSmallRight.Tag = "SmallCls&NextPage";
             this.btnClsSmallRight.Click += new System.EventHandler(this.btnTouchScreenForSmallCls_Click);
             // 
-            // tlpSale
-            // 
-            this.tlpSale.BackColor = System.Drawing.Color.Gray;
-            this.tlpSale.ColumnCount = 1;
-            this.tlpSale.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpSale.Controls.Add(this.lbMessage, 0, 3);
-            this.tlpSale.Controls.Add(this.plSaleTitle, 0, 0);
-            this.tlpSale.Controls.Add(this.GvSaleFlow, 0, 1);
-            this.tlpSale.Controls.Add(this.plSaleDown, 0, 2);
-            this.tlpSale.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpSale.Location = new System.Drawing.Point(0, 0);
-            this.tlpSale.Margin = new System.Windows.Forms.Padding(0);
-            this.tlpSale.Name = "tlpSale";
-            this.tlpSale.RowCount = 4;
-            this.tlpSale.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 36F));
-            this.tlpSale.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpSale.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tlpSale.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tlpSale.Size = new System.Drawing.Size(400, 344);
-            this.tlpSale.TabIndex = 0;
-            // 
-            // lbMessage
-            // 
-            this.lbMessage.BackColor = System.Drawing.SystemColors.Control;
-            this.lbMessage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbMessage.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbMessage.Location = new System.Drawing.Point(0, 304);
-            this.lbMessage.Margin = new System.Windows.Forms.Padding(0);
-            this.lbMessage.Name = "lbMessage";
-            this.lbMessage.Size = new System.Drawing.Size(400, 40);
-            this.lbMessage.TabIndex = 0;
-            this.lbMessage.Text = "Messages";
-            this.lbMessage.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // plSaleTitle
             // 
             this.plSaleTitle.BackColor = System.Drawing.SystemColors.Highlight;
@@ -1377,38 +1606,6 @@ namespace ICE.POS
             this.plSaleTitle.Name = "plSaleTitle";
             this.plSaleTitle.Size = new System.Drawing.Size(400, 36);
             this.plSaleTitle.TabIndex = 1;
-            // 
-            // GvSaleFlow
-            // 
-            this.GvSaleFlow.AllowUserToAddRows = false;
-            this.GvSaleFlow.AllowUserToDeleteRows = false;
-            this.GvSaleFlow.AutoGenerateColumns = false;
-            this.GvSaleFlow.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GvSaleFlow.DataSource = this.bindingSaleFlow;
-            this.GvSaleFlow.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.GvSaleFlow.Location = new System.Drawing.Point(0, 36);
-            this.GvSaleFlow.Margin = new System.Windows.Forms.Padding(0);
-            this.GvSaleFlow.MultiSelect = false;
-            this.GvSaleFlow.Name = "GvSaleFlow";
-            this.GvSaleFlow.ReadOnly = true;
-            this.GvSaleFlow.RowTemplate.Height = 52;
-            this.GvSaleFlow.RowTemplate.ReadOnly = true;
-            this.GvSaleFlow.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.GvSaleFlow.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.GvSaleFlow.Size = new System.Drawing.Size(400, 228);
-            this.GvSaleFlow.TabIndex = 2;
-            // 
-            // plSaleDown
-            // 
-            this.plSaleDown.BackColor = System.Drawing.Color.White;
-            this.plSaleDown.Controls.Add(this.btnSaleDown);
-            this.plSaleDown.Controls.Add(this.btnSaleUp);
-            this.plSaleDown.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.plSaleDown.Location = new System.Drawing.Point(0, 264);
-            this.plSaleDown.Margin = new System.Windows.Forms.Padding(0);
-            this.plSaleDown.Name = "plSaleDown";
-            this.plSaleDown.Size = new System.Drawing.Size(400, 40);
-            this.plSaleDown.TabIndex = 3;
             // 
             // btnSaleDown
             // 
@@ -1439,32 +1636,6 @@ namespace ICE.POS
             this.btnSaleUp.TabIndex = 0;
             this.btnSaleUp.TabStop = false;
             this.btnSaleUp.Click += new System.EventHandler(this.btnSaleUp_Click);
-            // 
-            // tlpMiddleRight
-            // 
-            this.tlpMiddleRight.BackColor = System.Drawing.Color.Silver;
-            this.tlpMiddleRight.ColumnCount = 6;
-            this.tlpMiddleRight.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 18F));
-            this.tlpMiddleRight.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpMiddleRight.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 19F));
-            this.tlpMiddleRight.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 17F));
-            this.tlpMiddleRight.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpMiddleRight.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 18F));
-            this.tlpMiddleRight.Controls.Add(this.plQtyLeft, 3, 0);
-            this.tlpMiddleRight.Controls.Add(this.plQtyRight, 5, 0);
-            this.tlpMiddleRight.Controls.Add(this.plQtyCenter, 4, 0);
-            this.tlpMiddleRight.Controls.Add(this.plAmtRight, 2, 0);
-            this.tlpMiddleRight.Controls.Add(this.plAmtCenter, 1, 0);
-            this.tlpMiddleRight.Controls.Add(this.plAmtLeft, 0, 0);
-            this.tlpMiddleRight.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpMiddleRight.Location = new System.Drawing.Point(400, 45);
-            this.tlpMiddleRight.Margin = new System.Windows.Forms.Padding(0);
-            this.tlpMiddleRight.Name = "tlpMiddleRight";
-            this.tlpMiddleRight.RowCount = 1;
-            this.tlpMiddleRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpMiddleRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpMiddleRight.Size = new System.Drawing.Size(396, 105);
-            this.tlpMiddleRight.TabIndex = 1;
             // 
             // plQtyLeft
             // 
@@ -1624,177 +1795,6 @@ namespace ICE.POS
             this.lbApplication.Size = new System.Drawing.Size(69, 20);
             this.lbApplication.TabIndex = 0;
             this.lbApplication.Text = "123456";
-            // 
-            // tlpMiddleLeft
-            // 
-            this.tlpMiddleLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(234)))), ((int)(((byte)(238)))));
-            this.tlpMiddleLeft.Controls.Add(this.labelNetStatus);
-            this.tlpMiddleLeft.Controls.Add(this.lbVip);
-            this.tlpMiddleLeft.Controls.Add(this.lbShopAssistant);
-            this.tlpMiddleLeft.Controls.Add(this.lbShopAssistantValue);
-            this.tlpMiddleLeft.Controls.Add(this.lbVipValue);
-            this.tlpMiddleLeft.Controls.Add(this.lbNowTime);
-            this.tlpMiddleLeft.Controls.Add(this.lbCheckStandValue);
-            this.tlpMiddleLeft.Controls.Add(this.lbCheckStand);
-            this.tlpMiddleLeft.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpMiddleLeft.Location = new System.Drawing.Point(0, 45);
-            this.tlpMiddleLeft.Margin = new System.Windows.Forms.Padding(0);
-            this.tlpMiddleLeft.Name = "tlpMiddleLeft";
-            this.tlpMiddleLeft.Size = new System.Drawing.Size(400, 105);
-            this.tlpMiddleLeft.TabIndex = 6;
-            // 
-            // labelNetStatus
-            // 
-            this.labelNetStatus.AutoSize = true;
-            this.labelNetStatus.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelNetStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.labelNetStatus.Location = new System.Drawing.Point(218, 43);
-            this.labelNetStatus.Name = "labelNetStatus";
-            this.labelNetStatus.Size = new System.Drawing.Size(92, 27);
-            this.labelNetStatus.TabIndex = 30;
-            this.labelNetStatus.Text = "联网状态";
-            // 
-            // lbVip
-            // 
-            this.lbVip.AutoSize = true;
-            this.lbVip.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbVip.Location = new System.Drawing.Point(3, 75);
-            this.lbVip.Name = "lbVip";
-            this.lbVip.Size = new System.Drawing.Size(75, 27);
-            this.lbVip.TabIndex = 0;
-            this.lbVip.Text = "会   员:";
-            // 
-            // lbShopAssistant
-            // 
-            this.lbShopAssistant.AutoSize = true;
-            this.lbShopAssistant.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbShopAssistant.Location = new System.Drawing.Point(3, 42);
-            this.lbShopAssistant.Name = "lbShopAssistant";
-            this.lbShopAssistant.Size = new System.Drawing.Size(77, 27);
-            this.lbShopAssistant.TabIndex = 0;
-            this.lbShopAssistant.Text = "收银员:";
-            // 
-            // lbShopAssistantValue
-            // 
-            this.lbShopAssistantValue.AutoSize = true;
-            this.lbShopAssistantValue.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbShopAssistantValue.Location = new System.Drawing.Point(71, 47);
-            this.lbShopAssistantValue.Name = "lbShopAssistantValue";
-            this.lbShopAssistantValue.Size = new System.Drawing.Size(143, 18);
-            this.lbShopAssistantValue.TabIndex = 0;
-            this.lbShopAssistantValue.Text = "【10002】管理员";
-            // 
-            // lbVipValue
-            // 
-            this.lbVipValue.AutoSize = true;
-            this.lbVipValue.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbVipValue.Location = new System.Drawing.Point(70, 80);
-            this.lbVipValue.Name = "lbVipValue";
-            this.lbVipValue.Size = new System.Drawing.Size(0, 18);
-            this.lbVipValue.TabIndex = 0;
-            // 
-            // lbNowTime
-            // 
-            this.lbNowTime.AutoSize = true;
-            this.lbNowTime.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbNowTime.Location = new System.Drawing.Point(196, 12);
-            this.lbNowTime.Name = "lbNowTime";
-            this.lbNowTime.Size = new System.Drawing.Size(214, 27);
-            this.lbNowTime.TabIndex = 0;
-            this.lbNowTime.Text = "0000-00-00 00:00:00";
-            // 
-            // lbCheckStandValue
-            // 
-            this.lbCheckStandValue.AutoSize = true;
-            this.lbCheckStandValue.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbCheckStandValue.Location = new System.Drawing.Point(71, 12);
-            this.lbCheckStandValue.Name = "lbCheckStandValue";
-            this.lbCheckStandValue.Size = new System.Drawing.Size(89, 18);
-            this.lbCheckStandValue.TabIndex = 0;
-            this.lbCheckStandValue.Text = "【10002】";
-            // 
-            // lbCheckStand
-            // 
-            this.lbCheckStand.AutoSize = true;
-            this.lbCheckStand.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbCheckStand.Location = new System.Drawing.Point(3, 7);
-            this.lbCheckStand.Name = "lbCheckStand";
-            this.lbCheckStand.Size = new System.Drawing.Size(77, 27);
-            this.lbCheckStand.TabIndex = 0;
-            this.lbCheckStand.Text = "收银台:";
-            // 
-            // plNumInput
-            // 
-            this.plNumInput.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.tblNum.SetColumnSpan(this.plNumInput, 5);
-            this.plNumInput.Controls.Add(this.lbCursor);
-            this.plNumInput.Controls.Add(this.lbInput);
-            this.plNumInput.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.plNumInput.Location = new System.Drawing.Point(3, 3);
-            this.plNumInput.Name = "plNumInput";
-            this.plNumInput.Size = new System.Drawing.Size(459, 64);
-            this.plNumInput.TabIndex = 0;
-            // 
-            // lbCursor
-            // 
-            this.lbCursor.BackColor = System.Drawing.Color.Black;
-            this.lbCursor.Font = new System.Drawing.Font("宋体", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbCursor.Location = new System.Drawing.Point(100, 40);
-            this.lbCursor.Name = "lbCursor";
-            this.lbCursor.Size = new System.Drawing.Size(3, 50);
-            this.lbCursor.TabIndex = 1;
-            // 
-            // lbInput
-            // 
-            this.lbInput.BackColor = System.Drawing.Color.White;
-            this.lbInput.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbInput.Font = new System.Drawing.Font("宋体", 40F, System.Drawing.FontStyle.Bold);
-            this.lbInput.Location = new System.Drawing.Point(0, 0);
-            this.lbInput.Margin = new System.Windows.Forms.Padding(0);
-            this.lbInput.Name = "lbInput";
-            this.lbInput.Size = new System.Drawing.Size(459, 64);
-            this.lbInput.TabIndex = 0;
-            this.lbInput.Text = "1234567890123";
-            this.lbInput.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // tblNum
-            // 
-            this.tblNum.BackColor = System.Drawing.Color.Transparent;
-            this.tblNum.ColumnCount = 5;
-            this.tblNum.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tblNum.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0005F));
-            this.tblNum.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0005F));
-            this.tblNum.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0005F));
-            this.tblNum.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.9985F));
-            this.tblNum.Controls.Add(this.btnSaleNum0, 0, 3);
-            this.tblNum.Controls.Add(this.plNumInput, 0, 0);
-            this.tblNum.Controls.Add(this.btnSaleNumEnter, 4, 3);
-            this.tblNum.Controls.Add(this.btnSaleNumDot, 0, 2);
-            this.tblNum.Controls.Add(this.btnSaleNum8, 2, 1);
-            this.tblNum.Controls.Add(this.btnSaleNum1, 1, 3);
-            this.tblNum.Controls.Add(this.btnSaleNum9, 3, 1);
-            this.tblNum.Controls.Add(this.btnSaleNum3, 3, 3);
-            this.tblNum.Controls.Add(this.btnSaleNum7, 1, 1);
-            this.tblNum.Controls.Add(this.btnSaleNum2, 2, 3);
-            this.tblNum.Controls.Add(this.btnSaleNum4, 1, 2);
-            this.tblNum.Controls.Add(this.btnSaleNum5, 2, 2);
-            this.tblNum.Controls.Add(this.btnSaleNum6, 3, 2);
-            this.tblNum.Controls.Add(this.btnSaleNumReset, 4, 2);
-            this.tblNum.Controls.Add(this.btnSaleNumBack, 4, 1);
-            this.tblNum.Controls.Add(this.btnSaleNumDiv, 0, 1);
-            this.tblNum.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tblNum.Location = new System.Drawing.Point(0, 0);
-            this.tblNum.Margin = new System.Windows.Forms.Padding(0);
-            this.tblNum.Name = "tblNum";
-            this.tblNum.RowCount = 4;
-            this.tblNum.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.00012F));
-            this.tblNum.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 24.99872F));
-            this.tblNum.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.00058F));
-            this.tblNum.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.00058F));
-            this.tblNum.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tblNum.Size = new System.Drawing.Size(465, 281);
-            this.tblNum.TabIndex = 0;
-            this.tblNum.Visible = false;
             // 
             // btnSaleNum0
             // 
@@ -2067,13 +2067,28 @@ namespace ICE.POS
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormMain_FormClosing);
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmMain_KeyDown);
-            ((System.ComponentModel.ISupportInitialize)(this.bindingPayFlow)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSaleFlow)).EndInit();
             this.plOtherFunc.ResumeLayout(false);
             this.tblPanelBalance.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.GvPayFlow)).EndInit();
             this.plPayInfo.ResumeLayout(false);
             this.gbPayInput.ResumeLayout(false);
+            this.gbPayInfo.ResumeLayout(false);
+            this.plPayTitle.ResumeLayout(false);
+            this.tblPayWay.ResumeLayout(false);
+            this.tlpMain.ResumeLayout(false);
+            this.plButton.ResumeLayout(false);
+            this.tlpBottom.ResumeLayout(false);
+            this.tlpCenter.ResumeLayout(false);
+            this.tlpCenterRight.ResumeLayout(false);
+            this.tlpSale.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.GvSaleFlow)).EndInit();
+            this.plSaleDown.ResumeLayout(false);
+            this.tlpMiddleRight.ResumeLayout(false);
+            this.tlpMiddleLeft.ResumeLayout(false);
+            this.tlpMiddleLeft.PerformLayout();
+            this.plNumInput.ResumeLayout(false);
+            this.tblNum.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.bindingPayFlow)).EndInit();
             this.plPayKey.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picPayNumEnter)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPayNum3)).EndInit();
@@ -2091,10 +2106,7 @@ namespace ICE.POS
             ((System.ComponentModel.ISupportInitialize)(this.picPayNum7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.plPayInput.ResumeLayout(false);
-            this.gbPayInfo.ResumeLayout(false);
             this.plPayLeft.ResumeLayout(false);
-            this.plPayTitle.ResumeLayout(false);
-            this.tblPayWay.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnPicFunWechat)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnPicFuncPayEsc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnPicFunRmb)).EndInit();
@@ -2106,9 +2118,6 @@ namespace ICE.POS
             ((System.ComponentModel.ISupportInitialize)(this.btnPicFunAllcan)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnPicFunAzs)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnPicFunAgz)).EndInit();
-            this.tlpMain.ResumeLayout(false);
-            this.plButton.ResumeLayout(false);
-            this.tlpBottom.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnFastOther)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnFastExit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnFastTot)).EndInit();
@@ -2119,27 +2128,18 @@ namespace ICE.POS
             ((System.ComponentModel.ISupportInitialize)(this.btnFastPnr)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnFastDou)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnFastVip)).EndInit();
-            this.tlpCenter.ResumeLayout(false);
-            this.tlpCenterRight.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnClsNextPage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClsSmallLeft)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClsPriorPage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClsSmallRight)).EndInit();
-            this.tlpSale.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.GvSaleFlow)).EndInit();
-            this.plSaleDown.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSaleFlow)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSaleDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSaleUp)).EndInit();
-            this.tlpMiddleRight.ResumeLayout(false);
             this.plQtyCenter.ResumeLayout(false);
             this.plAmtCenter.ResumeLayout(false);
             this.plTop.ResumeLayout(false);
             this.plTop.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
-            this.tlpMiddleLeft.ResumeLayout(false);
-            this.tlpMiddleLeft.PerformLayout();
-            this.plNumInput.ResumeLayout(false);
-            this.tblNum.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnSaleNum0)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSaleNumEnter)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSaleNumDot)).EndInit();

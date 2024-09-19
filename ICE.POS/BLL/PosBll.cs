@@ -544,12 +544,43 @@
         {
             base._dal.DeleteTempData();
         }
-        
-        
-        
-        
-        
-        
+
+
+        //保存优惠券使用
+        public void SaveCoupon(string flowNo, String mem_no, List<t_pos_coupon> listCoupon)
+        {
+
+            foreach (t_pos_coupon coupon in listCoupon)
+            {
+                coupon.flow_no = flowNo;//订单流水号
+                coupon.oper_uid = mem_no;//会员编号
+                coupon.oper_date= System.DateTime.Now.ToString("s");//当前日期
+                coupon.branch_no = Gattr.BranchNo;
+            }
+
+            
+            IDbTransaction objTrans = null;
+            bool flag = base._dal.BeginSQLTrans(ref objTrans);
+            try
+            {
+                base._dal.SaveCoupon(listCoupon, objTrans);
+            }
+            catch (SQLiteException exception)
+            {
+                if (flag)
+                {
+                    objTrans.Rollback();
+                    throw exception;
+                }
+            }
+            if (flag)
+            {
+                objTrans.Commit();
+            }
+        }
+
+
+
         public t_operator GetOperatorInfo(string operName, string operPwd, string branckId)
         {
             return base._dal.GetOperatorInfo(operName, operPwd, branckId);

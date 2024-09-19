@@ -330,12 +330,70 @@
             t = InvokeMemberService("memb_recharge_order_finish", _dic);
             return t;
         }
-        
-        
-        
-        
-        
-        
+
+        public t_pos_coupon CounponCheck(String code,decimal payAmount)
+        {
+            Dictionary<String, String> _dic = new Dictionary<string, string>();
+            t_pos_coupon t = null;
+            _dic.Add("code", code);
+            _dic.Add("payamount", payAmount.ToString());
+            try
+            {
+                Dictionary<string, object> _dic1 = Gfunc.GetServiceParameter();
+                foreach (KeyValuePair<String, String> kv in _dic)
+                {
+                    _dic1.Add(kv.Key, kv.Value);
+                }
+                string errorMessage = string.Empty;
+                bool isok = true;
+                string json = PServiceProvider.Instance.InvokeMethod(Gattr.MemberServiceUri + "/coupon_query", _dic1, ref isok, ref errorMessage);
+                if (isok)
+                {
+                    if (!string.IsNullOrEmpty(json))
+                    {
+                        if (json != "-10" && json != "-20")
+                        {
+                            t = JsonUtility.Instance.JsonToObject<t_pos_coupon>(json);
+                            if (t == null)
+                            {
+                                t = new t_pos_coupon() { code = "-1", info = "优惠券不存在" };
+                            } else{
+                                if (t.code == "2") {
+                                    t = new t_pos_coupon() { info = "优惠券不存在" };
+                                } else if (t.code == "3") {
+                                    t = new t_pos_coupon() { info = "优惠券已使用或已停用" };
+                                }
+                                else if (t.code == "5")
+                                {
+                                    t = new t_pos_coupon() { info = "支付金额未达到可使用该优惠券的最低金额" };
+                                }
+
+                            }
+                        }
+                        else
+                        {
+                            t = new t_pos_coupon() { code = "-1", info = "非法访问接口" };
+                        }
+                    }
+                }
+                else
+                {
+                    t = new t_pos_coupon() { code = "404", info = errorMessage+"接口查询失败" };
+                }
+            }
+            catch (Exception ex)
+            {
+                t = new t_pos_coupon() { code = "404", info = "接口查询失败" };
+                LoggerHelper.Log("MsmkLogger", ex.ToString(), LogEnum.ExceptionLog);
+            }
+
+
+            return t;
+        }
+
+
+
+
         private t_member_info InvokeMemberService(String method, Dictionary<String, String> _dic)
         {
             t_member_info t = null;

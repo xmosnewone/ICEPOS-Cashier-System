@@ -151,6 +151,12 @@
     <Compile Include="Pay\FrmAliPay2.Designer.cs">
       <DependentUpon>FrmAliPay2.cs</DependentUpon>
     </Compile>
+	<Compile Include="Pay\FrmCoupon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pay\FrmCoupon.Designer.cs">
+      <DependentUpon>FrmCoupon.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pay\FrmWechatPay.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -841,6 +847,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="DBSQLite\sql\item\t_sys_setting.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+	<Content Include="DBSQLite\sql\sale\t_app_coupon.sql">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="favicon.ico" />

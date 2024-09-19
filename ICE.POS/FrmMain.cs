@@ -57,9 +57,11 @@
         
         
         public List<t_cur_payflow> _listPayFlow;
-        
-        
-        
+
+
+        public List<t_pos_coupon> _listCoupon;
+
+
         public List<t_pending_payflow> _listPendingPayFlow;
         
         
@@ -195,6 +197,7 @@
             this.ClsBigPage(true, true);
             this._listSaleFlow = Gattr.Bll.GetTempSaleRow();
             this._listPayFlow = Gattr.Bll.GetTempPayRow();
+            this._listCoupon = new List<t_pos_coupon>();
             this.bindingSaleFlow.DataSource = this._listSaleFlow;
             this.GvSaleFlow.DataSource = this.bindingSaleFlow;
             this.bindingPayFlow.DataSource = this._listPayFlow;
@@ -2117,8 +2120,6 @@
                         this.FunKeyVipSale(false);
                         break;
                     case PosOpType.营业员:
-
-                       // MessageBox.Show("功能暂未开通", Gattr.AppTitle);
                         this.FunKeySaleMan();
                         break;
                     case PosOpType.结算:
@@ -2140,7 +2141,6 @@
                         this.FunKeyCsc();
                         break;
                     case PosOpType.支付宝:
-                        
                         this.FunKeyZFB();
                         break;
                     case PosOpType.微信支付:
@@ -2159,7 +2159,7 @@
                         MessageBox.Show(keyfunc.func_name + "功能尚未实现！", Gattr.AppTitle);
                         break;
                     case PosOpType.优惠券:
-                        MessageBox.Show(keyfunc.func_name + "功能尚未开放！", Gattr.AppTitle);
+                        this.FunKeyCoupon();
                         break;
                     case PosOpType.其他方式:
                         this.FunKeyFkf();
@@ -3125,6 +3125,8 @@
                 this.SetPosState(PosOpState.PAY);
                 this.IsPayState = false;
                 this.SetCursorText();
+                this._listCoupon.Clear();
+
                 if ((this.bindingSaleFlow.Count == 0))
                 {
                     this.tblPanelBalance.Visible = false;
@@ -3156,7 +3158,6 @@
                         vip_type = string.Empty;
                     }
 
-                    
                     List<t_cur_saleflow> sales = PlanDealer.Instance.DearPGSaleInfo(this._listSaleFlow, vip_type);
                     this._listSaleFlow.Clear();
                     this._listSaleFlow.AddRange(sales);
@@ -3164,6 +3165,7 @@
                     this.bindingSaleFlow.ResetBindings(false);
                     this.GvSaleFlow.Refresh();
                     this.SetTotalAmt();
+                    
 
                     List<t_rm_plan_master> _planMasters = GetPlanPluMasters(this._listSaleFlow);
                     if (_planMasters != null && _planMasters.Count > 0)
@@ -3680,8 +3682,7 @@
                 Alipay_No = Gattr.SystemTitle + Gattr.OperId + time;
 
                 FrmAliPay2 frmalipay = new FrmAliPay2(Convert.ToDecimal(this.lbPayAmtRec.Text), Alipay_No);
-                frmalipay.ShowDialog();
-                if (frmalipay.DialogResult == DialogResult.OK)
+                if (frmalipay.ShowDialog() == DialogResult.OK)
                 {
                     //执行支付宝付款码支付
                     if (this.PosPayAmt("ZFB", frmalipay.ReturnMoney, true, false))
@@ -3798,6 +3799,14 @@
             // LoggerHelper.Log("MsmkLogger", "FrmMain ==> FunKeyWechat ==>微信二维码支付发起！", LogEnum.ExceptionLog);
             
         }
+
+
+        private void FunKeyCoupon()
+        {
+            MessageBox.Show("功能尚未实现！", Gattr.AppTitle);
+            return;
+        }
+
 
         public string GetQrcode(String flow_no, decimal pay_amt)
         {
@@ -4231,6 +4240,17 @@
                         payflow = SetPayFlowInfo(payAmtPaid, payment, _saleTotalAmt, _currentFlowNo, _card, _memo);
                         _listPayFlow.Add(payflow);
                         break;
+                    case "COUPON":
+                        decimal _tempAmt10 = _saleTotalAmt - GetTotalPayedAmt();
+                        if (isRedirect)
+                        {
+                            _tempAmt10 = payAmt;
+                        }
+                        payAmtPaid = SIString.TryDec(_tempAmt10);
+                        payment = new t_payment_info() { rate = 1M, pay_way = "COUPON", pay_name = "优惠券抵扣" };
+                        payflow = SetPayFlowInfo(payAmtPaid, payment, _saleTotalAmt, _currentFlowNo, _card, _memo);
+                        _listPayFlow.Add(payflow);
+                        break;
                     case "ZFB":
                         decimal _tempAmt4 = _saleTotalAmt - GetTotalPayedAmt();
                         if (isRedirect)
@@ -4532,7 +4552,24 @@
                 this.IsPayState = true;
                 this.SetPosState(PosOpState.CHG);
                 this.ClearInput();
+                if (this._listCoupon.Count > 0)
+                {
+                    //保存优惠券使用信息
+                    try
+                    {
+                        String mem_no = "";
+                        if (_currentMember != null)
+                        {
+                            mem_no = _currentMember.mem_no;
+                        }
+                        Gattr.Bll.SaveCoupon(flow_no, mem_no, this._listCoupon);
+                    }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine("保存优惠券错误" + e.ToString());
+                    }
 
+                }
                 
                 _isFk = true;
                 //CHA 钱包余额  GZ 挂账
@@ -4656,6 +4693,7 @@
             this.SetPosState(PosOpState.PLU);
             this._listSaleFlow.Clear();
             this._listPayFlow.Clear();
+            this._listCoupon.Clear();
 
             this.bindingSaleFlow.ResetBindings(false);
             this.bindingPayFlow.ResetBindings(false);
@@ -5225,6 +5263,9 @@
                         break;
                     case "GZ":
                         strPayWay = "挂账";
+                        break;
+                    case "COUPON":
+                        strPayWay = "优惠券抵扣";
                         break;
                     case "ZFB":
                         strPayWay = "支付宝支付";

@@ -214,3 +214,4 @@ D:\wamp\www\iceposgithub\ICEPOS-Cashier-System\ICE.POS\obj\x86\Release\ICE.POS._
 D:\wamp\www\iceposgithub\ICEPOS-Cashier-System\ICE.POS\obj\x86\Release\ICE.POS.KeyBoard.resources
 D:\wamp\www\iceposgithub\ICEPOS-Cashier-System\ICE.POS\obj\x86\Release\ICE.POS.FrmPayCou.resources
 D:\wamp\www\iceposgithub\ICEPOS-Cashier-System\ICE.POS\obj\x86\Release\ICE.POS.csproj.GenerateResource.Cache
+D:\wamp\www\iceposgithub\ICEPOS-Cashier-System\ICE.POS\bin\Release\DBSQLite\sql\sale\t_app_coupon.sql

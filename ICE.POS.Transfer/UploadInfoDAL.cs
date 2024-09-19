@@ -80,7 +80,65 @@
             }
             return table;
         }
-        
+
+        //获取订单的优惠券
+        public static DataTable GetUploadCouponByFlowNo(String connectionString, String flowno)
+        {
+            DataTable table = null;
+            String sql = String.Empty;
+            SQLiteParameter[] parameters = null;
+            String errorMessage = String.Empty;
+            try
+            {
+                sql = "SELECT *  FROM t_app_coupon WHERE flow_no=@flow_no and com_flag<>1";
+                parameters = new SQLiteParameter[1];
+                parameters[0] = new SQLiteParameter("@flow_no", DbType.String);
+                parameters[0].Value = flowno;
+                table = DbUtilitySQLite.Instance.GetDataTable(connectionString, sql, parameters, ref errorMessage);
+                if (errorMessage.Length > 0)
+                {
+                    LoggerHelper.Log("MsmkLogger", "ICE.POS.DAL--->PayInfoDAL----->GetUploadCouponByFlowNo---->Error:" + errorMessage, LogEnum.ExceptionLog);
+                }
+            }
+            catch (Exception ex)
+            {
+                LoggerHelper.Log("MsmkLogger", "ICE.POS.DAL--->PayInfoDAL----->GetUploadCouponByFlowNo---->Error:" + ex.ToString(), LogEnum.ExceptionLog);
+            }
+            return table;
+        }
+
+        //更新优惠券的com_flag
+        public static bool UpdateCouponComFlag(String connectionString, String flowno)
+        {
+            bool isok = true;
+            //SqlTransEntity
+            List<SqlParaEntity> sqlParas = null;
+            SQLiteParameter[] parameters = null;
+            String errorMessage = String.Empty;
+            try
+            {
+                sqlParas = new List<SqlParaEntity>();
+                parameters = new SQLiteParameter[1];
+                parameters[0] = new SQLiteParameter("@flow_no", flowno);
+                sqlParas.Add(new SqlParaEntity()
+                {
+                    Sql = "update t_app_coupon set com_flag='1' where flow_no=@flow_no",
+                    parameters = parameters
+                });
+                
+                isok = DbUtilitySQLite.Instance.ExecuteSqlsByTrans(connectionString, sqlParas, ref errorMessage) > 0 ? true : false;
+                if (errorMessage.Length > 0)
+                {
+                    LoggerHelper.Log("MsmkLogger", "ICE.POS.DAL--->PayInfoDAL----->UpdateFlowComFlag---->Error:" + errorMessage, LogEnum.ExceptionLog);
+                }
+            }
+            catch (Exception ex)
+            {
+                LoggerHelper.Log("MsmkLogger", "ICE.POS.DAL--->PayInfoDAL----->UpdateFlowComFlag---->Error:" + ex.ToString(), LogEnum.ExceptionLog);
+            }
+            return isok;
+        }
+
         public static bool UpdateFlowComFlag(String connectionString, String flowno)
         {
             bool isok = true;
