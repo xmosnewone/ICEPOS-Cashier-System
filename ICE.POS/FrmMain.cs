@@ -3679,7 +3679,7 @@
             {
                 TimeSpan ts = DateTime.UtcNow - new DateTime(1970, 1, 1, 0, 0, 0, 0);
                 String time = Convert.ToInt64(ts.TotalSeconds).ToString();
-                Alipay_No = Gattr.SystemTitle + Gattr.OperId + time;
+                Alipay_No = "ZFB" + Gattr.BranchNo + Gattr.PosId + time;
 
                 FrmAliPay2 frmalipay = new FrmAliPay2(Convert.ToDecimal(this.lbPayAmtRec.Text), Alipay_No);
                 if (frmalipay.ShowDialog() == DialogResult.OK)
@@ -3778,7 +3778,7 @@
             {
                 TimeSpan ts = DateTime.UtcNow - new DateTime(1970, 1, 1, 0, 0, 0, 0);
                 String time = Convert.ToInt64(ts.TotalSeconds).ToString();
-                Wechatpay_No = Gattr.SystemTitle + Gattr.OperId + time;
+                Wechatpay_No = "WX" + Gattr.BranchNo + Gattr.PosId + time;
 
                 FrmWechatPay frmwechatpay = new FrmWechatPay(Convert.ToDecimal(this.lbPayAmtRec.Text), Wechatpay_No);
                 frmwechatpay.ShowDialog();

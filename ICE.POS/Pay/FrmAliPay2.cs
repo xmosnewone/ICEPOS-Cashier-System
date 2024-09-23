@@ -199,6 +199,8 @@ namespace ICE.POS
                 if (wxResult == "1")
                 {
                     LoggerHelper.Log("MsmkLogger", Gattr.OperId + "支付宝刷卡支付成功！", LogEnum.SysLog);
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
                 }
                 else
                 {
