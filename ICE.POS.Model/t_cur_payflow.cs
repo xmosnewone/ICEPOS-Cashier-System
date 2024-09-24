@@ -20,6 +20,7 @@
         private string _oper_date;
         private string _oper_id;
         private string _memo;
+        private string _pflow_id;//微信/支付宝等临时订单流水号
 
         public decimal flow_id
         {
@@ -166,6 +167,12 @@
             {
                 _vip_no = value;
             }
+        }
+
+        public string pflow_id
+        {
+            get { return _pflow_id; }
+            set { _pflow_id = value; }
         }
     }
 }

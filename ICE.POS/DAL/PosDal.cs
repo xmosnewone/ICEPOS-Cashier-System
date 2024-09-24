@@ -1025,8 +1025,8 @@ namespace ICE.POS
             builder.Append("Insert into t_app_saleflow(flow_id,flow_no,item_no,unit_price,sale_price,sale_qnty,sale_money,discount_rate,oper_id,oper_date,item_subno,item_clsno,item_name,item_status,item_subname,reasonid,sale_way,branch_no,pos_id,price,plan_no,item_brand)");
             builder.Append(" values(@flow_id,@flow_no,@item_no,@unit_price,@sale_price,@sale_qnty,@sale_money,@discount_rate,@oper_id,@oper_date,@item_subno,@item_clsno,@item_name,@item_status,@item_subname,@reasonid,@sale_way,@branch_no,@pos_id,@price,@plan_no,@item_brand)");
             StringBuilder builder2 = new StringBuilder();
-            builder2.Append("Insert into t_app_payflow (flow_id,flow_no,sale_amount,pay_way,pay_amount,coin_type,pay_name,coin_rate,convert_amt,card_no,memo,oper_date,oper_id,voucher_no,branch_no,pos_id,sale_way,vip_no)");
-            builder2.Append(" values(@flow_id,@flow_no,@sale_amount,@pay_way,@pay_amount,@coin_type,@pay_name,@coin_rate,@convert_amt,@card_no,@memo,@oper_date,@oper_id,@voucher_no,@branch_no,@pos_id,@sale_way,@vip_no)");
+            builder2.Append("Insert into t_app_payflow (flow_id,flow_no,sale_amount,pay_way,pay_amount,coin_type,pay_name,coin_rate,convert_amt,card_no,memo,oper_date,oper_id,voucher_no,branch_no,pos_id,sale_way,vip_no,pflow_id)");
+            builder2.Append(" values(@flow_id,@flow_no,@sale_amount,@pay_way,@pay_amount,@coin_type,@pay_name,@coin_rate,@convert_amt,@card_no,@memo,@oper_date,@oper_id,@voucher_no,@branch_no,@pos_id,@sale_way,@vip_no,@pflow_id)");
             try
             {
                 SQLiteCommand cmd = new SQLiteCommand
@@ -1119,6 +1119,7 @@ namespace ICE.POS
             cmd.Parameters.Add(new SQLiteParameter("@branch_no", payflow.branch_no));
             cmd.Parameters.Add(new SQLiteParameter("@pos_id", payflow.pos_id));
             cmd.Parameters.Add(new SQLiteParameter("@vip_no", payflow.vip_no));
+            cmd.Parameters.Add(new SQLiteParameter("@pflow_id", payflow.pflow_id));
         }
         #endregion
 

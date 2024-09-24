@@ -105,35 +105,23 @@
         
         bool _isCHG = false;
         
-        
-        
         bool _isFk = true;
-        
         
         
         List<PrintString> _listWinPrtStr = new List<PrintString>();
         
-        
-        
+
         bool _isVip = false;
-        
-        
-        
-        
-        
         
         
         decimal _balancePayAmt = 0M;
         
         
-        
         String _currentFlowNo = string.Empty;
-        
-        
+       
         
         decimal moneyCHA = 0;
-        
-        
+
         
         t_member_info _currentMember = null;
         private Size _sizeInputText; 
@@ -148,9 +136,9 @@
         private FrmDoubleDisplay frmdouble = null;
 
         private FrmStart _frmStart = null;
-        
 
-        
+        private string payflow_id = "";//微信/支付宝等临时生成的付款订单号
+
 
         public FrmMain(FrmLogin frmLogin, FrmStart frmStart)
         {
@@ -3126,6 +3114,7 @@
                 this.IsPayState = false;
                 this.SetCursorText();
                 this._listCoupon.Clear();
+                this.payflow_id = "";
 
                 if ((this.bindingSaleFlow.Count == 0))
                 {
@@ -3674,6 +3663,7 @@
         private void FunKeyZFB()
         {
             String Alipay_No = String.Empty;
+            this.payflow_id = "";
 
             if (this._posState == PosOpState.PAY)
             {
@@ -3684,6 +3674,7 @@
                 FrmAliPay2 frmalipay = new FrmAliPay2(Convert.ToDecimal(this.lbPayAmtRec.Text), Alipay_No);
                 if (frmalipay.ShowDialog() == DialogResult.OK)
                 {
+                    this.payflow_id = frmalipay.flow_no;
                     //执行支付宝付款码支付
                     if (this.PosPayAmt("ZFB", frmalipay.ReturnMoney, true, false))
                     {
@@ -3773,6 +3764,7 @@
         private void FunKeyWechat()
         {
             String Wechatpay_No = String.Empty;
+            this.payflow_id = "";
 
             if (this._posState == PosOpState.PAY)
             {
@@ -3784,6 +3776,7 @@
                 frmwechatpay.ShowDialog();
                 if (frmwechatpay.DialogResult==DialogResult.OK)
                 {
+                    this.payflow_id = frmwechatpay.flow_no;
                     //执行微信刷卡支付
                     if (this.PosPayAmt("Wechat", frmwechatpay.ReturnMoney, true, false))
                     {
@@ -5754,6 +5747,7 @@
                 payflow.oper_id = Gattr.OperId;
                 payflow.pos_id = Gattr.PosId;
                 payflow.memo = memo;
+                payflow.pflow_id = this.payflow_id;
             }
             catch (Exception ex)
             {

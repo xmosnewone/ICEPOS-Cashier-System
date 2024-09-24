@@ -39,5 +39,6 @@ pos_id               varchar(10),
 sale_way             varchar(1),
 com_flag             varchar(1)						 default '0',
 vip_no			     varchar(20)					 default null,
+pflow_id             varchar(30)                     default null,
 primary key (id)
 );

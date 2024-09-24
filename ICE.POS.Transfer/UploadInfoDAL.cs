@@ -39,7 +39,7 @@
             String errorMessage = String.Empty;
             try
             {
-                sql = "SELECT flow_id,flow_no,sale_amount,pay_way,pay_amount,coin_type,pay_name,coin_rate,convert_amt,card_no,memo,oper_date,oper_id,voucher_no,branch_no,pos_id,sale_way,com_flag,vip_no FROM t_app_payflow WHERE flow_no=@flow_no and com_flag<>1";
+                sql = "SELECT flow_id,flow_no,sale_amount,pay_way,pay_amount,coin_type,pay_name,coin_rate,convert_amt,card_no,memo,oper_date,oper_id,voucher_no,branch_no,pos_id,sale_way,com_flag,vip_no,pflow_id FROM t_app_payflow WHERE flow_no=@flow_no and com_flag<>1";
                 parameters = new SQLiteParameter[1];
                 parameters[0] = new SQLiteParameter("@flow_no", DbType.String);
                 parameters[0].Value = flowno;

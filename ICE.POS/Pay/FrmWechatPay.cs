@@ -17,7 +17,7 @@ namespace ICE.POS
         private decimal _payAmt=0;
         private decimal _returnMoney = 0;
         private string Qrcode_url = string.Empty;
-        private string flow_no = string.Empty;
+        public string flow_no = string.Empty;
         private string branch_no = string.Empty;
         private string Qrcode_Url = string.Empty;
 
