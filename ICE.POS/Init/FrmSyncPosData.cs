@@ -61,6 +61,10 @@ namespace ICE.POS
             {
                 isok = true;
 
+                if (!File.Exists(Gattr.ITEM_DB_FILE) || !File.Exists(Gattr.SALE_DB_FILE))
+                {
+                    buttonEx2.Enabled = false;
+                }
                 /**var updater = FSLib.App.SimpleUpdater.Updater.Instance;
                 updater.Context.UpdateDownloadUrl = ConfigurationManager.AppSettings["updateUrl"];
                 //updater.Context.AutoKillProcesses = true;
