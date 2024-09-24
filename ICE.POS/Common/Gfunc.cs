@@ -899,16 +899,14 @@
                 Gattr.UsedDicKeyTag.Add(_key[index], _value[index]);
             }
         }
-        
-        
-        
-        
+
+
         public static bool SetFlowNo()
         {
             try
             {
                 int num = Gattr.FlowNo + 1;
-                if (num > 99999)
+                if (num > 999999)
                 {
                     num = 1;
                 }
@@ -942,8 +940,8 @@
             }
             return false;
         }
-        
-        
+
+
         public static string GetFlowNo()
         {
             bool flag = false;
@@ -958,7 +956,7 @@
                 {
                     string str3 = str.Substring(0, 10);
                     num = TypeToInt(str.Substring(12), 0);
-                    if ((num > 0) && (num <= 9999))
+                    if ((num > 0) && (num <= 999999))
                     {
                         if (str3 != DateTime.Today.Date.ToString("yyyy-MM-dd"))
                         {
@@ -966,12 +964,12 @@
                         }
                         if (num != Gattr.FlowNo)
                         {
-                            str4 = string.Format("获得流水号。从文件得到的流水号不匹配系统FlowNo变量！\n 文件值：{0}\n系统值：{1}", num.ToString("0000"), Gattr.FlowNo.ToString("0000"));
+                            str4 = string.Format("获得流水号。从文件得到的流水号不匹配系统FlowNo变量！\n 文件值：{0}\n系统值：{1}", num.ToString("000000"), Gattr.FlowNo.ToString("000000"));
                         }
                     }
                     else
                     {
-                        str4 = "从文件得到的流水号不在[0-9999]！";
+                        str4 = "从文件得到的流水号不在[0-999999]！";
                     }
                 }
                 else
@@ -994,7 +992,7 @@
                 //如果flowno.isf日期跟今天日期不一致，则重设Gattr.FlowNo
                 SetFlowNo();
             }
-            string str6 = Gattr.BranchNo + Gattr.PosId + DateTime.Today.ToString("yyyyMMdd").Substring(2, 6).Trim() + Gattr.FlowNo.ToString("00000");
+            string str6 = Gattr.BranchNo + Gattr.PosId + DateTime.Today.ToString("yyyyMMdd").Substring(2, 6).Trim() + Gattr.FlowNo.ToString("000000");
             //if (str6.Length > 20)
             //{
             //throw new ApplicationException("获取交易流水号时发生错误！");
@@ -1044,12 +1042,13 @@
                     //初始化Gattr.FlowNo
                     str = str.Substring(12);
                     Gattr.FlowNo = TypeToInt(str, 0);
-                    if (Gattr.FlowNo>=1) {
+                    if (Gattr.FlowNo >= 1)
+                    {
                         Gattr.FlowNo = Gattr.FlowNo - 1;
                     }
-                    if ((Gattr.FlowNo <= 0) || (Gattr.FlowNo >= 9999))
+                    if ((Gattr.FlowNo <= 0) || (Gattr.FlowNo >= 999999))
                     {
-                        str2 = "初始化全局变量FileRead()读取的流水号不在范围[0-9999]！读取值：" + str;
+                        str2 = "初始化全局变量FileRead()读取的流水号不在范围[0-999999]！读取值：" + str;
                     }
                 }
                 else
