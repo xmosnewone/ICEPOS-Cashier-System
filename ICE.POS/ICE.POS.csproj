@@ -151,7 +151,7 @@
     <Compile Include="Pay\FrmAliPay2.Designer.cs">
       <DependentUpon>FrmAliPay2.cs</DependentUpon>
     </Compile>
-	<Compile Include="Pay\FrmCoupon.cs">
+    <Compile Include="Pay\FrmCoupon.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Pay\FrmCoupon.Designer.cs">
@@ -770,6 +770,7 @@
     <None Include="Resources\icepos.png" />
     <None Include="Resources\newlogin_bg.bmp" />
     <None Include="Resources\newlogin_bg.png" />
+    <None Include="Resources\init.png" />
     <Content Include="Resources\start.png" />
     <Content Include="更新说明.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -849,7 +850,7 @@
     <Content Include="DBSQLite\sql\item\t_sys_setting.sql">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-	<Content Include="DBSQLite\sql\sale\t_app_coupon.sql">
+    <Content Include="DBSQLite\sql\sale\t_app_coupon.sql">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="favicon.ico" />

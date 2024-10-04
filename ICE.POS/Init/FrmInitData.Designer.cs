@@ -33,7 +33,6 @@ namespace ICE.POS
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmInitData));
             this.btnCancel = new ICE.POS.Common.ButtonEx(this.components);
             this.btnOk = new ICE.POS.Common.ButtonEx(this.components);
-            this.picLogo = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.cbbBranch = new System.Windows.Forms.ComboBox();
@@ -42,8 +41,9 @@ namespace ICE.POS
             this.plMain = new System.Windows.Forms.Panel();
             this.lbWWW = new System.Windows.Forms.Label();
             this.txtServerUrl = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
+            this.picLogo = new System.Windows.Forms.PictureBox();
             this.plMain.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCancel
@@ -76,19 +76,6 @@ namespace ICE.POS
             this.btnOk.UseVisualStyleBackColor = true;
             this.btnOk.Click += new System.EventHandler(this.btnTest_Click);
             // 
-            // picLogo
-            // 
-            this.picLogo.BackColor = System.Drawing.Color.Transparent;
-            this.picLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picLogo.Image = ((System.Drawing.Image)(resources.GetObject("picLogo.Image")));
-            this.picLogo.Location = new System.Drawing.Point(28, 10);
-            this.picLogo.Margin = new System.Windows.Forms.Padding(4);
-            this.picLogo.Name = "picLogo";
-            this.picLogo.Size = new System.Drawing.Size(487, 70);
-            this.picLogo.TabIndex = 28;
-            this.picLogo.TabStop = false;
-            this.picLogo.Click += new System.EventHandler(this.picLogo_Click);
-            // 
             // label2
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -99,7 +86,7 @@ namespace ICE.POS
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(100, 15);
             this.label2.TabIndex = 32;
-            this.label2.Text = "机      构：";
+            this.label2.Text = "门      店：";
             // 
             // label3
             // 
@@ -192,6 +179,19 @@ namespace ICE.POS
             this.txtServerUrl.TabIndex = 37;
             this.txtServerUrl.Visible = false;
             // 
+            // picLogo
+            // 
+            this.picLogo.BackColor = System.Drawing.Color.Transparent;
+            this.picLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picLogo.Image = global::ICE.POS.Properties.Resources.init;
+            this.picLogo.Location = new System.Drawing.Point(28, 5);
+            this.picLogo.Margin = new System.Windows.Forms.Padding(4);
+            this.picLogo.Name = "picLogo";
+            this.picLogo.Size = new System.Drawing.Size(487, 89);
+            this.picLogo.TabIndex = 28;
+            this.picLogo.TabStop = false;
+            this.picLogo.Click += new System.EventHandler(this.picLogo_Click);
+            // 
             // FrmInitData
             // 
             this.AcceptButton = this.btnTest;
@@ -208,9 +208,9 @@ namespace ICE.POS
             this.Name = "FrmInitData";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "POS初始化";
-            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             this.plMain.ResumeLayout(false);
             this.plMain.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             this.ResumeLayout(false);
 
         }
