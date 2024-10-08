@@ -73,6 +73,7 @@ namespace ICE.POS
             bool isok = true;
             string errorMessage = string.Empty;
             Dictionary<string, object> _dic = new Dictionary<string, object>();
+            this.mention.Text = "";
             try
             {
                 _dic.Add("username", Gattr.OperId);
@@ -86,13 +87,14 @@ namespace ICE.POS
                 wxResult = PServiceProvider.Instance.InvokeMethod(Gattr.serverUrl + "/wechatPay", _dic, ref isok, ref errorMessage);
                 if (wxResult == "1")
                 {
-                    LoggerHelper.Log("MsmkLogger", Gattr.OperId + "微信刷卡支付成功！", LogEnum.SysLog);
+                    LoggerHelper.Log("MsmkLogger", Gattr.OperId + "微信扫码支付成功！", LogEnum.SysLog);
                     this.DialogResult = DialogResult.OK;
                     this.Close();
                 }
                 else
                 {
-                    LoggerHelper.Log("MsmkLogger", Gattr.OperId + "微信刷卡支付失败！", LogEnum.SysLog);
+                    this.mention.Text = "微信扫码支付失败！";
+                    LoggerHelper.Log("MsmkLogger", Gattr.OperId + "微信扫码支付失败！", LogEnum.SysLog);
                 }
             }
             catch (Exception ex)
