@@ -12,6 +12,7 @@
         public FrmSQ()
         {
             InitializeComponent();
+            this.tbox_PWD.Focus();
         }
 
         private void buttonEx1_Click(object sender, EventArgs e)
@@ -95,8 +96,9 @@
             }
             if (e.KeyCode == Keys.Escape)
             {
-                base.Close();
+                base.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             }
+            return;
         }
     }
 }

@@ -2024,7 +2024,12 @@
                     }
                     else if (str.Length == 1)
                     {
-                        if (str.ToLower() == "r" || str.ToLower() == "i" || str.ToLower() == "c" || str.ToLower() == "=" || str.ToLower() == "," || str.ToLower() == "j" || str.ToLower() == "e")
+                        string lowerStr = str.ToLower();
+                        if (lowerStr == "-" || lowerStr == "i" || lowerStr == "c"
+                            || lowerStr == "=" || lowerStr == "," || lowerStr == "j"
+                            || lowerStr == "e" || lowerStr == "q" || lowerStr == "g"
+                            || lowerStr == "f" || lowerStr == "v"
+                            )
                         {
                             this.CallKeyFunc(new t_attr_function() { func_id = Gattr.UsedDicKeyTag[str.ToLower()] });
                         }

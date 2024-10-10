@@ -892,8 +892,8 @@
             {
                 Gattr.DicPosOpType.Add(_dicTag[index], types[index]);
             }
-            String[] _value = new String[] { "rmb", "cdt", "csc", "yezf", "payother", "ads", "aca","azs","agz" };
-            String[] _key = new String[] { "-", "i", "c", "=", ",", "j", "e" ,"s","g"};
+            String[] _value = new String[] { "rmb", "coupon", "csc", "yezf", "payother", "ads", "aca", "azs", "agz", "zfb", "wechat" };
+            String[] _key = new String[] { "-", "i", "c", "=", ",", "j", "e", "q", "g", "f", "v" };
             for (int index = 0; index < _key.Length; index++)
             {
                 Gattr.UsedDicKeyTag.Add(_key[index], _value[index]);
