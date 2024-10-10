@@ -609,7 +609,8 @@ namespace ICE.POS
                         sale_qnty = ExtendUtility.Instance.ParseToDecimal(reader["sale_qnty"]),
                         oper_id = reader["oper_id"].ToString().Trim(),
                         item_clsno = reader["item_clsno"].ToString().Trim(),
-                        item_status = reader["Item_status"].ToString().Trim(),
+                        item_status = reader["item_status"].ToString().Trim(),
+                        item_brand = reader["item_brand"].ToString().Trim(),
                         vip_acc_flag = reader["vip_acc_flag"].ToString().Trim(),
                         item_subname = reader["item_subname"].ToString().Trim(),
                         last_item_name = Gfunc.ItemNameFormat(reader["item_no"].ToString().Trim(), reader["item_name"].ToString().Trim())
