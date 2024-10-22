@@ -2028,7 +2028,7 @@
                         if (lowerStr == "-" || lowerStr == "i" || lowerStr == "c"
                             || lowerStr == "=" || lowerStr == "," || lowerStr == "j"
                             || lowerStr == "e" || lowerStr == "q" || lowerStr == "g"
-                            || lowerStr == "f" || lowerStr == "v"
+                            || lowerStr == "f" || lowerStr == "v" || lowerStr == "r"
                             )
                         {
                             this.CallKeyFunc(new t_attr_function() { func_id = Gattr.UsedDicKeyTag[str.ToLower()] });
