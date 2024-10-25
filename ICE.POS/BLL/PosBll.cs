@@ -505,7 +505,12 @@
                 _saleflow.flow_no = flowNo;
                 _saleflow.sale_money = Math.Abs(_saleflow.sale_money);
                 _saleflow.sale_qnty = Math.Abs(_saleflow.sale_qnty);
-                _saleflow.discount_rate = ExtendUtility.Instance.ParseToDecimal((_saleflow.unit_price / _saleflow.sale_price).ToString(Gattr.PosSaleAmtPoint));
+                if (_saleflow.sale_price > 0)
+                {
+                    _saleflow.discount_rate = ExtendUtility.Instance.ParseToDecimal((_saleflow.unit_price / _saleflow.sale_price).ToString(Gattr.PosSaleAmtPoint));
+                }else{
+                    _saleflow.discount_rate = 1;
+                }
                 _saleflow.oper_date = ExtendUtility.Instance.ParseToDateTime(operDataTime).ToString("s");
             }
 
