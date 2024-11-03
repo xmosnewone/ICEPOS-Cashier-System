@@ -48,6 +48,7 @@ ICEPOS收银系统对服务器或电脑硬件要求不高,可以使用单台电�
 
 #### 技术交流
 QQ 群号:967490959 (ICEPOS技术交流群1)
+<a target="_blank" href="https://qm.qq.com/cgi-bin/qm/qr?k=hV12i59FxFUwBmBYoABZ4LGISzDnh9qZ&jump_from=webapi&authKey=D2UebEO01aTMAj6I4IIYNQR6ey+JrgidGKwg2h0l2kLkxnt+/5g81zqpCwLc6Pq3"><img border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="ICEPOS技术交流群1" title="ICEPOS技术交流群1"></a>
 <div align="center">
     <p align="center">
         <img src="./blob/main/qqqrcode.png" height="auto" alt="logo"/>
