@@ -43,6 +43,10 @@
             String result = string.Empty;
             try
             {
+                ServicePointManager.SecurityProtocol = SecurityProtocolType.Ssl3
+                | SecurityProtocolType.Tls
+                | (SecurityProtocolType)0x300 //Tls11
+                | (SecurityProtocolType)0xC00; //Tls12
                 webrequest = (HttpWebRequest)HttpWebRequest.Create(address);
                 webrequest.Timeout = 60 * 1000;
                 webreponse = (HttpWebResponse)webrequest.GetResponse();
@@ -80,6 +84,10 @@
             StreamReader readStream = null;
             try
             {
+                ServicePointManager.SecurityProtocol = SecurityProtocolType.Ssl3
+                | SecurityProtocolType.Tls
+                | (SecurityProtocolType)0x300 //Tls11
+                | (SecurityProtocolType)0xC00; //Tls12
                 webrequest = (HttpWebRequest)HttpWebRequest.Create(address);
                 webrequest.Timeout = 30 * 1000;
                 webrequest.Method = "POST";

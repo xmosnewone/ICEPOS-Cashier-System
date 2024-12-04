@@ -1334,15 +1334,15 @@
                 }
             }
         }
-        
-        
 
-        
 
-        
-        
-        
-        
+
+
+
+
+
+
+
         private void SetGridViewColumnsValue(string item_no)
         {
             if (this.tblPanelBalance.Visible)
@@ -1353,17 +1353,62 @@
             if (item_no != null && !item_no.Equals(""))
             {
                 this.ClearInput();
-                
-                //if (item_no.Length == 13 && item_no.Substring(0, 2).Equals("21"))
-                //{
-                    //this._saleflow = Gattr.Bll.GetItemInfo(item_no.Substring(2, 5));
-                    //string strPrice = item_no.Substring(7, 3) + "." + item_no.Substring(10, 2);
-                    //this._saleflow.sale_money = Convert.ToDecimal(strPrice);
-                    
-                    //this._saleflow.sale_qnty = this._saleflow.sale_money / this._saleflow.sale_price;
-                //}
-               // else
-               // {
+
+                bool isShopcode = CodeUtil.isShopCode(item_no);
+
+                //13或者18位超市自编码识别
+                if (isShopcode)
+                {
+                    Dictionary<string, string> goodInfo = CodeUtil.getGoodInfo(item_no);
+                    try
+                    {
+
+                        this._saleflow = null;
+
+                        string goodCode = goodInfo["goodCode"];
+
+                        if (goodCode != "")
+                        {
+                            this._saleflow = Gattr.Bll.GetItemInfo(goodCode);
+                        }
+
+                        if (goodCode == "" || this._saleflow == null)
+                        {
+                            MessageBox.Show("货号" + item_no + "不存在", Gattr.AppTitle);
+                            this.ShowMessage("商品开始交易....");
+                            this.ClearInput();
+                            return;
+                        }
+
+                        //需要计算价格
+                        if (goodInfo["needToSum"] == "1")
+                        {
+                            decimal unit_price = this._saleflow.unit_price;
+                            //后台填写的是以1000克为单位的商品单价
+                            this._saleflow.sale_money = Math.Round(Convert.ToDecimal(goodInfo["goodWeight"]) / 1000 * unit_price, 2);
+                        }
+                        else
+                        {
+                            this._saleflow.sale_money = Convert.ToDecimal(goodInfo["goodMoney"]);
+                        }
+
+                        this._saleflow.unit_price = this._saleflow.sale_money;
+                        this._saleflow.unit_price1 = this._saleflow.sale_money;
+                        this._saleflow.sale_qnty = 1;
+                        this._saleflow.is_shopcode = true;
+
+                    }
+                    catch (Exception)
+                    {
+
+                        MessageBox.Show("货号" + item_no + "不存在", Gattr.AppTitle);
+                        this.ShowMessage("商品开始交易....");
+                        this.ClearInput();
+                        return;
+                    }
+                }
+                else
+                {
                     //通过查询商品，拼凑销售数据
                     List<t_cur_saleflow> saleInfos = Gattr.Bll.GetItemsForPos(item_no);
                     if (saleInfos.Count == 0)
@@ -1389,28 +1434,32 @@
                     {
                         this._saleflow = saleInfos[0];
                     }
-                // }
+                }
 
                 //合并相同货号项目
-                if (this._listSaleFlow.Count>0) {
+                if (this._listSaleFlow.Count > 0 && !isShopcode)
+                {
 
                     String _item_no = this._saleflow.item_no;
                     bool flag = false;
-                    foreach (t_cur_saleflow flow in this._listSaleFlow) {
+                    foreach (t_cur_saleflow flow in this._listSaleFlow)
+                    {
                         String temp_no = flow.item_no;
-                        if (temp_no==_item_no ) {
+                        if (temp_no == _item_no)
+                        {
                             this.FunKeyNum(flow);
                             flag = true;
                             break;
                         }
                     }
-                    if (flag) {
+                    if (flag)
+                    {
                         return;
                     }
                 }
 
                 _saleflow.flow_id = this.bindingSaleFlow.Count + 1;
-                
+
 
                 List<t_cur_saleflow> _saleInfos = this._listSaleFlow;
                 _saleInfos.Add(_saleflow);//堆栈进原有的购物车销售数据列表
@@ -1418,11 +1467,11 @@
                 this.ResetSaleFlowData();
                 this.bindingSaleFlow.DataSource = this._listSaleFlow;
                 this.bindingSaleFlow.ResetBindings(true);
-           
+
                 this.bindingSaleFlow.MoveLast();
                 this.GvSaleFlow.DataSource = this.bindingSaleFlow;
                 this.ShowMessage("交易商品<" + item_no + ">,数量<" + _saleflow.sale_qnty + ">");
-                
+
                 decimal amtTotal = 0M;
                 decimal qntyTotal = 0M;
                 foreach (t_cur_saleflow saleflow in this.bindingSaleFlow)
@@ -1448,9 +1497,9 @@
             }
 
         }
-        
 
-        
+
+
 
         private void btnSaleDown_Click(object sender, EventArgs e)
         {

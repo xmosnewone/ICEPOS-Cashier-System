@@ -29,6 +29,7 @@
         private decimal _num3; //商品交易类型
         private string _unit_no; //商品类型
         private string _item_brand;
+        private bool _is_shopcode = false;//是否自定义编码
 
         private string _plan_no;
         private string _row_id;
@@ -390,6 +391,18 @@
             set
             {
                 _scheme_price = value;
+            }
+        }
+
+        public bool is_shopcode
+        {
+            get
+            {
+                return _is_shopcode;
+            }
+            set
+            {
+                _is_shopcode = value;
             }
         }
     }

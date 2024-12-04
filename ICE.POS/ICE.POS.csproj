@@ -493,6 +493,7 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
+	<Compile Include="Utility\CodeUtil.cs" />
     <Compile Include="Utility\SIString.cs">
       <SubType>Code</SubType>
     </Compile>

@@ -54,6 +54,9 @@
         private static int _flowNo = 0; //流水ID
         private static string _flowNoFile;//流水文件路径
         private static bool _isWeigh; //是否是称重
+        private static int _codeLength = ExtendUtility.Instance.ParseToInt32(ConfigurationManager.AppSettings["codeLength"]); //自编码长度13/18位
+        private static int _codeType = ExtendUtility.Instance.ParseToInt32(ConfigurationManager.AppSettings["codeType"]); //自编码配置
+        private static string _codeStart = ExtendUtility.Instance.ParseToString(ConfigurationManager.AppSettings["codeStart"]); //自编码开头两位数字
         #region 双屏属性
         public static short DoubleColorBlue = 240;
         public static short DoubleColorGreen = 240;
@@ -700,9 +703,25 @@
             get { return _oper_pwd; }
             set { _oper_pwd = value; }
         }
-        
-        
-        
+
+        public static int codeLength
+        {
+            get { return _codeLength; }
+            set { _codeLength = value; }
+        }
+
+        public static int codeType
+        {
+            get { return _codeType; }
+            set { _codeType = value; }
+        }
+
+        public static string codeStart
+        {
+            get { return _codeStart; }
+            set { _codeStart = value; }
+        }
+
         public static string DB_FILE_PATH = AppDomain.CurrentDomain.BaseDirectory + "DBSQLite/sql/";
         
         
