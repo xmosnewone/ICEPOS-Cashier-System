@@ -662,13 +662,14 @@
                 Dictionary<string, object> _dic = Gfunc.GetServiceParameter();
                 bool isNetOk = true;
                 string errorMessage1 = string.Empty;
-                decimal d = ExtendUtility.Instance.ParseToDecimal(RunCmd(Gattr.serverUrl));
+                //decimal d = ExtendUtility.Instance.ParseToDecimal(RunCmd(Gattr.serverUrl));
                 string res = PServiceProvider.Instance.InvokeMethod(Gattr.serverUrl + "/Testconn", _dic, ref isNetOk, ref errorMessage1);
 
                 //首次安装配置需要联网，并由FrmInitData窗口选择门店POS机信息,生成Application.xml
                 if (dic == null || SIString.IsNullOrEmptyOrDBNull(dic[nodePaths[0]]))
                 {
-                    if (!isNetOk || res != "1" || d >= 10)
+                    //if (!isNetOk || res != "1" || d >= 10)
+                    if (!isNetOk || res != "1")
                     {
                         //首次配置无法连接后台
                         return -404;
@@ -699,7 +700,8 @@
                 LoggerHelper.Log("MsmkLogger", "读取配置信息完成End", LogEnum.InitLog);
 
                 //如果可以Ping通管理后台,则验证POS机信息是否跟后台一致
-                if (isNetOk && res == "1" && d < 10)
+                //if (isNetOk && res == "1" && d < 10)
+                if (isNetOk && res == "1")
                 {
                     string errorMessage2 = string.Empty;
                     if (!PosServericeBll.Instance.ValidatePos(Gattr.BranchNo, Gattr.PosId, ref errorMessage2))
