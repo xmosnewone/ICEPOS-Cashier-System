@@ -375,12 +375,12 @@
                                             DealerDataWork = false;
                                         if (json == "-10")
                                         {
-                                            sb.AppendLine("流水号:" + dr[0].ToString() + "Error:参数错误");
+                                            sb.AppendLine("流水号:" + dr[0].ToString() + "Error:支付订单号重复,后台已存在相同支付订单号！或未提交任何支付流水信息");
                                             LoggerHelper.Log("MsmkLogger", sb.ToString(), LogEnum.TransferLog);
                                         }
                                         else
                                         {
-                                            sb.AppendLine("流水号:" + dr[0].ToString() + "Error:权限不足");
+                                            sb.AppendLine("流水号:" + dr[0].ToString() + "Error:权限不足！请检查提交的账户数据");
                                             LoggerHelper.Log("MsmkLogger", sb.ToString(), LogEnum.TransferLog);
                                         }
                                     }
