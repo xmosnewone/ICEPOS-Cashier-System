@@ -21,7 +21,7 @@ namespace ICE.POS
         
         public DataTable GetBigClsPage(string clsNo, int pageSize, bool isNextPages)
         {
-            string sql = "select typeno,typename from t_product_food_type where parent IS NULL or length(rtrim(ltrim(parent)))=0";
+            string sql = "select typeno,typename from t_product_food_type where parent IS NULL or parent=0 or length(rtrim(ltrim(parent)))=0";
             DataTable data = base.dbPosItem.GetData(sql);
             if (data.Rows.Count == 0)
             {
