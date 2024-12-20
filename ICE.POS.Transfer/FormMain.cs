@@ -336,10 +336,10 @@
                             
                             string errorMessage = string.Empty;
                             bool isok11 = true;
-                            string isConnect = PServiceProvider.Instance.InvokeMethod(GlobalSet.serverUrl + "/Testconn", _dic, ref isok11, ref errorMessage);
+                            string isConnect = PServiceProvider.Instance.InvokeMethod(GlobalSet.serverUrl + "/testconn", _dic, ref isok11, ref errorMessage);
                             if (isok11 && isConnect == "1")
                             {
-                                string json = PServiceProvider.Instance.InvokeMethod(GlobalSet.serverUrl + "/" + "Addflow", _dic, ref isok11, ref errorMessage);
+                                string json = PServiceProvider.Instance.InvokeMethod(GlobalSet.serverUrl + "/" + "addflow", _dic, ref isok11, ref errorMessage);
                                 if (isok11)
                                 {
                                     if (json != "-10" && json != "-20")
