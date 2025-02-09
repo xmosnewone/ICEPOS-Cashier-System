@@ -470,6 +470,8 @@
             }
             catch (Exception ex)
             {
+                this.currentThread.Abort();
+                this.currentThread = null;
                 LoggerHelper.Log("MsmkLogger", "ICE.POS.Transfer->FormMain-->DealerData--->" + ex.ToString(), LogEnum.TransferLog);
             }
         }
@@ -565,7 +567,9 @@
             }
             catch (Exception ex)
             {
-
+                this.currentThread.Abort();
+                this.currentThread = null;
+                LoggerHelper.Log("MsmkLogger", "ICE.POS.Transfer->FormMain-->DealerAccount--->" + ex.ToString(), LogEnum.TransferLog);
             }
         }
         
@@ -659,7 +663,9 @@
             }
             catch (Exception ex)
             {
-
+                this.currentThread.Abort();
+                this.currentThread = null;
+                LoggerHelper.Log("MsmkLogger", "ICE.POS.Transfer->FormMain-->DealerVip--->" + ex.ToString(), LogEnum.TransferLog);
             }
         }
         
