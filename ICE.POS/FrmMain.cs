@@ -2964,7 +2964,7 @@
            // }
             //else
             //{
-                MessageBox.Show("您没有权限进行此操作！");
+                //MessageBox.Show("您没有权限进行此操作！");
             //}
 
         }
