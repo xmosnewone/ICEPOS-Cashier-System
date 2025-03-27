@@ -11,6 +11,7 @@
     using ICE.Utility;
     using System.IO;
     using Newtonsoft.Json.Linq;
+    using Newtonsoft.Json;
     using System.Threading;
 
     //接受侦听扫码设备输入的事件在FrmMain.Designer.cs文件
@@ -5914,7 +5915,8 @@
                                 vipinfo.card_no = _pay.vip_no;
                                 vipinfo.sale_amt = _pay.sale_amount;
                                 vipinfo.score = _acc_num;
-                                memberinfo = MemberService.Instance.AddMemberScore(_pay.vip_no, _acc_num.ToString(), flow_no, "门店消费:" + flow_no);
+                                string json = JsonConvert.SerializeObject(_listPayFlow, Formatting.Indented);
+                                memberinfo = MemberService.Instance.AddMemberScore(_pay.vip_no, _acc_num.ToString(), flow_no, json, "门店消费:" + flow_no);
                                 if (memberinfo.code == "1")
                                 {
                                     vipinfo.card_amount = memberinfo.balance;
@@ -6084,7 +6086,8 @@
                     {
                         if (_pay.sale_way == "A")
                         {
-                            _memberinfo = MemberService.Instance.AddMemberScore(_pay.vip_no, _pay.sale_amount.ToString(), flowNo, "门店消费:" + flowNo);
+                            string json = JsonConvert.SerializeObject(_listPayFlow, Formatting.Indented);
+                            _memberinfo = MemberService.Instance.AddMemberScore(_pay.vip_no, _pay.sale_amount.ToString(), flowNo, json, "门店消费:" + flowNo);
                             if (_memberinfo.code == "-1")
                             {
                                 ispay = false;
@@ -6105,7 +6108,8 @@
                         {
                             if (_pay.sale_way == "B")
                             {
-                                _memberinfo = MemberService.Instance.AddMemberScore(vip_no, (_pay.sale_amount).ToString(), flowNo, "门店退货:" + _pay.voucher_no);
+                                string json = JsonConvert.SerializeObject(_listPayFlow, Formatting.Indented);
+                                _memberinfo = MemberService.Instance.AddMemberScore(vip_no, (_pay.sale_amount).ToString(), flowNo, json, "门店退货:" + _pay.voucher_no);
                                 _currentMember = _memberinfo;
                                 if (_memberinfo.code == "-1")
                                 {

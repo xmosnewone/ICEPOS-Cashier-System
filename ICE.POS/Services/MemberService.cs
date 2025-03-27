@@ -223,18 +223,19 @@
             }
             return t;
         }
-        
-        
-        
-        
-        
-        
-        
-        public t_member_info AddMemberScore(String mem_no, String score, String ordername, String el = "")
+
+
+
+
+
+
+
+        public t_member_info AddMemberScore(String mem_no, String score, String ordername, String payflow = "", String el = "")
         {
             Dictionary<String, String> _dic = new Dictionary<string, string>();
             t_member_info t = null;
             _dic.Add("else", System.Web.HttpUtility.UrlEncode(el).ToUpper());
+            _dic.Add("payflow", payflow);
             _dic.Add("mem_no", mem_no);
             _dic.Add("score", score);
             _dic.Add("ordername", ordername);
@@ -246,13 +247,13 @@
             }
             return t;
         }
-        
-        
-        
-        
-        
-        
-        
+
+
+
+
+
+
+
         public t_member_info UseMemberScore(String mem_no, String score, String ordername, String el = "")
         {
             Dictionary<String, String> _dic = new Dictionary<string, string>();
