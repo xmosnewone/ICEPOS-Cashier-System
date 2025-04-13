@@ -46,11 +46,13 @@
                 }
                 catch (InvalidPrinterException exception)
                 {
-                    MessageBox.Show(exception.Message,"系统提示");
+                    //没有打印机不提示
+                    //MessageBox.Show(exception.Message,"系统提示");
                 }
                 catch (Exception exception2)
                 {
-                    MessageBox.Show(exception2.Message,"系统提示");
+                    //没有打印机不提示
+                    //MessageBox.Show(exception2.Message,"系统提示");
                 }
             }
         }
