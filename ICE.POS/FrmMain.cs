@@ -1385,8 +1385,10 @@
                         if (goodInfo["needToSum"] == "1")
                         {
                             decimal unit_price = this._saleflow.unit_price;
+                            decimal goodWeight = Convert.ToDecimal(goodInfo["goodWeight"]) / 1000;
                             //后台填写的是以1000克为单位的商品单价
-                            this._saleflow.sale_money = Math.Round(Convert.ToDecimal(goodInfo["goodWeight"]) / 1000 * unit_price, 2);
+                            this._saleflow.sale_money = Math.Round(goodWeight * unit_price, 2);
+                            this._saleflow.item_name = this._saleflow.item_name + " " + goodWeight.ToString() + "KG";
                         }
                         else
                         {
@@ -5202,11 +5204,11 @@
 
             listPs.Add(new PrintString(str1 + str2 + str3 + str4, Gattr.PrtLen, TextAlign.Left));
             listPs.Add(new PrintString(itemName, Gattr.PrtLen, TextAlign.Left));
-            t_cur_saleflow sale = Gattr.Bll.GetItemInfo(saleItem.item_no);
-            if (sale.unit_price != saleItem.unit_price && saleItem.sale_way != "B")
-            {
-                listPs.Add(new PrintString("       原价：" + sale.unit_price.ToString("0.00"), Gattr.PrtLen, TextAlign.Left));
-            }
+            //t_cur_saleflow sale = Gattr.Bll.GetItemInfo(saleItem.item_no);
+            //if (sale.unit_price != saleItem.unit_price && saleItem.sale_way != "B")
+            //{
+                //listPs.Add(new PrintString("       原价：" + sale.unit_price.ToString("0.00"), Gattr.PrtLen, TextAlign.Left));
+            //}
             return listPs;
         }
         
@@ -5232,12 +5234,27 @@
                 }
                 else
                 {
-                    iTotSum += _saleflow.sale_qnty * _saleflow.unit_price;
+                    //非商品自编码统计原价金额
+                    if (!_saleflow.is_shopcode)
+                    {
+                        iTotSum += _saleflow.sale_qnty * _saleflow.unit_price;
+                    }
+                    else
+                    {
+                        iTotSum += _saleflow.sale_money;
+                    }
                 }
                 t_cur_saleflow sale = Gattr.Bll.GetItemInfo(_saleflow.item_no);
                 if (_saleflow.sale_way != "B")
                 {
-                    descYh += _saleflow.sale_qnty * sale.unit_price;
+                    if (!_saleflow.is_shopcode)
+                    {
+                        descYh += _saleflow.sale_qnty * sale.unit_price;
+                    }
+                    else
+                    {
+                        descYh += _saleflow.sale_money;
+                    }
                 }
                 else
                 {
