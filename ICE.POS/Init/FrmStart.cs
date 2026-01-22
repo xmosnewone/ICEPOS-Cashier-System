@@ -157,6 +157,8 @@
                 Process.Start(new ProcessStartInfo()
                 {
                     FileName = path,
+                    WorkingDirectory = Path.GetDirectoryName(path),
+                    UseShellExecute = false,
                     Arguments =
                         dbpath + " " +
                         "transfer.ini" + " " +
